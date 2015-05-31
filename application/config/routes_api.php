@@ -1,4 +1,5 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
   ## API Route
-  $route['api/login-auth']['post'] = 'api/MemberService/checkAuth';
+  $route['api/register-customer']['post'] = 'api/CustomerApiCtrl/callReister';
+  $route['api/login-customer']['post'] = 'api/CustomerApiCtrl/callLogin';
