@@ -51,7 +51,7 @@ class CustomerApiCtrl extends CI_Controller {
       
   }
 
-  public function checkAuth() {
+  public function callLogin() {
     $resp['result'] = 'error';
       $this->load->library('form_validation');
         $this->form_validation->set_rules('userName', 'user', 'required');
@@ -60,20 +60,32 @@ class CustomerApiCtrl extends CI_Controller {
              $resp['result'] = 'bot';
         }else{  
           $resp['result'] = 'loginFalse';
-          $isAuthen = $this->Model_customer->cusAuth("pudthai12", "1234");
-          if($isAuthen){
-              $userSessions = array('sesToken' => $isAuthen->cusToken,
-                                    'sesCusId' => $isAuthen->cusId,
-                                    'isSesLogin' => true);
-              $this->session->set_userdata($userSessions);
-              $resp['result'] = 'loginSuccess';
-          }
-
+          $isAuthen = $this->Model_customer->callLoginService($this->input->post('userName'), $this->input->post('password'));
+            if($isAuthen){
+                $userSessions = array('sesToken' => $isAuthen->cusToken,
+                                      'sesCusId' => $isAuthen->cusId,
+                                      'isSesLogin' => true);
+                $this->session->set_userdata($userSessions);
+                $resp['result'] = 'loginSuccess';
+            } 
         }
+    $result = json_encode($resp);
+    echo $result;
   }
 
-  public function viewAuth() {
-    
+ 
+  ## GET SERVICE
+  
+  
+  public function getProfile(){
+    $resp['success'] = null;
+      $hasProfile = $this->Model_customer->getProfileService(3);
+      if($hasProfile){
+        $resp['success'] = 'success';
+        $resp['data'] = $hasProfile;
+      }
+      $result = json_encode($resp);
+      echo $result;
   }
-
+  
 }
