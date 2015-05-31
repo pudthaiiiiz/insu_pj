@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
           <!-- logo -->
           <h1 class="navbar-brand">
-            <a href="#body" class="white">@{{title}} insurancebroker360</a>
+            <a href="#body" class="white">${title} <span>{{title}}</span> </a>
           </h1>
           <!-- /logo -->
         </div>
