@@ -1,0 +1,7 @@
+ RewriteEngine On
+ RewriteBase /insu
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond $1 !^(index\.php|images|robots\.txt|css|docs|javascript|system|asssets|background)
+  RewriteRule ^(.*)$ /insu/index.php?/$1 [L]
