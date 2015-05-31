@@ -31,7 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     ==================================== -->
     <header id="navigation" class="navbar-inverse navbar-fixed-top animated-header">
       <div class="container">
-        <div class="navbar-header" ng-controller="HomeCtrl">
+        <div class="navbar-header" ng-controller="MenuCtrl">
           <!-- responsive nav button -->
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
           <!-- logo -->
           <h1 class="navbar-brand">
-            <a href="#body" class="white"><span>{{userName}}</span> </a>
+            <a href="#body" class="white"><span ng-bind="userName"></span> </a>
           </h1>
           <!-- /logo -->
         </div>
@@ -72,14 +72,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <!--
       Home Slider
       ==================================== -->
-      <section id="home-slider">
+      <section id="home-slider" ng-controller="SliderCtrl">
         <div id="slider" class="sl-slider-wrapper">
           <div class="sl-slider">
             <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
               <div class="bg-img bg-img-1"></div>
               <div class="slide-caption">
                 <div class="caption-content">
-                  <h2 class="animated fadeInDown black">เปลี่ยนตัวเองมาเป็นที่ปรึกษา</h2>
+                  <h2 class="animated fadeInDown black">{{data.title}}</h2>
                   <span class="animated fadeInDown black">Lorem Ipsum is simply dummy text of the printing. </span>
                   <a href="#" class="btn btn-blue btn-effect">Join US</a>
                 </div>
