@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 var app  = angular.module('application', ['ngRoute'])
-app.controller('HomeCtrl', ['$scope', 'RegisterServices',  function ($scope, RegisterServices) {
+.controller('MenuCtrl', ['$scope', 'RegisterServices',  function ($scope, RegisterServices) {
 	$scope.userName = null;
   var data = {
     userName : 'pudthai'
@@ -18,4 +18,9 @@ app.controller('HomeCtrl', ['$scope', 'RegisterServices',  function ($scope, Reg
   }).error(function() {
      console.log('API Timeout');
   });
-}]);
+}])
+.controller('SliderCtrl', ['$scope', 'RegisterServices',  function ($scope) {
+  $scope.data = {
+    title : 'เปลี่ยนตัวเองมาเป็นที่ปรึกษา'
+  };
+}])
