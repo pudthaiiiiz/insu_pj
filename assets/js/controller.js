@@ -5,18 +5,15 @@
  */
 var app  = angular.module('application', ['ngRoute'])
 app.controller('HomeCtrl', ['$scope', 'RegisterServices',  function ($scope, RegisterServices) {
-	$scope.title = 'Card Game'; 
+	$scope.userName = null;
   var data = {
     userName : 'pudthai'
   };
   var callServiceProfile =  RegisterServices.getPofile(data);
-  console.log(callServiceProfile);
   callServiceProfile.success(function(data) {
     if(data.status === 'success'){
-      console.log(data.data);
-    } else {
-      console.log("Error : ");
-      console.log(data);
+      data = data.data;
+      $scope.userName = data.cusFullname;
     }
   }).error(function() {
      console.log('API Timeout');

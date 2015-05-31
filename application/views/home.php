@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
           <!-- logo -->
           <h1 class="navbar-brand">
-            <a href="#body" class="white">${assets} <span>{{title}}</span> </a>
+            <a href="#body" class="white"><span>{{userName}}</span> </a>
           </h1>
           <!-- /logo -->
         </div>
