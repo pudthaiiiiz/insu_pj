@@ -15,15 +15,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="keywords" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="<?php echo assets();?>css/font.css">
-    <link rel="stylesheet" href="<?php echo assets();?>css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?php echo assets();?>css/jquery.fancybox.css">
-    <link rel="stylesheet" href="<?php echo assets();?>css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo assets();?>css/owl.carousel.css">
-    <link rel="stylesheet" href="<?php echo assets();?>css/slit-slider.css">
-    <link rel="stylesheet" href="<?php echo assets();?>css/animate.css">
-    <link rel="stylesheet" href="<?php echo assets();?>css/main.css">
-    <script src="<?php echo assets();?>js/modernizr-2.6.2.min.js"></script>
+    <link rel="stylesheet" href="${assets}css/font.css">
+    <link rel="stylesheet" href="${assets}css/font-awesome.min.css">
+    <link rel="stylesheet" href="${assets}css/jquery.fancybox.css">
+    <link rel="stylesheet" href="${assets}css/bootstrap.min.css">
+    <link rel="stylesheet" href="${assets}css/owl.carousel.css">
+    <link rel="stylesheet" href="${assets}css/slit-slider.css">
+    <link rel="stylesheet" href="${assets}css/animate.css">
+    <link rel="stylesheet" href="${assets}css/main.css">
+    <script src="${assets}js/modernizr-2.6.2.min.js"></script>
   </head>
   <body id="body" ng-app="application">
     <!--
@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
           <!-- logo -->
           <h1 class="navbar-brand">
-            <a href="#body" class="white">${title} <span>{{title}}</span> </a>
+            <a href="#body" class="white">${assets} <span>{{title}}</span> </a>
           </h1>
           <!-- /logo -->
         </div>
@@ -67,7 +67,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     End Fixed Navigation
     ==================================== -->
 
-    <main class="site-content" role="main">
+    <main class="site-content" role="main" ng-cloak>
 
       <!--
       Home Slider
@@ -94,22 +94,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <a href="#" class="btn btn-blue btn-effect">Join US</a>
                 </div>
               </div>
-
             </div>
-
-            <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
-
-              <div class="bg-img bg-img-3"></div>
-              <div class="slide-caption">
-                <div class="caption-content">
-<!--                  <h2 class="black">เบี้ยประกันต้นทุน ค่าสมัคร <span style="font-size: 3em;">0</span> บาท</h2>
-                  <span class="black">Clean and Professional one page Template</span>
-                  <a href="#" class="btn btn-blue btn-effect">Join US</a>-->
-                </div>
-              </div>
-
-            </div>
-
           </div><!-- /sl-slider -->
 
           <!-- 
@@ -166,7 +151,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <div class="welcome-block">
                 <h3>Welcome To Our Site</h3>								
                 <div class="message-body">
-                  <img src="<?php echo assets();?>img/member-1.jpg" class="pull-left" alt="member">
+                  <img src="${assets}img/member-1.jpg" class="pull-left" alt="member">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
                 </div>
                 <a href="#" class="btn btn-border btn-effect pull-right">Read More</a>
@@ -247,73 +232,73 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             <ul class="project-wrapper wow animated fadeInUp">
               <li class="portfolio-item">
-                <img src="<?php echo assets();?>img/portfolio/item.jpg" class="img-responsive" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat">
+                <img src="${assets}img/portfolio/item.jpg" class="img-responsive" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat">
               <figcaption class="mask">
                 <h3>Wall street</h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
               </figcaption>
               <ul class="external">
-                <li><a class="fancybox" title="Araund The world" data-fancybox-group="works" href="<?php echo assets();?>img/portfolio/item.jpg"><i class="fa fa-search"></i></a></li>
+                <li><a class="fancybox" title="Araund The world" data-fancybox-group="works" href="${assets}img/portfolio/item.jpg"><i class="fa fa-search"></i></a></li>
                 <li><a href=""><i class="fa fa-link"></i></a></li>
               </ul>
               </li>
 
               <li class="portfolio-item">
-                <img src="<?php echo assets();?>img/portfolio/item2.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
+                <img src="${assets}img/portfolio/item2.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
               <figcaption class="mask">
                 <h3>Wall street</h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
               </figcaption>
               <ul class="external">
-                <li><a class="fancybox" title="Wall street" href="<?php echo assets();?>img/slider/banner.jpg" data-fancybox-group="works" ><i class="fa fa-search"></i></a></li>
+                <li><a class="fancybox" title="Wall street" href="${assets}img/slider/banner.jpg" data-fancybox-group="works" ><i class="fa fa-search"></i></a></li>
                 <li><a href=""><i class="fa fa-link"></i></a></li>
               </ul>
               </li>
 
               <li class="portfolio-item">
-                <img src="<?php echo assets();?>img/portfolio/item3.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
+                <img src="${assets}img/portfolio/item3.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
               <figcaption class="mask">
                 <h3>Wall street</h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
               </figcaption>
               <ul class="external">
-                <li><a class="fancybox" title="Behind The world" data-fancybox-group="works" href="<?php echo assets();?>img/portfolio/item3.jpg"><i class="fa fa-search"></i></a></li>
+                <li><a class="fancybox" title="Behind The world" data-fancybox-group="works" href="${assets}img/portfolio/item3.jpg"><i class="fa fa-search"></i></a></li>
                 <li><a href=""><i class="fa fa-link"></i></a></li>
               </ul>
               </li>
 
               <li class="portfolio-item">
-                <img src="<?php echo assets();?>img/portfolio/item4.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry.">
+                <img src="${assets}img/portfolio/item4.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry.">
               <figcaption class="mask">
                 <h3>Wall street</h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
               </figcaption>
               <ul class="external">
-                <li><a class="fancybox" title="Wall street 4" data-fancybox-group="works" href="<?php echo assets();?>img/portfolio/item4.jpg"><i class="fa fa-search"></i></a></li>
+                <li><a class="fancybox" title="Wall street 4" data-fancybox-group="works" href="${assets}img/portfolio/item4.jpg"><i class="fa fa-search"></i></a></li>
                 <li><a href=""><i class="fa fa-link"></i></a></li>
               </ul>
               </li>
 
               <li class="portfolio-item">
-                <img src="<?php echo assets();?>img/portfolio/item5.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
+                <img src="${assets}img/portfolio/item5.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
               <figcaption class="mask">
                 <h3>Wall street</h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
               </figcaption>
               <ul class="external">
-                <li><a class="fancybox" title="Wall street 5" data-fancybox-group="works" href="<?php echo assets();?>img/portfolio/item5.jpg"><i class="fa fa-search"></i></a></li>
+                <li><a class="fancybox" title="Wall street 5" data-fancybox-group="works" href="${assets}img/portfolio/item5.jpg"><i class="fa fa-search"></i></a></li>
                 <li><a href=""><i class="fa fa-link"></i></a></li>
               </ul>
               </li>
 
               <li class="portfolio-item">
-                <img src="<?php echo assets();?>img/portfolio/item6.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
+                <img src="${assets}img/portfolio/item6.jpg" class="img-responsive" alt="Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. ">
               <figcaption class="mask">
                 <h3>Wall street</h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
               </figcaption>
               <ul class="external">
-                <li><a class="fancybox" title="Wall street 6" data-fancybox-group="works" href="<?php echo assets();?>img/portfolio/item6.jpg"><i class="fa fa-search"></i></a></li>
+                <li><a class="fancybox" title="Wall street 6" data-fancybox-group="works" href="${assets}img/portfolio/item6.jpg"><i class="fa fa-search"></i></a></li>
                 <li><a href=""><i class="fa fa-link"></i></a></li>
               </ul>
               </li>
@@ -336,21 +321,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
               <div id="testimonial" class=" wow animated fadeInUp">
                 <div class="testimonial-item text-center">
-                  <img src="<?php echo assets();?>img/member-1.jpg" alt="Our Clients">
+                  <img src="${assets}img/member-1.jpg" alt="Our Clients">
                   <div class="clearfix">
                     <span>Katty Flower</span>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                   </div>
                 </div>
                 <div class="testimonial-item text-center">
-                  <img src="<?php echo assets();?>img/member-1.jpg" alt="Our Clients">
+                  <img src="${assets}img/member-1.jpg" alt="Our Clients">
                   <div class="clearfix">
                     <span>Katty Flower</span>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                   </div>
                 </div>
                 <div class="testimonial-item text-center">
-                  <img src="<?php echo assets();?>img/member-1.jpg" alt="Our Clients">
+                  <img src="${assets}img/member-1.jpg" alt="Our Clients">
                   <div class="clearfix">
                     <span>Katty Flower</span>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -540,28 +525,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- Essential jQuery Plugins
     ================================================== -->
     <!-- Main jQuery -->
-    <script src="<?php echo assets();?>js/jquery-1.11.1.min.js"></script>
-    <script src="<?php echo assets();?>js/angular.min.js"></script>
-    <script src="<?php echo assets();?>js/angular-route/angular-route.js"></script>
-    <script src="<?php echo assets();?>js/controller.js"></script>
+    <script src="${assets}js/jquery-1.11.1.min.js"></script>
+    <script src="${assets}js/angular.min.js"></script>
+    <script src="${assets}js/angular-route/angular-route.js"></script>
+    <script src="${assets}js/controller.js"></script>
     <!-- Twitter Bootstrap -->
-    <script src="<?php echo assets();?>js/bootstrap.min.js"></script>
+    <script src="${assets}js/bootstrap.min.js"></script>
     <!-- Single Page Nav -->
-    <script src="<?php echo assets();?>js/jquery.singlePageNav.min.js"></script>
+    <script src="${assets}js/jquery.singlePageNav.min.js"></script>
     <!-- jquery.fancybox.pack -->
-    <script src="<?php echo assets();?>js/jquery.fancybox.pack.js"></script>
+    <script src="${assets}js/jquery.fancybox.pack.js"></script>
     <!-- Google Map API -->
     <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <!-- Owl Carousel -->
-    <script src="<?php echo assets();?>js/owl.carousel.min.js"></script>
+    <script src="${assets}js/owl.carousel.min.js"></script>
     <!-- jquery easing -->
-    <script src="<?php echo assets();?>js/jquery.easing.min.js"></script>
+    <script src="${assets}js/jquery.easing.min.js"></script>
     <!-- Fullscreen slider -->
-    <script src="<?php echo assets();?>js/jquery.slitslider.js"></script>
-    <script src="<?php echo assets();?>js/jquery.ba-cond.min.js"></script>
+    <script src="${assets}js/jquery.slitslider.js"></script>
+    <script src="${assets}js/jquery.ba-cond.min.js"></script>
     <!-- onscroll animation -->
-    <script src="<?php echo assets();?>js/wow.min.js"></script>
+    <script src="${assets}js/wow.min.js"></script>
     <!-- Custom Functions -->
-    <script src="<?php echo assets();?>js/main.js"></script>
+    <script src="${assets}js/main.js"></script>
   </body>
 </html>
