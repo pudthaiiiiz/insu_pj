@@ -4,6 +4,21 @@
  * and open the template in the editor.
  */
 var app  = angular.module('application', ['ngRoute'])
-.controller('HomeCtrl', ['$scope',  function ($scope) {
+app.controller('HomeCtrl', ['$scope', 'RegisterServices',  function ($scope, RegisterServices) {
 	$scope.title = 'Card Game'; 
+  var data = {
+    userName : 'pudthai'
+  };
+  var callServiceProfile =  RegisterServices.getPofile(data);
+  console.log(callServiceProfile);
+  callServiceProfile.success(function(data) {
+    if(data.status === 'success'){
+      console.log(data.data);
+    } else {
+      console.log("Error : ");
+      console.log(data);
+    }
+  }).error(function() {
+     console.log('API Timeout');
+  });
 }]);
