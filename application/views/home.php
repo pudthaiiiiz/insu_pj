@@ -529,6 +529,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="${assets}js/angular.min.js"></script>
     <script src="${assets}js/angular-route/angular-route.js"></script>
     <script src="${assets}js/controller.js"></script>
+    <script src="${assets}js/services/RegisterServices.js"></script>
     <!-- Twitter Bootstrap -->
     <script src="${assets}js/bootstrap.min.js"></script>
     <!-- Single Page Nav -->
