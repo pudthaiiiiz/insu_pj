@@ -18,12 +18,22 @@ class Model_customer extends CI_Model{
 		$this->db->where('cusUsername',$user);
 		$this->db->where('cusPassword',sha1(md5($pass)));
 		$this->db->from('tbl_customers');
-		$query = $this->db->get();
-		if($query->num_rows()){
-			$result = $query->row();
+		$isQuery = $this->db->get();
+		if($isQuery->num_rows()){
+			$result = $isQuery->row();
 		}
 		return $result;
 	}
 
+  public function getProfileService($attb){
+     $result = 0;
+     $this->db->where('cusId',$attb);
+     $this->db->from('tbl_customers');
+     $isQuery = $this->db->get();
+     if($isQuery->num_rows()){
+      $result = $isQuery->row();
+     }
+     return $result;
+  }
 
 }
