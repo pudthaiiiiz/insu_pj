@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $autoload['packages'] = array();
 
 
-$autoload['libraries'] = array('session','database',);
+$autoload['libraries'] = array('session', 'database', 'parser');
 
 
 /*
@@ -34,7 +34,7 @@ $autoload['drivers'] = array();
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url');
+$autoload['helper'] = array('url', 'my_path_helper');
 
 
 /*
