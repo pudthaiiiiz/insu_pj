@@ -78,10 +78,10 @@ class CustomerApiCtrl extends CI_Controller {
   
   
   public function getProfile(){
-    $resp['success'] = null;
+    $resp['status'] = null;
       $hasProfile = $this->Model_customer->getProfileService(3);
       if($hasProfile){
-        $resp['success'] = 'success';
+        $resp['status'] = 'success';
         $resp['data'] = $hasProfile;
       }
       $result = json_encode($resp);
