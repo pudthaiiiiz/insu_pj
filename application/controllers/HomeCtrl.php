@@ -5,6 +5,14 @@ class HomeCtrl extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('home');
+    
+//   echo assets();
+//   return;
+    $this->load->library('parser');
+    $data = array(
+                  'title' => 'insurancebroker360',
+                  'assets' => assets()
+                );
+    $this->parser->parse('home', $data);
 	}
 }
