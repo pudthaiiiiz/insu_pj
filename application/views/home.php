@@ -52,11 +52,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     ==================================== -->
 
     <main class="site-content" role="main">
-      <section id="home" data-temp-slide></section>      
+      <section id="home" data-temp-slide></section>    
       <section id="searchForm" data-temp-check-package></section>     
       <section id="step" data-temp-step></section> 
-      <section id="content" data-temp-content></section> 
-      <section id="whyme" data-temp-why-me></section> 
+      <section id="content" data-temp-content data-url="${assets}"></section> 
+      <section id="whyme" data-temp-why-me data-url="${assets}"></section> 
       <section id="follow-us" data-temp-follow-us></section> 
       <section id="contact-us" data-temp-contact-us></section> 
     </main>

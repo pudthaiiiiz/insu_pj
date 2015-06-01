@@ -28,14 +28,26 @@ app.directive('tempStep', function () {
 app.directive('tempContent', function () {
   return {
     restrict: 'A',
-    templateUrl: 'assets/templates/temp-content.html'
+    templateUrl: 'assets/templates/temp-content.html',
+     scope: {
+       assets : '@url'
+     },
+//     link: function(scope) {
+//        do
+//    }
   };
 });
 
 app.directive('tempWhyMe', function () {
   return {
     restrict: 'A',
-    templateUrl: 'assets/templates/temp-why-me.html'
+    templateUrl: 'assets/templates/temp-why-me.html',
+    scope: {
+       assets : '@url'
+     }
+//     link: function(scope) {
+//        do
+//    }
   };
 });
 
