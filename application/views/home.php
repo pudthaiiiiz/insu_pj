@@ -23,40 +23,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="${assets}css/slit-slider.css">
     <link rel="stylesheet" href="${assets}css/animate.css">
     <link rel="stylesheet" href="${assets}css/main.css">
-    <script src="${assets}js/modernizr-2.6.2.min.js"></script>
+    <script src="${assets}js/plugin/modernizr-2.6.2.min.js"></script>
   </head>
   <body id="body" ng-app="application">
     <!--
     Fixed Navigation
     ==================================== -->
-    <header id="navigation" class="navbar-inverse navbar-fixed-top animated-header">
+    <header id="navigation" class="navbar-inverse navbar-fixed-top animated-header" ng-controller="MenuCtrl">
       <div class="container">
-        <div class="navbar-header" ng-controller="MenuCtrl">
-          <!-- responsive nav button -->
+        <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <!-- /responsive nav button -->
-
-          <!-- logo -->
           <h1 class="navbar-brand">
-            <a href="#body" class="white"><span ng-bind="userName"></span> </a>
+            <a href="#body" class="white"><span ng-bind="menu.title"></span> </a>
           </h1>
-          <!-- /logo -->
         </div>
-
-        <!-- main nav -->
         <nav class="collapse navbar-collapse navbar-right" role="navigation">
           <ul id="nav" class="nav navbar-nav">
-            <li><a href="#body">หน้าแรก</a></li>
-            <li><a href="#service">สมัครง่าย</a></li>
-            <li><a href="#portfolio">บทความ</a></li>
-            <li><a href="#testimonials">ทำไมต้องเรา</a></li>
-            <li><a href="#price">Package</a></li>
-            <li><a href="#contact">ติดต่อเรา</a></li>
+            <li ng-repeat="list in menu.lists">
+              <a href="{{list.link}}" ng-bind="list.name"></a>
+            </li>
           </ul>
         </nav>
         <!-- /main nav -->
@@ -72,56 +62,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <!--
       Home Slider
       ==================================== -->
-      <section id="home-slider" ng-controller="SliderCtrl">
-        <div id="slider" class="sl-slider-wrapper">
-          <div class="sl-slider">
-            <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-              <div class="bg-img bg-img-1"></div>
-              <div class="slide-caption">
-                <div class="caption-content">
-                  <h2 class="animated fadeInDown black">{{data.title}}</h2>
-                  <span class="animated fadeInDown black">Lorem Ipsum is simply dummy text of the printing. </span>
-                  <a href="#" class="btn btn-blue btn-effect">Join US</a>
-                </div>
-              </div>
-            </div>
-            <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
-              <div class="bg-img bg-img-2"></div>
-              <div class="slide-caption">
-                <div class="caption-content">
-                  <h2>แจก Benz S-class</h2>
-                  <span>Lorem Ipsum is simply dummy text of the printing. </span>
-                  <a href="#" class="btn btn-blue btn-effect">Join US</a>
-                </div>
-              </div>
-            </div>
-          </div><!-- /sl-slider -->
-
-          <!-- 
-          <nav id="nav-arrows" class="nav-arrows">
-              <span class="nav-arrow-prev">Previous</span>
-              <span class="nav-arrow-next">Next</span>
-          </nav>
-          -->
-
-          <nav id="nav-arrows" class="nav-arrows hidden-xs hidden-sm visible-md visible-lg">
-            <a href="javascript:;" class="sl-prev">
-              <i class="fa fa-angle-left fa-3x"></i>
-            </a>
-            <a href="javascript:;" class="sl-next">
-              <i class="fa fa-angle-right fa-3x"></i>
-            </a>
-          </nav>
-
-
-          <nav id="nav-dots" class="nav-dots visible-xs visible-sm hidden-md hidden-lg">
-            <span class="nav-dot-current"></span>
-            <span></span>
-            <span></span>
-          </nav>
-
-        </div><!-- /slider-wrapper -->
-      </section>
+      
+      <section id="home-slider" data-temp-slide></section>
 
       <!--
       End Home SliderEnd
@@ -484,9 +426,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </section>
       <!-- end Contact section -->
 
-      <section id="google-map">
+<!--      <section id="google-map">
         <div id="map-canvas" class="wow animated fadeInUp"></div>
-      </section>
+      </section>-->
 
     </main>
 
@@ -525,29 +467,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- Essential jQuery Plugins
     ================================================== -->
     <!-- Main jQuery -->
-    <script src="${assets}js/jquery-1.11.1.min.js"></script>
-    <script src="${assets}js/angular.min.js"></script>
+    <script src="${assets}js/plugin/jquery-1.11.1.min.js"></script>
+    <script src="${assets}js/plugin/angular.min.js"></script>
     <script src="${assets}js/angular-route/angular-route.js"></script>
-    <script src="${assets}js/controller.js"></script>
+    <script src="${assets}js/app.js"></script>
+    <script src="${assets}js/MenuCtrl.js"></script>
+    <script src="${assets}js/SlideCtrl.js"></script>
+    <script src="${assets}js/directives.js"></script>
     <script src="${assets}js/services/RegisterServices.js"></script>
     <!-- Twitter Bootstrap -->
-    <script src="${assets}js/bootstrap.min.js"></script>
+    <script src="${assets}js/plugin/bootstrap.min.js"></script>
     <!-- Single Page Nav -->
-    <script src="${assets}js/jquery.singlePageNav.min.js"></script>
+    <script src="${assets}js/plugin/jquery.singlePageNav.min.js"></script>
     <!-- jquery.fancybox.pack -->
-    <script src="${assets}js/jquery.fancybox.pack.js"></script>
-    <!-- Google Map API -->
-    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="${assets}js/plugin/jquery.fancybox.pack.js"></script>
     <!-- Owl Carousel -->
-    <script src="${assets}js/owl.carousel.min.js"></script>
+    <script src="${assets}js/plugin/owl.carousel.min.js"></script>
     <!-- jquery easing -->
-    <script src="${assets}js/jquery.easing.min.js"></script>
+    <script src="${assets}js/plugin/jquery.easing.min.js"></script>
     <!-- Fullscreen slider -->
-    <script src="${assets}js/jquery.slitslider.js"></script>
-    <script src="${assets}js/jquery.ba-cond.min.js"></script>
+    <script src="${assets}js/plugin/jquery.slitslider.js"></script>
+    <script src="${assets}js/plugin/jquery.ba-cond.min.js"></script>
     <!-- onscroll animation -->
-    <script src="${assets}js/wow.min.js"></script>
+    <script src="${assets}js/plugin/wow.min.js"></script>
     <!-- Custom Functions -->
-    <script src="${assets}js/main.js"></script>
+    <script src="${assets}js/plugin/main.js"></script>
   </body>
 </html>
