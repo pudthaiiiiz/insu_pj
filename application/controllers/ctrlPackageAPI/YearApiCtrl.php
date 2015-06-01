@@ -16,26 +16,23 @@ class YearApiCtrl extends CI_Controller {
   }
 
   public function callSaveService() {
-    
-    $resp['status'] = 'error';
-      $this->load->library('form_validation');
-      $_POST = json_decode(file_get_contents("php://input"), true);
-     	$this->form_validation->set_rules('inputYear', 'fullname', 'required');
-     		if ($this->form_validation->run() == FALSE){
-     			$resp['result'] = 'bot';
-     		}else{    
-          $values = array('yName' => $this->input->post('inputYear'));
 
-          $isRegister = $this->Model_package->saveYear($values);
-          if($isRegister){
-            $resp['status'] = 'success';
-          }
-        }
-        $result = json_encode($resp);
-        echo $result;
-      
+    $resp['status'] = 'error';
+    $this->load->library('form_validation');
+    $_POST = json_decode(file_get_contents("php://input"), true);
+    $this->form_validation->set_rules('inputYear', 'fullname', 'required');
+    if ($this->form_validation->run() == FALSE) {
+      $resp['result'] = 'bot';
+    } else {
+      $values = array('yName' => $this->input->post('inputYear'));
+
+      $isRegister = $this->Model_package->saveYear($values);
+      if ($isRegister) {
+        $resp['status'] = 'success';
+      }
+    }
+    $result = json_encode($resp);
+    echo $result;
   }
 
-  
-  
 }

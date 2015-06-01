@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class YearApiCtrl extends CI_Controller {
+class BrandApiCtrl extends CI_Controller {
 
   var $timeStamp;
   var $dateTime;
@@ -16,25 +16,22 @@ class YearApiCtrl extends CI_Controller {
   }
 
   public function callSaveService() {
-    
     $resp['status'] = 'error';
-      $this->load->library('form_validation');
-     	$this->form_validation->set_rules('inputBrand', 'fullname', 'required');
-     		if ($this->form_validation->run() == FALSE){
-     			$resp['result'] = 'bot';
-     		}else{    
-          $values = array('bName' => $this->input->post('inputBrand'));
+    $this->load->library('form_validation');
+    $_POST = json_decode(file_get_contents("php://input"), true);
+    $this->form_validation->set_rules('inputBrand', 'fullname', 'required');
+    if ($this->form_validation->run() == FALSE) {
+      $resp['result'] = 'bot';
+    } else {
+      $values = array('bName' => $this->input->post('inputBrand'));
 
-          $isRegister = $this->Model_package->saveBrand($values);
-          if($isRegister){
-            $resp['status'] = 'success';
-          }
-        }
-        $result = json_encode($resp);
-        echo $result;
-      
+      $isRegister = $this->Model_package->saveBrand($values);
+      if ($isRegister) {
+        $resp['status'] = 'success';
+      }
+    }
+    $result = json_encode($resp);
+    echo $result;
   }
 
-  
-  
 }
