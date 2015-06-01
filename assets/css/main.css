@@ -58,8 +58,9 @@ h1, h2, h3, h4, h5, h6,
     color: #252525;
 }
 
-main > section {
-    padding: 70px 0;
+main > section .container{
+    padding: 20px;
+    padding-top: 70px;
 }
 
 .btn {
@@ -84,6 +85,17 @@ main > section {
 
 .bg-blue {
     background-color: #E35F00;
+}
+
+.bg-orange {
+    border: 2px solid #E35F00;
+    color: #fff;
+    background-color: #E35F00;
+}
+
+.bg-orange p{
+    font-size: 24px;
+    margin: 10px 0px;
 }
 
 /* Sweep To Right */
@@ -271,6 +283,21 @@ main > section {
 
 
 
+
+
+/**
+/*	temp-slide
+/* ==========================================*/
+.temp-slide{
+  margin-top: 90px;
+  padding-top: 80px;
+  height: 500px;
+  background-color: #000;
+  background-image: url(../img/Mercedes-emblem.jpg);
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-size: 100%;
+}
 
 
 /**

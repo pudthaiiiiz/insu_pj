@@ -12,8 +12,12 @@ app.controller('MenuCtrl', ['$scope', 'RegisterServices',  function ($scope, Reg
     link : '#home'
     },
     {
+    name : 'ค้นหาเบี้ย',
+    link : '#searchForm'
+    },
+    {
     name : 'สมัครง่าย',
-    link : '#member'
+    link : '#step'
     },
     {
     name : 'บทความ',
@@ -29,7 +33,7 @@ app.controller('MenuCtrl', ['$scope', 'RegisterServices',  function ($scope, Reg
     },
     {
     name : 'ติดต่อเรา',
-    link : '#contact'
+    link : '#contact-us'
     }
   ];
   var params = {
