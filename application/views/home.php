@@ -102,7 +102,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="${assets}js/angular-route/angular-route.js"></script>
     <script src="${assets}js/app.js"></script>
     <script src="${assets}js/MenuCtrl.js"></script>
+    <script src="${assets}js/SlideCtrl.js"></script>
     <script src="${assets}js/CheckPackageCtrl.js"></script>
+    <script src="${assets}js/StepCtrl.js"></script>
+    <script src="${assets}js/ContentCtrl.js"></script>
+    <script src="${assets}js/WhyMeCtrl.js"></script>
+    <script src="${assets}js/FollowUsCtrl.js"></script>
+    <script src="${assets}js/ContactUsCtrl.js"></script>
     <script src="${assets}js/directives.js"></script>
     <script src="${assets}js/services/RegisterServices.js"></script>
     <!-- Twitter Bootstrap -->
