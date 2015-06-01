@@ -86,6 +86,17 @@ main > section {
     background-color: #E35F00;
 }
 
+.bg-orange {
+    border: 2px solid #E35F00;
+    color: #fff;
+    background-color: #E35F00;
+}
+
+.bg-orange p{
+    font-size: 24px;
+    margin: 10px 0px;
+}
+
 /* Sweep To Right */
 .btn-effect {
 	vertical-align: middle;
@@ -271,6 +282,14 @@ main > section {
 
 
 
+
+
+/**
+/*	check-package
+/* ==========================================*/
+.check-package{
+  padding-top: 20px;
+}
 
 
 /**
