@@ -3,8 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var app  = angular.module('application', ['ngRoute'])
-app.controller('HomeCtrl', ['$scope', 'RegisterServices',  function ($scope, RegisterServices) {
+app.controller('MenuCtrl', ['$scope', 'RegisterServices',  function ($scope, RegisterServices) {
 	$scope.userName = null;
   var data = {
     userName : 'pudthai'
