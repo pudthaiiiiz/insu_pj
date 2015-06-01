@@ -1,12 +1,58 @@
-<div ng-controller="CheckPackageCtrl" ng-cloak>
-  <div class="container check-package">
+<div ng-controller="CheckPackageCtrl" ng-cloak class="check-package">
+  <div class="container">
     <div class="row">
-      <div class="col-md-12 wow animated fadeInLeft">
-        <h1>ฟรี! Benz S-class</h1>
-        <p>เพียงซื้อประกันรถยนต์ผ่านเวบไซต์ DirectAsia.co.th
-          รับฟรี USB แฟลชไดรฟ์ความจุ 4GB มูลค่า 399 บาท</p>
-        <p>&nbsp</p>
-        <a href="#" class="btn btn-effect bg-orange"><p>คลิก สมัครเลย!!</p></a>
+      <div class="col-md-4 wow animated fadeInLeft">
+        <div class="welcome-block">
+          <h3>ค้นหาเบี้ยประกันภัย</h3>								
+          <div class="message-body">
+            <form action="#" method="post">
+              <div class="input-field">
+                <label>รายละเอียดรถยนต์:</label>
+              </div>
+              <div class="input-field">
+                <select class="form-control">
+                  <option>เลือกปี</option>
+                </select>
+              </div>
+              <div class="input-field">
+                <select class="form-control">
+                  <option>เลือกยี้ห้อ</option>
+                </select>
+              </div>
+              <div class="input-field">
+                <select class="form-control">
+                  <option>เลือกรุ่น</option>
+                </select>
+              </div>
+              <div class="input-field">
+                <select class="form-control">
+                  <option>รายละเอียดเบืองต้นรถยนต์</option>
+                </select>
+              </div>
+              <div class="input-field">
+                <textarea name="message" class="form-control" placeholder="Messages..."></textarea>
+              </div>
+              <button type="submit" id="submit" class="btn btn-danger">ยกเลิก</button>
+              <button type="submit" id="submit" class="btn btn-info">ค้นหา</button>
+            </form>  
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7 col-md-offset-1 wow animated fadeInRight">
+        <div class="recent-works">
+          <h3>ขั้นตอนการสมัคร</h3>
+          <div id="works">
+            <div class="work-item">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br> <br> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+            </div>
+            <div class="work-item">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br><br> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+            </div>
+            <div class="work-item">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br><br> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

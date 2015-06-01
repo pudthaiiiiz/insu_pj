@@ -3,5 +3,5 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-app.controller('CheckPackageCtrl', ['$scope', 'RegisterServices', function ($scope) {
+app.controller('ContactUsCtrl', ['$scope', 'RegisterServices', function ($scope) {
   }]);
