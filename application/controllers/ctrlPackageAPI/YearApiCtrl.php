@@ -19,6 +19,7 @@ class YearApiCtrl extends CI_Controller {
     
     $resp['status'] = 'error';
       $this->load->library('form_validation');
+      $_POST = json_decode(file_get_contents("php://input"), true);
      	$this->form_validation->set_rules('inputYear', 'fullname', 'required');
      		if ($this->form_validation->run() == FALSE){
      			$resp['result'] = 'bot';
