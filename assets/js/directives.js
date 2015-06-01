@@ -64,3 +64,10 @@ app.directive('tempContactUs', function () {
     templateUrl: 'assets/templates/temp-contact-us.html'
   };
 });
+
+app.directive('tempFooter', function () {
+  return {
+    restrict: 'A',
+    templateUrl: 'assets/templates/temp-footer.html'
+  };
+});
