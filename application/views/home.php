@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -58,9 +57,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </main>
     <footer id="footer" data-temp-footer></footer>
 
-    <!-- Essential jQuery Plugins
-    ================================================== -->
-    <!-- Main jQuery -->
     <script src="${assets}js/plugin/modernizr-2.6.2.min.js"></script>
     <script src="${assets}js/plugin/jquery-1.11.1.min.js"></script>
     <script src="${assets}js/plugin/angular.min.js"></script>
@@ -77,22 +73,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="${assets}js/FooterCtrl.js"></script>
     <script src="${assets}js/directives.js"></script>
     <script src="${assets}js/services/RegisterServices.js"></script>
-    <!-- Twitter Bootstrap -->
     <script src="${assets}js/plugin/bootstrap.min.js"></script>
-    <!-- Single Page Nav -->
     <script src="${assets}js/plugin/jquery.singlePageNav.min.js"></script>
-    <!-- jquery.fancybox.pack -->
     <script src="${assets}js/plugin/jquery.fancybox.pack.js"></script>
-    <!-- Owl Carousel -->
     <script src="${assets}js/plugin/owl.carousel.min.js"></script>
-    <!-- jquery easing -->
     <script src="${assets}js/plugin/jquery.easing.min.js"></script>
-    <!-- Fullscreen slider -->
     <script src="${assets}js/plugin/jquery.slitslider.js"></script>
     <script src="${assets}js/plugin/jquery.ba-cond.min.js"></script>
-    <!-- onscroll animation -->
     <script src="${assets}js/plugin/wow.min.js"></script>
-    <!-- Custom Functions -->
     <script src="${assets}js/plugin/main.js"></script>
   </body>
 </html>
