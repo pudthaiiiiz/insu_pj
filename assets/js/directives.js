@@ -71,3 +71,10 @@ app.directive('tempFooter', function () {
     templateUrl: 'assets/templates/temp-footer.html'
   };
 });
+
+app.directive('tempLoad', function () {
+  return {
+    restrict: 'A',
+    templateUrl: 'assets/templates/temp-load.html'
+  };
+});

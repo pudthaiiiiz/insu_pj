@@ -22,8 +22,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="${assets}css/slit-slider.css">
     <link rel="stylesheet" href="${assets}css/animate.css">
     <link rel="stylesheet" href="${assets}css/main.css">
+    <link rel="stylesheet" href="${assets}css/loading.css">
   </head>
   <body id="body" ng-app="application">
+    <div data-temp-load></div>
     <header id="navigation" class="navbar-inverse navbar-fixed-top animated-header" ng-controller="MenuCtrl">
       <div class="container">
         <div class="navbar-header">
@@ -71,6 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="${assets}js/FollowUsCtrl.js"></script>
     <script src="${assets}js/ContactUsCtrl.js"></script>
     <script src="${assets}js/FooterCtrl.js"></script>
+    <script src="${assets}js/LoadCtrl.js"></script>
     <script src="${assets}js/directives.js"></script>
     <script src="${assets}js/services/RegisterServices.js"></script>
     <script src="${assets}js/plugin/bootstrap.min.js"></script>
