@@ -8,5 +8,5 @@ app.controller('LoadCtrl', ['$rootScope', '$scope', 'RegisterServices', function
     $rootScope.$on('showLoading', function(event, args) {
       $rootScope.showLoad = args.show;
     });
-    $rootScope.$broadcast('showLoading', {'show':true});
+    $rootScope.$broadcast('showLoading', {'show':false});
   }]);
