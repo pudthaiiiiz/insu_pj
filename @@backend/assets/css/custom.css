@@ -1,0 +1,20 @@
+/**
+ *
+ * Apply Here your Custom CSS
+ *
+*/
+
+body {
+	
+}
+
+@font-face {
+    font-family: 'DBMomentXRegular';
+    src: url('../fonts/dbmoment/db_moment_x-webfont.eot');
+    src: url('../fonts/dbmoment/db_moment_x-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/dbmoment/db_moment_x-webfont.woff') format('woff'),
+         url('../fonts/dbmoment/db_moment_x-webfont.ttf') format('truetype'),
+         url('../fonts/dbmoment/db_moment_x-webfont.svg#DBMomentXRegular') format('svg');
+    font-weight:normal;
+    font-style:normal;
+    font-weight:600px;
