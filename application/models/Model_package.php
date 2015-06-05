@@ -17,7 +17,7 @@ class Model_package extends CI_Model{
   
   public function getYear(){
     $result = 0;
-    $this->db->order_by('yName','ASC');
+    $this->db->order_by('yName','DESC');
     $query = $this->db->get('tbl_package_year');
     $isData = $query->num_rows();
       if($isData > 0){
@@ -74,6 +74,25 @@ class Model_package extends CI_Model{
    
   }
   
+  
+  
+  # Main #
+  
+  
+  public function getMain($year,$brand,$series){
+    $result = 0;
+    $this->db->where('mYear',$year);
+    $this->db->where('mBrand',$brand);
+    $this->db->where('mSeries',$series);
+    $this->db->order_by('mName','ASC');
+    $query = $this->db->get('tbl_package_main');
+    $isData = $query->num_rows();
+      if($isData > 0){
+        $result = $query->result();
+      }
+    return $result;
+   
+  }
   
  
   
