@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-app.controller('LoadCtrl', ['$rootScope', '$scope', 'RegisterServices', function ($rootScope, $scope, RegisterServices) {
+app.controller('LoadCtrl', ['$rootScope', '$scope', function ($rootScope, $scope) {
     $rootScope.showLoad = false;
     $rootScope.$on('showLoading', function(event, args) {
       $rootScope.showLoad = args.show;

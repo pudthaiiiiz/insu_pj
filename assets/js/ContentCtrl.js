@@ -3,5 +3,5 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-app.controller('ContentCtrl', ['$scope', 'RegisterServices', function ($scope) {
+app.controller('ContentCtrl', ['$scope', function ($scope) {
   }]);
