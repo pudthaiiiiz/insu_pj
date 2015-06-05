@@ -41,7 +41,7 @@ class LevelApiCtrl extends CI_Controller {
     
     $_POST = json_decode(file_get_contents("php://input"), true);
 //    $this->input->post('inputIdMain')
-    $isData = $this->Model_package->getLevel(1);
+    $isData = $this->Model_package->getLevel($this->input->post('inputIdMain'));
       if($isData != 0 ){
         $resp['status'] = 'success';
         $resp['data'] = $isData;
