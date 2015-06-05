@@ -5,36 +5,36 @@
         <div class="welcome-block">
           <h3>ค้นหาเบี้ยประกันภัย</h3>								
           <div class="message-body">
-            <form action="#" method="post">
+            <form  ng-submit="submitSearchForm()">
               <div class="input-field">
                 <label>รายละเอียดรถยนต์:</label>
               </div>
               <div class="input-field">
-                <select class="form-control" ng-model="formSearch.year" data-select-search ng-change="selectWatch('year')">
+                <select class="form-control" ng-model="formSearch.year" data-select-search ng-change="selectWatch('year')" required>
                   <option value="">เลือกปี</option>
                   <option ng-repeat="year in data.Years">{{year.yName}}</option>
                 </select>
               </div>
               <div class="input-field">
-                <select class="form-control" ng-model="formSearch.brand" data-select-search ng-change="selectWatch('brand')" ng-show="formSearch.year !== ''">
+                <select class="form-control" ng-model="formSearch.brand" data-select-search ng-change="selectWatch('brand')" ng-show="formSearch.year !== ''" required>
                   <option value="">เลือกยี้ห้อ</option>
                   <option ng-repeat="brand in data.Brands" value="{{brand.bId}}">{{brand.bName}}</option>
                 </select>
               </div>
               <div class="input-field">
-                <select class="form-control" ng-model="formSearch.series" data-select-search ng-change="selectWatch('series')" ng-show="formSearch.brand !== ''">
+                <select class="form-control" ng-model="formSearch.series" data-select-search ng-change="selectWatch('series')" ng-show="formSearch.brand !== ''" required>
                   <option value="">เลือกรุ่น</option>
                   <option ng-repeat="series in data.Series" value="{{series.sId}}">{{series.sName}}</option>
                 </select>
               </div>
               <div class="input-field">
-                <select class="form-control" ng-model="formSearch.main" data-select-search ng-change="selectWatch('main')" ng-show="formSearch.series !== ''">
+                <select class="form-control" ng-model="formSearch.main" data-select-search ng-change="selectWatch('main')" ng-show="formSearch.series !== ''" required>
                   <option value="">เลือกรายละเอียดรถยนต์</option>
-                  <option ng-repeat="main in data.Mains" value="{{main.mId}}">{{main.mName}}</option>
+                  <option ng-repeat="main in data.Mains" value="{{main.mId}}">{{main.mDetail}}</option>
                 </select>
               </div>
-              <button type="submit" id="submit" class="btn btn-danger">ยกเลิก</button>
-              <button type="submit" id="submit" class="btn btn-info">ค้นหา</button>
+              <button type="reset" class="btn btn-danger">ยกเลิก</button>
+              <button type="submit" class="btn btn-info">ค้นหา</button>
             </form>  
           </div>
         </div>

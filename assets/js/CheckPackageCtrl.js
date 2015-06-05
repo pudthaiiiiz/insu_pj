@@ -25,24 +25,23 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
       }
     };
 
+    $scope.submitSearchForm = function () {
+        callService('getLevelPackage');
+    };
+    
     $scope.selectWatch = function (selectWhere) {
       if (selectWhere === 'year') {
-        if ($scope.formSearch.year === '') {
-            $scope.formSearch.year = '';
-            $scope.formSearch.series = '';
-            $scope.formSearch.main = '';
-        }
+        $scope.formSearch.brand = '';
+        $scope.formSearch.series = '';
+        $scope.formSearch.main = '';
       } else if (selectWhere === 'brand') {
-        if ($scope.formSearch.brand === '') {
-            $scope.formSearch.series = '';
-            $scope.formSearch.main = '';
-        }
+        $scope.formSearch.series = '';
+        $scope.formSearch.main = '';
         callService('getSeries');
         HomeServices.showLoad(true);
       } else if (selectWhere === 'series') {
-        if ($scope.formSearch.series === '') {
-            $scope.formSearch.main = '';
-        }
+        $scope.formSearch.main = '';
+
         callService('getMainPackage');
         HomeServices.showLoad(true);
       }
@@ -72,6 +71,10 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
           inputYear: $scope.formSearch.year,
           inputIdBrand: $scope.formSearch.brand,
           inputIdSeries: $scope.formSearch.series
+        };
+      } else if (serviceName === 'getLevelPackage') {
+        params = {
+          inputIdMain: $scope.formSearch.main
         };
       }
       var callServiceName = HomeServices[serviceName](params);

@@ -38,6 +38,15 @@ app.factory('HomeServices', function ($http, $rootScope) {
               data: formData
           });
           return promise;
+        },
+        getLevelPackage : function (data) {
+          var formData = data;
+          var promise = $http({
+              method: 'post',
+              url: 'api-get-level-package',
+              data: formData
+          });
+          return promise;
         }
     };
 });
