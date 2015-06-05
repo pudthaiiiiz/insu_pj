@@ -75,7 +75,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="${assets}js/FooterCtrl.js"></script>
     <script src="${assets}js/LoadCtrl.js"></script>
     <script src="${assets}js/directives.js"></script>
-    <script src="${assets}js/services/RegisterServices.js"></script>
+    <script src="${assets}js/services/HomeServices.js"></script>
     <script src="${assets}js/plugin/bootstrap.min.js"></script>
     <script src="${assets}js/plugin/jquery.singlePageNav.min.js"></script>
     <script src="${assets}js/plugin/jquery.fancybox.pack.js"></script>
