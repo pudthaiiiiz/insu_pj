@@ -60,8 +60,10 @@ class Model_package extends CI_Model{
 		return $result;
 	}
   
-  public function getSeries(){
+  public function getSeries($year,$brand){
     $result = 0;
+    $this->db->where('sYear',$year);
+    $this->db->where('sBrand',$brand);
     $this->db->order_by('sName','DESC');
     $query = $this->db->get('tbl_package_series');
     $isData = $query->num_rows();
