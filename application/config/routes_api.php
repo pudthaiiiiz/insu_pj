@@ -27,4 +27,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   $route['api-edit-main-package']['post'] = '';
   $route['api-delete-main-package']['post'] = '';
   
+  
+  $route['api-get-level-package']['post'] = 'ctrlPackageAPI/LevelApiCtrl/callGetService';
+  $route['api-save-level-package']['post'] = 'ctrlPackageAPI/LevelApiCtrl/callSaveService';
+  $route['api-edit-level-package']['post'] = '';
+  $route['api-delete-level-package']['post'] = '';
+  
+  
   $route['api-get-profile']['post'] = 'api/CustomerApiCtrl/getProfile';
