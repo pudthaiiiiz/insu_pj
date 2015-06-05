@@ -27,6 +27,7 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
 
     $scope.submitSearchForm = function () {
         callService('getLevelPackage');
+        HomeServices.showLoad(true);
     };
     
     $scope.selectWatch = function (selectWhere) {
@@ -41,7 +42,6 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
         HomeServices.showLoad(true);
       } else if (selectWhere === 'series') {
         $scope.formSearch.main = '';
-
         callService('getMainPackage');
         HomeServices.showLoad(true);
       }
@@ -57,6 +57,8 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
         $scope.data.Series = getData;
       } else if (serviceName === 'getMainPackage') {
         $scope.data.Mains = getData;
+      } else if (serviceName === 'getLevelPackage') {
+        $scope.data.Levels = getData;
       }
     };
     
