@@ -1,10 +1,10 @@
-app.factory('RegisterServices', function ($http) {
+app.factory('YearServices', function ($http) {
     return {
-        getPofile : function (data) {
+        getYear : function (data) {
           var formData = data;
           var promise = $http({
               method: 'post',
-              url: 'api-get-profile',
+              url: 'api-get-year-package',
               data: formData
           });
           return promise;

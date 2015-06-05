@@ -1,10 +1,10 @@
-app.factory('RegisterServices', function ($http) {
+app.factory('BrandServices', function ($http) {
     return {
-        getPofile : function (data) {
+        getBrand : function (data) {
           var formData = data;
           var promise = $http({
               method: 'post',
-              url: 'api-get-profile',
+              url: 'api-get-brand-package',
               data: formData
           });
           return promise;
