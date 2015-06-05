@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   
   ## API Package
   
-  $route['api-get-year-package']['post'] = '';
+  $route['api-get-year-package']['post'] = 'ctrlPackageAPI/YearApiCtrl/callGetService';
   $route['api-save-year-package']['post'] = 'ctrlPackageAPI/YearApiCtrl/callSaveService';
   $route['api-edit-year-package']['post'] = '';
   $route['api-delete-year-package']['post'] = '';
