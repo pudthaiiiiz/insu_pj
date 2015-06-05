@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-app.controller('MenuCtrl', ['$scope', 'RegisterServices',  function ($scope, RegisterServices) {
+app.controller('MenuCtrl', ['$rootScope', '$scope', 'RegisterServices',  function ($rootScope, $scope, RegisterServices) {
   $scope.menu = {};
   $scope.menu.title = "MENU TITILE";
   $scope.menu.lists = [
@@ -48,4 +48,5 @@ app.controller('MenuCtrl', ['$scope', 'RegisterServices',  function ($scope, Reg
   }).error(function() {
      console.log('API Timeout');
   });
+  
 }]);
