@@ -34,5 +34,16 @@ class YearApiCtrl extends CI_Controller {
     $result = json_encode($resp);
     echo $result;
   }
-
+  
+  public function callGetService(){
+    $resp['status'] = 'error';
+    $resp['data'] = null;
+    $isData = $this->Model_package->getYear();
+      if($isData != 0 ){
+        $resp['status'] = 'success';
+        $resp['data'] = $isData;
+      }
+    $result = json_encode($resp);
+    echo $result;
+  }
 }

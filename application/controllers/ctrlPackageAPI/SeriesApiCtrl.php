@@ -34,4 +34,16 @@ class SeriesApiCtrl extends CI_Controller {
     echo $result;
   }
 
+  
+  public function callGetService(){
+    $resp['status'] = 'error';
+    $resp['data'] = null;
+    $isData = $this->Model_package->getSeries();
+      if($isData != 0 ){
+        $resp['status'] = 'success';
+        $resp['data'] = $isData;
+      }
+    $result = json_encode($resp);
+    echo $result;
+  }
 }
