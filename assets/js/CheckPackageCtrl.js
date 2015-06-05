@@ -10,7 +10,12 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
     ];
     var params = {};
     $scope.data = {};
-    $scope.formSearch = {};
+    $scope.formSearch = {
+      year: '',
+      brand: '',
+      series: '',
+      main: ''
+    };
     
     var assignData = function (serviceName,getData) {
       if (serviceName === 'getYear') {
@@ -21,8 +26,24 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
     };
 
     $scope.selectWatch = function (selectWhere) {
-      if (selectWhere === 'brand') {
+      if (selectWhere === 'year') {
+        if ($scope.formSearch.year === '') {
+            $scope.formSearch.year = '';
+            $scope.formSearch.series = '';
+            $scope.formSearch.main = '';
+        }
+      } else if (selectWhere === 'brand') {
+        if ($scope.formSearch.brand === '') {
+            $scope.formSearch.series = '';
+            $scope.formSearch.main = '';
+        }
         callService('getSeries');
+        HomeServices.showLoad(true);
+      } else if (selectWhere === 'series') {
+        if ($scope.formSearch.series === '') {
+            $scope.formSearch.main = '';
+        }
+        callService('getMains')(params);
         HomeServices.showLoad(true);
       }
     };
@@ -33,6 +54,10 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
         $scope.data.Years = getData;
       } else if (serviceName === 'getBrand') {
         $scope.data.Brands = getData;
+      } else if (serviceName === 'getSeries') {
+        $scope.data.Series = getData;
+      } else if (serviceName === 'getMains') {
+        $scope.data.Mains = getData;
       }
     };
     
@@ -41,6 +66,12 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
         params = {
           inputYear: $scope.formSearch.year,
           inputIdBrand: $scope.formSearch.brand
+        };
+      } else if (serviceName === 'getMains') {
+        params = {
+          inputYear: $scope.formSearch.year,
+          inputIdBrand: $scope.formSearch.brand,
+          inputIdSeries: $scope.formSearch.series
         };
       }
       var callServiceName = HomeServices[serviceName](params);

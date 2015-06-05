@@ -16,15 +16,21 @@
                 </select>
               </div>
               <div class="input-field">
-                <select class="form-control" ng-model="formSearch.brand" data-select-search ng-change="selectWatch('brand')" ng-show="formSearch.year !== undefined">
+                <select class="form-control" ng-model="formSearch.brand" data-select-search ng-change="selectWatch('brand')" ng-show="formSearch.year !== ''">
                   <option value="">เลือกยี้ห้อ</option>
                   <option ng-repeat="brand in data.Brands" value="{{brand.bId}}">{{brand.bName}}</option>
                 </select>
               </div>
               <div class="input-field">
-                <select class="form-control" ng-model="formSearch.series" data-select-search ng-change="selectWatch('series')" ng-show="formSearch.brand !== undefined">
+                <select class="form-control" ng-model="formSearch.series" data-select-search ng-change="selectWatch('series')" ng-show="formSearch.brand !== ''">
                   <option value="">เลือกรุ่น</option>
-                  <option ng-repeat="series in data.Series">{{series.sName}}</option>
+                  <option ng-repeat="series in data.Series" value="{{series.sId}}">{{series.sName}}</option>
+                </select>
+              </div>
+              <div class="input-field">
+                <select class="form-control" ng-model="formSearch.main" data-select-search ng-change="selectWatch('main')" ng-show="formSearch.series !== ''">
+                  <option value="">เลือกรายละเอียดรถยนต์</option>
+                  <option ng-repeat="main in data.Mains" value="{{main.mId}}">{{main.mName}}</option>
                 </select>
               </div>
               <button type="submit" id="submit" class="btn btn-danger">ยกเลิก</button>
