@@ -43,7 +43,7 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
         if ($scope.formSearch.series === '') {
             $scope.formSearch.main = '';
         }
-        callService('getMains')(params);
+        callService('getMainPackage');
         HomeServices.showLoad(true);
       }
     };
@@ -56,7 +56,7 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
         $scope.data.Brands = getData;
       } else if (serviceName === 'getSeries') {
         $scope.data.Series = getData;
-      } else if (serviceName === 'getMains') {
+      } else if (serviceName === 'getMainPackage') {
         $scope.data.Mains = getData;
       }
     };
@@ -67,7 +67,7 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
           inputYear: $scope.formSearch.year,
           inputIdBrand: $scope.formSearch.brand
         };
-      } else if (serviceName === 'getMains') {
+      } else if (serviceName === 'getMainPackage') {
         params = {
           inputYear: $scope.formSearch.year,
           inputIdBrand: $scope.formSearch.brand,
