@@ -84,7 +84,7 @@ class Model_package extends CI_Model{
     $this->db->where('mYear',$year);
     $this->db->where('mBrand',$brand);
     $this->db->where('mSeries',$series);
-    $this->db->order_by('mName','ASC');
+    $this->db->order_by('mDetail','ASC');
     $query = $this->db->get('tbl_package_main');
     $isData = $query->num_rows();
       if($isData > 0){
@@ -94,6 +94,19 @@ class Model_package extends CI_Model{
    
   }
   
+  
+  public function getLevel($idGroup){
+    $result = 0;
+    $this->db->where('lvGroup',$idGroup);
+    $this->db->order_by('lvType','ASC');
+    $query = $this->db->get('tbl_package_level');
+    $isData = $query->num_rows();
+      if($isData > 0){
+        $result = $query->result();
+      }
+    return $result;
+   
+  }
  
   
 	
