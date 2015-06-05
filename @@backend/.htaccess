@@ -1,5 +1,0 @@
-php_value memory_limit 7168M
-
-RewriteEngine on
-RewriteCond $1 !^(index\.php|assets|upload)
-RewriteRule ^(.*)$ index.php/$1 [L]
