@@ -21,12 +21,9 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
     };
 
     $scope.selectWatch = function (selectWhere) {
-      if (selectWhere === 'year') {
-        
-      } else if (selectWhere === 'brand') {
-       
-      } else if (selectWhere === 'series') {
-        
+      if (selectWhere === 'brand') {
+        callService('getSeries');
+        HomeServices.showLoad(true);
       }
     };
 
@@ -43,7 +40,7 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
       if (serviceName === 'getSeries') {
         params = {
           inputYear: $scope.formSearch.year,
-          inputBrand: $scope.formSearch.brand
+          inputIdBrand: $scope.formSearch.brand
         };
       }
       var callServiceName = HomeServices[serviceName](params);
@@ -52,7 +49,9 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
           var getData = angular.extend(data.data);
           assignData(serviceName,getData);
         }
+        HomeServices.showLoad(false);
       }).error(function () {
+        HomeServices.showLoad(false);
         console.log('API Timeout');
       });
     };

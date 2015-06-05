@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jun 06, 2015 at 02:50 AM
+-- Generation Time: Jun 06, 2015 at 04:41 AM
 -- Server version: 5.5.42
 -- PHP Version: 5.6.7
 
@@ -186,9 +186,27 @@ CREATE TABLE `tbl_package_main` (
 CREATE TABLE `tbl_package_series` (
   `sId` int(11) NOT NULL,
   `sName` varchar(200) NOT NULL,
-  `sYear` int(11) NOT NULL,
+  `sYear` varchar(100) NOT NULL,
   `sBrand` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_package_series`
+--
+
+INSERT INTO `tbl_package_series` (`sId`, `sName`, `sYear`, `sBrand`) VALUES
+(1, 'Accord', '2014,2013', 31),
+(2, 'Brio', '2014,2013', 31),
+(3, 'City', '2014,2013', 31),
+(4, 'Civic', '2014,2013', 31),
+(5, 'CR-V', '2014,2013', 31),
+(6, 'CR-Z', '2014,2013', 31),
+(7, 'Freed', '2014,2013', 31),
+(8, 'HRV', '2014', 31),
+(9, 'Jazz', '2014,2013', 31),
+(10, 'Mobilio', '2014', 31),
+(11, 'Odyssey', '2014,2013', 31),
+(15, 'STEPWGN SPADA', '2013', 31);
 
 -- --------------------------------------------------------
 
@@ -302,7 +320,7 @@ ALTER TABLE `tbl_package_main`
 -- AUTO_INCREMENT for table `tbl_package_series`
 --
 ALTER TABLE `tbl_package_series`
-  MODIFY `sId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `sId` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `tbl_package_type`
 --

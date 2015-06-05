@@ -17,7 +17,7 @@ class Model_package extends CI_Model{
   
   public function getYear(){
     $result = 0;
-    $this->db->order_by('yName','DESC');
+    $this->db->order_by('yName','ASC');
     $query = $this->db->get('tbl_package_year');
     $isData = $query->num_rows();
       if($isData > 0){
@@ -39,7 +39,7 @@ class Model_package extends CI_Model{
   
   public function getBrand(){
     $result = 0;
-    $this->db->order_by('bName','DESC');
+    $this->db->order_by('bName','ASC');
     $query = $this->db->get('tbl_package_brand');
     $isData = $query->num_rows();
       if($isData > 0){
@@ -62,9 +62,9 @@ class Model_package extends CI_Model{
   
   public function getSeries($year,$brand){
     $result = 0;
-    $this->db->where('sYear',$year);
+    $this->db->like('sYear',$year);
     $this->db->where('sBrand',$brand);
-    $this->db->order_by('sName','DESC');
+    $this->db->order_by('sName','ASC');
     $query = $this->db->get('tbl_package_series');
     $isData = $query->num_rows();
       if($isData > 0){
@@ -75,7 +75,18 @@ class Model_package extends CI_Model{
   }
   
   
-  
+ 
   
 	
 }
+
+
+
+
+
+
+
+
+
+
+

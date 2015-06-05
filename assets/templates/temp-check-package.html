@@ -16,13 +16,13 @@
                 </select>
               </div>
               <div class="input-field">
-                <select class="form-control" ng-model="formSearch.brand" data-select-search ng-change="selectWatch('brand')">
+                <select class="form-control" ng-model="formSearch.brand" data-select-search ng-change="selectWatch('brand')" ng-show="formSearch.year !== undefined">
                   <option value="">เลือกยี้ห้อ</option>
                   <option ng-repeat="brand in data.Brands" value="{{brand.bId}}">{{brand.bName}}</option>
                 </select>
               </div>
               <div class="input-field">
-                <select class="form-control" ng-model="formSearch.series" data-select-search ng-change="selectWatch('series')">
+                <select class="form-control" ng-model="formSearch.series" data-select-search ng-change="selectWatch('series')" ng-show="formSearch.brand !== undefined">
                   <option value="">เลือกรุ่น</option>
                   <option ng-repeat="series in data.Series">{{series.sName}}</option>
                 </select>

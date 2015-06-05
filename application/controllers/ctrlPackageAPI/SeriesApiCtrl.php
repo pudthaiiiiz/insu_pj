@@ -38,7 +38,10 @@ class SeriesApiCtrl extends CI_Controller {
   public function callGetService(){
     $resp['status'] = 'error';
     $resp['data'] = null;
-    $isData = $this->Model_package->getSeries();
+    
+    $_POST = json_decode(file_get_contents("php://input"), true);
+    
+    $isData = $this->Model_package->getSeries($this->input->post('inputYear'),$this->input->post('inputIdBrand'));
       if($isData != 0 ){
         $resp['status'] = 'success';
         $resp['data'] = $isData;
