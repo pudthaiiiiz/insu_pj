@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   $route['api-edit-year-package']['post'] = '';
   $route['api-delete-year-package']['post'] = '';
   
-  $route['api-get-brand-package']['post'] = '';
+  $route['api-get-brand-package']['post'] = 'ctrlPackageAPI/BrandApiCtrl/callGetService';
   $route['api-save-brand-package']['post'] = 'ctrlPackageAPI/BrandApiCtrl/callSaveService';
   $route['api-edit-brand-package']['post'] = '';
   $route['api-delete-brand-package']['post'] = '';
