@@ -1,5 +1,8 @@
-app.factory('HomeServices', function ($http) {
+app.factory('HomeServices', function ($http, $rootScope) {
     return {
+        showLoad : function (bool){
+          $rootScope.showLoad = bool;
+        },
         getYear : function (data) {
           var formData = data;
           var promise = $http({

@@ -10,27 +10,22 @@
                 <label>รายละเอียดรถยนต์:</label>
               </div>
               <div class="input-field">
-                <select class="form-control">
-                  <option>เลือกปี</option>
+                <select class="form-control" ng-model="formSearch.year" data-select-search ng-change="selectWatch('year')">
+                  <option value="">เลือกปี</option>
+                  <option ng-repeat="year in data.Years">{{year.yName}}</option>
                 </select>
               </div>
               <div class="input-field">
-                <select class="form-control">
-                  <option>เลือกยี้ห้อ</option>
+                <select class="form-control" ng-model="formSearch.brand" data-select-search ng-change="selectWatch('brand')">
+                  <option value="">เลือกยี้ห้อ</option>
+                  <option ng-repeat="brand in data.Brands" value="{{brand.bId}}">{{brand.bName}}</option>
                 </select>
               </div>
               <div class="input-field">
-                <select class="form-control">
-                  <option>เลือกรุ่น</option>
+                <select class="form-control" ng-model="formSearch.series" data-select-search ng-change="selectWatch('series')">
+                  <option value="">เลือกรุ่น</option>
+                  <option ng-repeat="series in data.Series">{{series.sName}}</option>
                 </select>
-              </div>
-              <div class="input-field">
-                <select class="form-control">
-                  <option>รายละเอียดเบืองต้นรถยนต์</option>
-                </select>
-              </div>
-              <div class="input-field">
-                <textarea name="message" class="form-control" placeholder="Messages..."></textarea>
               </div>
               <button type="submit" id="submit" class="btn btn-danger">ยกเลิก</button>
               <button type="submit" id="submit" class="btn btn-info">ค้นหา</button>

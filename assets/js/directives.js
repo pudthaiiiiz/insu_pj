@@ -78,3 +78,20 @@ app.directive('tempLoad', function () {
     templateUrl: 'assets/templates/temp-load.html'
   };
 });
+
+app.directive('selectSearch',['HomeServices', function (HomeServices) {
+  return {
+    restrict: 'A',
+    require: 'ngModel',
+    link : function (scope, element, attrs, ngModel) {
+//           scope.$watch(function (oldValue, newValue) {
+//             if (attrs.ngModel === 'formSearch.brand') {
+//              if(newValue !== undefined){
+//                console.log(attrs.ngModel);
+//              }
+////               HomeServices.showLoad(true);
+//             }
+//           });
+    }
+  };
+}]);
