@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jun 06, 2015 at 05:41 AM
+-- Generation Time: Jun 06, 2015 at 05:51 AM
 -- Server version: 5.5.42
 -- PHP Version: 5.6.7
 
@@ -160,7 +160,16 @@ CREATE TABLE `tbl_package_level` (
   `lvPrice` int(11) NOT NULL,
   `lvLimit` int(11) NOT NULL,
   `lvGroup` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_package_level`
+--
+
+INSERT INTO `tbl_package_level` (`lvId`, `lvType`, `lvPrice`, `lvLimit`, `lvGroup`) VALUES
+(1, '1', 11000, 10, 1),
+(2, '2', 7600, 15, 1),
+(3, '3', 5800, 20, 1);
 
 -- --------------------------------------------------------
 
@@ -320,7 +329,7 @@ ALTER TABLE `tbl_package_brand`
 -- AUTO_INCREMENT for table `tbl_package_level`
 --
 ALTER TABLE `tbl_package_level`
-  MODIFY `lvId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `lvId` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tbl_package_main`
 --

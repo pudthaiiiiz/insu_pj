@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class SeriesApiCtrl extends CI_Controller {
+class MainApiCtrl extends CI_Controller {
 
   var $timeStamp;
   var $dateTime;
