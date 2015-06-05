@@ -17,13 +17,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   $route['api-edit-brand-package']['post'] = '';
   $route['api-delete-brand-package']['post'] = '';
   
-  $route['api-get-series-package']['post'] = '';
+  $route['api-get-series-package']['post'] = 'ctrlPackageAPI/SeriesApiCtrl/callGetService';
   $route['api-save-series-package']['post'] = 'ctrlPackageAPI/SeriesApiCtrl/callSaveService';
   $route['api-edit-series-package']['post'] = '';
   $route['api-delete-series-package']['post'] = '';
   
-  $route['api-get-main-package']['post'] = '';
-  $route['api-save-main-package']['post'] = 'ctrlPackageAPI/SeriesApiCtrl/callSaveService';
+  $route['api-get-main-package']['post'] = 'ctrlPackageAPI/MainApiCtrl/callGetService';
+  $route['api-save-main-package']['post'] = 'ctrlPackageAPI/MainApiCtrl/callSaveService';
   $route['api-edit-main-package']['post'] = '';
   $route['api-delete-main-package']['post'] = '';
   
