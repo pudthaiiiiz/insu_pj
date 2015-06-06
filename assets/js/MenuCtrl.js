@@ -12,7 +12,7 @@ app.controller('MenuCtrl', ['$scope',  function ($scope) {
     link : '#home'
     },
     {
-    name : 'ค้นหาเบี้ย',
+    name : 'ค้นหาเบี้ยประกันภัย',
     link : '#searchForm'
     },
     {
@@ -26,10 +26,6 @@ app.controller('MenuCtrl', ['$scope',  function ($scope) {
     {
     name : 'ทำไมต้องเรา',
     link : '#whyme'
-    },
-    {
-    name : 'แพ็คแกจ',
-    link : '#package'
     },
     {
     name : 'ติดต่อเรา',
