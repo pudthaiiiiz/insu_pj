@@ -20,7 +20,8 @@ class CustomerApiCtrl extends CI_Controller {
   }
 
   public function callReister() {
-    $resp['result'] = 'error';
+    $resp['status'] = 'error';
+    $_POST = json_decode(file_get_contents("php://input"), true);
       $this->load->library('form_validation');
      	$this->form_validation->set_rules('fullName', 'fullname', 'required');
      	$this->form_validation->set_rules('userName', 'user', 'required');
@@ -30,7 +31,7 @@ class CustomerApiCtrl extends CI_Controller {
      	$this->form_validation->set_rules('address', 'address', 'required');
 
      		if ($this->form_validation->run() == FALSE){
-     			$resp['result'] = 'bot';
+     			$resp['status'] = 'bot';
      		}else{    
           $values = array('cusFullname' => $this->input->post('fullName'),
                           'cusAdrs' => $this->input->post('address'),
@@ -43,7 +44,13 @@ class CustomerApiCtrl extends CI_Controller {
 
           $isRegister = $this->Model_customer->callReisterService($values);
           if($isRegister){
-            $resp['result'] = 'success';
+            
+            $userSessions = array('sesToken' => $isAuthen->cusToken,
+                                      'sesCusId' => $isAuthen->cusId,
+                                      'isSesLogin' => true);
+                $this->session->set_userdata($userSessions);
+                $resp['status'] = 'loginSuccess';
+//            $resp['result'] = 'success';
           }
         }
         $result = json_encode($resp);
@@ -52,21 +59,22 @@ class CustomerApiCtrl extends CI_Controller {
   }
 
   public function callLogin() {
-    $resp['result'] = 'error';
+    $resp['status'] = 'error';
+    $_POST = json_decode(file_get_contents("php://input"), true);
       $this->load->library('form_validation');
         $this->form_validation->set_rules('userName', 'user', 'required');
      	  $this->form_validation->set_rules('password', 'pass', 'required');
         if ($this->form_validation->run() == FALSE){
              $resp['result'] = 'bot';
         }else{  
-          $resp['result'] = 'loginFalse';
+          $resp['status'] = 'loginFalse';
           $isAuthen = $this->Model_customer->callLoginService($this->input->post('userName'), $this->input->post('password'));
             if($isAuthen){
                 $userSessions = array('sesToken' => $isAuthen->cusToken,
                                       'sesCusId' => $isAuthen->cusId,
                                       'isSesLogin' => true);
                 $this->session->set_userdata($userSessions);
-                $resp['result'] = 'loginSuccess';
+                $resp['status'] = 'loginSuccess';
             } 
         }
     $result = json_encode($resp);
