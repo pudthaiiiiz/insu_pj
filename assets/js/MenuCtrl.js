@@ -5,7 +5,7 @@
  */
 app.controller('MenuCtrl', ['$scope',  function ($scope) {
   $scope.menu = {};
-  $scope.menu.title = "MENU TITILE";
+  $scope.menu.title = "insurancebroker360";
   $scope.menu.lists = [
     {
     name : 'หน้าแรก',

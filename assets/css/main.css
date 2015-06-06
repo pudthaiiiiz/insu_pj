@@ -1164,6 +1164,58 @@ textarea.form-control {
 
 
 
+/*============================================================
+	Select Level Car
+==============================================================*/
+.car-item{
+  padding: 10px 5px;
+  margin: 10px;
+  border: 1px solid #E35F00;
+  position: relative;
+  opacity: 1;
+  cursor: pointer;
+}
+.select-car{
+  top:20px;
+  left: 20px;
+  font-size: 55px;
+  position: absolute;
+  cursor: pointer;
+}
+.select-car.active{
+  color: #E35F00;
+}
+.car-item.active span{
+  color: #E35F00;
+}
+.car-item input[type="radio"]{
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+}
+.car-item span{
+  cursor: pointer;
+  padding-left: 100px;
+  display: block;
+}
+.box-form{
+  padding: 20px 30px;
+  margin: 10px;
+  position: relative;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.box-login{
+  border: 1px solid #5bc0de;
+}
+
+.box-register{
+  border: 1px solid #E35F00;
+}
+.color-success{
+  color: green;
+}
 /*============================================================ 
 	Responsive Styles
  ============================================================*/

@@ -10,12 +10,23 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
     ];
     var params = {};
     $scope.data = {};
+    $scope.formSubmit = {};
+    $scope.formRegister = {};
+    $scope.formLogin = {};
+    $scope.formLogin.username = '';
+    $scope.formLogin.password = '';
+    $scope.formLevel = {};
+    $scope.formLevel.id = '';
     $scope.formSearch = {
       year: '',
       brand: '',
       series: '',
       main: ''
     };
+    $scope.showFromLogin = 1;
+    $scope.showFromRegister = 2;
+    $scope.showFromLoginAndRegister = 0;
+    $scope.showStep = 0;
     
     var assignData = function (serviceName,getData) {
       if (serviceName === 'getYear') {
@@ -25,9 +36,24 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
       }
     };
 
+    $scope.getLevelPackage = function () {
+      var getIndexLevel = ($scope.formLevel.id - 1);
+      $scope.formSubmit.lvType = $scope.data.Levels[getIndexLevel].lvType;
+      $scope.formSubmit.lvPrice = $scope.data.Levels[getIndexLevel].lvPrice;
+      $scope.formSubmit.lvLimit = $scope.data.Levels[getIndexLevel].lvLimit;
+    };
+    
     $scope.submitSearchForm = function () {
         callService('getLevelPackage');
         HomeServices.showLoad(true);
+    };
+    
+    $scope.submitLoginForm = function () {
+            $scope.showStep = 3;
+    };
+    
+    $scope.submitRegisterForm = function () {
+            $scope.showStep = 3;
     };
     
     $scope.selectWatch = function (selectWhere) {
@@ -84,6 +110,9 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
         if (data.status === 'success') {
           var getData = angular.extend(data.data);
           assignData(serviceName,getData);
+          if (serviceName === 'getLevelPackage') {
+            $scope.showStep = 1;
+          }
         }
         HomeServices.showLoad(false);
       }).error(function () {
