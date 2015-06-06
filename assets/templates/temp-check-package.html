@@ -55,21 +55,25 @@
         </div>
         <div class="form-show" ng-if="showStep === 1">
           <h3>Step 1 - เลือกประเภทประกันภัย</h3> 
-          <button ng-click="$parent.showStep = 2; getLevelPackage();" class="btn btn-danger" ng-disabled="formLevel.id === ''" >ถัดไป</button>
           <div>
-              <div class="work-item" ng-repeat="level in data.Levels">
-                <div class="car-item" ng-class="{'active': (formLevel.id == level.lvId)}">
-                  <p>
-                    <label>
-                      <input type="radio" value="{{level.lvId}}" ng-model="$parent.formLevel.id">
-                      <i class="fa fa-car select-car" ng-class="{'active': (formLevel.id == level.lvId)}"></i> 
-                      <span>ประกันภัยรถยนต์ชั้น {{level.lvType}}  </span> 
-                      <span>ราคา {{level.lvPrice| filter:currency}} บาท ต่อปี </span> 
-                      <span>รถยนต์อายุไม่เกิน {{level.lvLimit}} ปี</span>
-                    </label>
-                  </p>
-                </div>
+            <div class="work-item" ng-repeat="level in data.Levels">
+              <div class="car-item" ng-class="{'active': (formLevel.id == level.lvId)}">
+                <p>
+                  <label>
+                    <input type="radio" value="{{level.lvId}}" ng-model="$parent.formLevel.id">
+                    <i class="fa fa-car select-car" ng-class="{'active': (formLevel.id == level.lvId)}"></i> 
+                    <span>ประกันภัยรถยนต์ชั้น {{level.lvType}}  </span> 
+                    <span>ราคา {{level.lvPrice| filter:currency}} บาท ต่อปี </span> 
+                    <span>รถยนต์อายุไม่เกิน {{level.lvLimit}} ปี</span>
+                  </label>
+                </p>
               </div>
+            </div>
+
+            <div class="work-item">
+              <button ng-click="$parent.showStep = 2;
+                    getLevelPackage();"  class="btn btn-lg btn-block btn-danger" ng-disabled="formLevel.id === ''" >ถัดไป</button>
+            </div>
           </div>
         </div>
         <div class="form-show" ng-if="showStep === 2">
@@ -78,75 +82,76 @@
           <button class="btn btn-primary btn-lg btn-block" ng-if="showFromLoginAndRegister === 0" ng-click="$parent.showFromLoginAndRegister = 1">เข้าสู่ระบบ</button>
           <button class="btn btn-default btn-lg btn-block" ng-if="showFromLoginAndRegister === 0" ng-click="$parent.showFromLoginAndRegister = 2">ลงทะเบียน</button>
           <div class="box-login box-form" ng-if="showFromLoginAndRegister === 1">
-                <form  ng-submit="submitLoginForm()">
-                  <div class="input-field">
-                    <label>เข้าสู่ระบบ :</label>
-                  </div>
-                  <div class="form-group">
-                    <label>Username :</label>
-                    <input type="text" class="form-control" ng-modal="formLogin.username" placeholder="Enter Username" required>
-                  </div>
-                  <div class="form-group">
-                    <label>Password :</label>
-                    <input type="password" class="form-control" ng-modal="formLogin.password" placeholder="Enter Password" required>
-                  </div>
-                  <button type="submit" class="btn btn-primary btn-lg btn-block">เข้าสู่ระบบ</button>
-                </form> 
+            <form  ng-submit="submitLoginForm()">
+              <div class="input-field">
+                <label>เข้าสู่ระบบ :</label>
               </div>
-              <div class="box-register box-form" ng-if="showFromLoginAndRegister === 2">
-                <form  ng-submit="submitRegisterForm()">
-                  <div class="input-field">
-                    <label>ลงทะเบียน :</label>
-                  </div>
-                  <div class="form-group">
-                    <label>ชื่อ-นามสกุล :</label>
-                    <input type="text" class="form-control" ng-modal="formRegister.fullname" placeholder="ชื่อ-นามสกุล" required>
-                  </div>
-                  <div class="form-group">
-                    <label>ที่อยู่ :</label>
-                    <input type="text" class="form-control" ng-modal="formRegister.address" placeholder="ที่อยู่" required>
-                  </div>
-                  <div class="form-group">
-                    <label>เบอร​์โทรศัพท์ :</label>
-                    <input type="text" class="form-control" ng-modal="formRegister.tel" placeholder="เบอร​์โทรศัพท์" required>
-                  </div>
-                  <div class="form-group">
-                    <label>อีเมล์ :</label>
-                    <input type="text" class="form-control" ng-modal="formRegister.email" placeholder="อีเมล์" required>
-                  </div>
-                  <div class="form-group">
-                    <label>Username :</label>
-                    <input type="text" class="form-control" ng-modal="formRegister.username" placeholder="Username" required>
-                  </div>
-                  <div class="form-group">
-                    <label>Password :</label>
-                    <input type="password" class="form-control" ng-modal="formRegister.password" placeholder="Password" required>
-                  </div>
-                  <button type="submit" class="btn btn-default btn-lg btn-block">ลงทะเบียน</button>
-                </form> 
+              <div class="form-group">
+                <label>Username :</label>
+                <input type="text" class="form-control" ng-modal="formLogin.username" placeholder="Enter Username" required>
               </div>
+              <div class="form-group">
+                <label>Password :</label>
+                <input type="password" class="form-control" ng-modal="formLogin.password" placeholder="Enter Password" required>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg btn-block">เข้าสู่ระบบ</button>
+            </form> 
+          </div>
+          <div class="box-register box-form" ng-if="showFromLoginAndRegister === 2">
+            <form  ng-submit="submitRegisterForm()">
+              <div class="input-field">
+                <label>ลงทะเบียน :</label>
+              </div>
+              <div class="form-group">
+                <label>ชื่อ-นามสกุล :</label>
+                <input type="text" class="form-control" ng-modal="formRegister.fullname" placeholder="ชื่อ-นามสกุล" required>
+              </div>
+              <div class="form-group">
+                <label>ที่อยู่ :</label>
+                <input type="text" class="form-control" ng-modal="formRegister.address" placeholder="ที่อยู่" required>
+              </div>
+              <div class="form-group">
+                <label>เบอร​์โทรศัพท์ :</label>
+                <input type="text" class="form-control" ng-modal="formRegister.tel" placeholder="เบอร​์โทรศัพท์" required>
+              </div>
+              <div class="form-group">
+                <label>อีเมล์ :</label>
+                <input type="text" class="form-control" ng-modal="formRegister.email" placeholder="อีเมล์" required>
+              </div>
+              <div class="form-group">
+                <label>Username :</label>
+                <input type="text" class="form-control" ng-modal="formRegister.username" placeholder="Username" required>
+              </div>
+              <div class="form-group">
+                <label>Password :</label>
+                <input type="password" class="form-control" ng-modal="formRegister.password" placeholder="Password" required>
+              </div>
+              <button type="submit" class="btn btn-default btn-lg btn-block">ลงทะเบียน</button>
+            </form> 
+          </div>
           <button class="btn btn-default btn-lg btn-block" ng-if="showFromLoginAndRegister !== 0" ng-click="$parent.showFromLoginAndRegister = 0">ยกเลิก</button>
         </div>
         <div class="form-show" ng-if="showStep === 3">
-              <div class="work-item">
-                <div class="car-item active">
-                  <p>
-                    <label>
-                      <input type="radio">
-                      <i class="fa fa-car select-car active"></i> 
-                      <span>ประกันภัยรถยนต์ชั้น {{formSubmit.lvType}}  </span> 
-                      <span>ราคา {{formSubmit.lvPrice| filter:currency}} บาท ต่อปี </span> 
-                      <span>รถยนต์อายุไม่เกิน {{formSubmit.lvLimit}} ปี</span>
-                    </label>
-                  </p>
-                </div>
-              </div>
-                <form>
-                  <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="$parent.showStep = 4">ยืนยันการสั่งซื้อ</button>
-                </form> 
+          <h3>Step 3 - ยืนยันการสั่งซื้อ</h3>
+          <div class="work-item">
+            <div class="car-item active">
+              <p>
+                <label>
+                  <input type="radio">
+                  <i class="fa fa-car select-car active"></i> 
+                  <span>ประกันภัยรถยนต์ชั้น {{formSubmit.lvType}}  </span> 
+                  <span>ราคา {{formSubmit.lvPrice| filter:currency}} บาท ต่อปี </span> 
+                  <span>รถยนต์อายุไม่เกิน {{formSubmit.lvLimit}} ปี</span>
+                </label>
+              </p>
+            </div>
+          </div>
+          <form>
+            <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="$parent.showStep = 4">ยืนยันการสั่งซื้อ</button>
+          </form> 
         </div>
         <div class="form-show" ng-if="showStep === 4">
-          <div align="center">
+          <div align="center" class="box-login box-form">
             <h1 class="color-success">ขอบคุณที่ไว้วางใจ</h1>
           </div>
         </div>
