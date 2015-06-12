@@ -60,22 +60,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       <div class="sec-title text-center wow animated fadeInDown">
         <h2>บทความ</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
       </div>
 
 
       <ul class="project-wrapper wow animated fadeInUp">
-        
         ${contents}
         <li class="portfolio-item">
-          <img src="${baseUrl}uploads/${cImage}" class="img-responsive" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat">
+          <img src="${baseUrl}uploads/${cImage}" class="img-responsive" alt="${cDes}">
         <figcaption class="mask">
-          <h3>Wall street</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
+          <h3>${cTitle}</h3>
+          <p>${cDes} </p>
         </figcaption>
         <ul class="external">
-          <li><a class="fancybox" title="Araund The world" data-fancybox-group="works" href="{{assets}}img/portfolio/item.jpg"><i class="fa fa-search"></i></a></li>
-          <li><a href=""><i class="fa fa-link"></i></a></li>
+          <!--<li><a class="fancybox" title="Araund The world" data-fancybox-group="works" href="{{assets}}img/portfolio/item.jpg"><i class="fa fa-search"></i></a></li>-->
+          <li><a href="${baseUrl}content/${cId}"><i class="fa fa-link"></i></a></li>
         </ul>
         </li>
         ${/contents}

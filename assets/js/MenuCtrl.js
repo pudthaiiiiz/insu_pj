@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/* global app, Global */
+
 app.controller('MenuCtrl', ['$scope',  function ($scope) {
   $scope.menu = {};
   $scope.menu.title = "insurancebroker360";
   $scope.menu.lists = [
     {
     name : 'หน้าแรก',
-    link : '#home'
+    link : Global.baseurl
     },
     {
     name : 'ค้นหาเบี้ยประกันภัย',
