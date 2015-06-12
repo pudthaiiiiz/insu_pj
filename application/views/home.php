@@ -67,7 +67,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <ul class="project-wrapper wow animated fadeInUp">
         ${contents}
         <li class="portfolio-item">
-          <img src="${baseUrl}uploads/${cImage}" class="img-responsive" alt="${cDes}">
+          <div class="img-crop" style="background-image: url('${baseUrl}uploads/${cImage}')"></div>
+          <img src="${baseUrl}uploads/${cImage}" class="img-responsive transparent" alt="${cDes}">
         <figcaption class="mask">
           <h3>${cTitle}</h3>
           <p>${cDes} </p>
