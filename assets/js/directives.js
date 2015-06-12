@@ -32,11 +32,12 @@ app.directive('tempContent', function () {
     restrict: 'A',
     templateUrl: Global.baseurl+'assets/templates/temp-content.html',
      scope: {
-       assets : '@url'
+       assets : '@url',
+       contents : '@contents'
      },
-//     link: function(scope) {
-//        do
-//    }
+     link: function(scope) {
+        console.log(scope.contents);
+    }
   };
 });
 

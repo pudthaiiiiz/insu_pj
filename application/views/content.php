@@ -55,7 +55,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="container">
           <div class="row">
             <div class="col-md-12 wow animated fadeInLeft">
-             
               <div align="center">
                 <div class="pull-right"><a href="${baseUrl}" class="btn btn-primary" style="margin-top:5px;">ย้อนกลับ</a></div>
                 <div class="clearfix"></div>
@@ -68,8 +67,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <td colspan='2'>${contentDetail}</td>
                   </tr>
                 </table>
-                
-              
             </div>
           </div>
         </div>
