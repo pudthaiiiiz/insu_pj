@@ -181,7 +181,7 @@
 						
 						<div class="col-sm-10">
               
-              <input type="text" name="title" class="form-control">
+              <input type="text" name="title" class="form-control" placeholder="Title">
 							
 						</div>
 					</div>
@@ -190,7 +190,7 @@
 						
 						<div class="col-sm-10">
               
-             	<textarea name="des" class="form-control ckeditor"></textarea>
+             	<textarea name="des" class="form-control" placeholder="Descaption"></textarea>
 							
 						</div>
 					</div>
@@ -199,7 +199,7 @@
 						
 						<div class="col-sm-10">
               
-             	<textarea name="detail"class="form-control ckeditor"></textarea>
+             	<textarea name="detail"class="form-control ckeditor" ></textarea>
 							
 						</div>
 					</div>
