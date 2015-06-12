@@ -31,16 +31,17 @@ class ContentsApiCtrl extends CI_Controller {
     ## UPLOAD 
   
     $new_name = time().'.jpg';
-		$config['upload_path'] = base_url().'uploads/';
-		$config['new_image']= base_url().'uploads/'.$new_name.'.jpg';
+		$config['upload_path'] = './../uploads/';
+		$config['new_image']= './../uploads/'.$new_name.'.jpg';
 		$config['allowed_types'] = 'gif|jpg|png|jpeg';
 		$config['file_name'] = $new_name;
-   $this->load->library('upload', $config);
-          
+    $this->load->library('upload', $config);
+    $this->upload->initialize($config);
     ## WORK
-    if (($this->form_validation->run() == FALSE) && (! $this->upload->do_upload("img"))) {
+    if ($this->form_validation->run() == FALSE ) {
       $resp['result'] = 'bot';
     }else{
+      if($this->upload->do_upload("img")){
       $values = array('cTitle' => $this->input->post('title'),
                       'cDes' => $this->input->post('des'),
                       'cDetail' => $this->input->post('detail'),
@@ -49,6 +50,9 @@ class ContentsApiCtrl extends CI_Controller {
       
       $isContents = $this->Model_contents->addContent($values);
       $resp['status'] = 'success';
+      }else{
+        $resp['result'] ="noupload";
+      }
     }
     $result = json_encode($resp);
     print_r($this->upload->data());

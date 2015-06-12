@@ -21,38 +21,36 @@ class CustomerApiCtrl extends CI_Controller {
 
   public function callReister() {
     $resp['status'] = 'error';
+    $this->load->library('form_validation');
     $_POST = json_decode(file_get_contents("php://input"), true);
-      $this->load->library('form_validation');
-     	$this->form_validation->set_rules('InputFullName', 'fullname', 'required');
-     	$this->form_validation->set_rules('InputUserName', 'user', 'required');
-     	$this->form_validation->set_rules('InputPassword', 'pass', 'required');
-     	$this->form_validation->set_rules('InputEmail', 'email', 'required');
-     	$this->form_validation->set_rules('InputPhone', 'phone', 'required');
-     	$this->form_validation->set_rules('InputAddress', 'address', 'required');
+    
+     	$this->form_validation->set_rules('inputFullName', 'fullname', 'required');
+     	$this->form_validation->set_rules('inputUserName', 'user', 'required');
+     	$this->form_validation->set_rules('inputPassword', 'pass', 'required');
+     	$this->form_validation->set_rules('inputEmail', 'email', 'required');
+     	$this->form_validation->set_rules('inputPhone', 'phone', 'required');
+     	$this->form_validation->set_rules('inputAddress', 'address', 'required');
 
      		if ($this->form_validation->run() == FALSE){
-     			$resp['status'] = 'bot';
+     			$resp['status'] = "bot";
      		}else{    
-          $values = array('cusFullname' => $this->input->post('InputFullName'),
-                          'cusAdrs' => $this->input->post('InputAddress'),
-                          'cusPhone' => $this->input->post('InputPhone'),
-                          'cusEmail' => $this->input->post('InputEmail'),
-                          'cusUsername' => $this->input->post('InputUserName'),
-                          'cusPassword' => sha1(md5($this->input->post('InputPassword'))),
-                          'cusIdCard' => $this->input->post('InputIdCard'),
-                          'cusLevel' => $this->input->post('InputLevel'),
+          $values = array('cusFullname' => $this->input->post('inputFullName'),
+                          'cusAdrs' => $this->input->post('inputAddress'),
+                          'cusPhone' => $this->input->post('inputPhone'),
+                          'cusEmail' => $this->input->post('inputEmail'),
+                          'cusUsername' => $this->input->post('inputUserName'),
+                          'cusPassword' => sha1(md5($this->input->post('inputPassword'))),
+                          'cusIdCard' => $this->input->post('inputIdCard'),
+                          'cusLevel' => $this->input->post('inputLevel'),
                           'cusToken' => uniqid(md5(mt_rand()), true),
                           'cusCreateAt' => $this->dateTime );
 
           $isRegister = $this->Model_customer->callReisterService($values);
           if($isRegister){
             
-            $userSessions = array('sesToken' => $isAuthen->cusToken,
-                                      'sesCusId' => $isAuthen->cusId,
-                                      'isSesLogin' => true);
-                $this->session->set_userdata($userSessions);
-                $resp['status'] = 'loginSuccess';
-//            $resp['result'] = 'success';
+           
+//                $resp['status'] = 'loginSuccess';
+            $resp['status'] = 'success';
           }
         }
         $result = json_encode($resp);
