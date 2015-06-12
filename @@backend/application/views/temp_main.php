@@ -88,12 +88,37 @@
 					</li>
 					<li>
 						<a href="member">
-							<span>Member</span>
+							<span>ระบบสมาชิก แก้ไข/ดูรายชื่อ</span>
 						</a>
 					</li>
 					<li>
 						<a href="content">
-							<span>Content</span>
+							<span>ระบบจัดการเนือหา</span>
+						</a>
+					</li>
+					<li>
+						<a href="payment">
+							<span>ช่องทางการชำระเงิน</span>
+						</a>
+					</li>
+					<li>
+						<a href="accident">
+							<span>เบอร์แจ้งอุบัติเหตุ</span>
+						</a>
+					</li>
+					<li>
+						<a href="products">
+							<span>สินค้าและเบี้ยประกันภัย</span>
+						</a>
+					</li>
+					<li>
+						<a href="history">
+							<span>ประวัติ</span>
+						</a>
+					</li>
+					<li>
+						<a href="service">
+							<span>บริการ</span>
 						</a>
 					</li>
 					<li>

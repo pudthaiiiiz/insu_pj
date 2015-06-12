@@ -163,12 +163,15 @@
 <hr />
 
 
-
+<div class="pull-right"> <a href="#" class="btn btn-success">ดูเนื้อหามั้งหมด</a></div>
+        <div class="clearfix"></div>
+        <br />
 <div class="panel panel-primary" data-collapsed="0">
 		
 			<div class="panel-heading">
+        
 				<div class="panel-title">
-					From
+					เพิ่มเนื้อหาใหม่
 				</div>
 			</div>
 			
