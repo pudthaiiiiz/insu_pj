@@ -53,7 +53,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <section id="home" data-temp-slide></section>    
       <section id="searchForm" data-temp-check-package></section>     
       <section id="step" data-temp-step></section> 
-      <section id="content" data-temp-content data-url="${assets}"></section> 
+      
+      <div ng-controller="ContentCtrl">
+  <div class="container">
+    <div class="row">
+
+      <div class="sec-title text-center wow animated fadeInDown">
+        <h2>บทความ</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+
+
+      <ul class="project-wrapper wow animated fadeInUp">
+        
+        ${contents}
+        <li class="portfolio-item">
+          <img src="${baseUrl}uploads/${cImage}" class="img-responsive" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat">
+        <figcaption class="mask">
+          <h3>Wall street</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting ndustry. </p>
+        </figcaption>
+        <ul class="external">
+          <li><a class="fancybox" title="Araund The world" data-fancybox-group="works" href="{{assets}}img/portfolio/item.jpg"><i class="fa fa-search"></i></a></li>
+          <li><a href=""><i class="fa fa-link"></i></a></li>
+        </ul>
+        </li>
+        ${/contents}
+      </ul>
+
+    </div>
+  </div>
+</div>
+      
+      <!--<section id="content" data-temp-content data-url="${assets}" data-contents="${contents}"></section>--> 
 <!--      <section id="whyme" data-temp-why-me data-url="${assets}"></section> 
       <section id="follow-us" data-temp-follow-us></section> 
       <section id="contact-us" data-temp-contact-us></section> -->
