@@ -1,6 +1,56 @@
 <div ng-controller="CheckPackageCtrl" ng-cloak class="check-package">
   <div class="container">
-    <div class="row">
+    <div class="row" ng-init="needToRister = false">
+      
+     <br><br>
+     <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="needToRister = true" ng-show="!needToRister">สมัครสมาชิก</button>
+      
+      <div class="col-md-12 wow animated fadeInLeft" ng-if="needToRister">
+          <div class="box-register box-form">
+            <form ng-submit="submitRegisterForm()">
+              <div class="input-field">
+                <label>ลงทะเบียน :</label>
+              </div>
+              <div class="form-group">
+                <label>หมายเลขบัตรประชาชน :</label>
+                <input type="text" name="idCard" class="form-control" ng-model="formRegister.idCard" placeholder="หมายเลขบัตรประชาชน" maxlength="13" pattern="\d*" required title="กรอกเฉพาะตัวเลขเท่านั้น">
+              </div>
+              <div class="form-group">
+                <label>ชื่อ-นามสกุล :</label>
+                <input type="text" name="fullname" class="form-control" ng-model="formRegister.fullname" placeholder="ชื่อ-นามสกุล" required title="กรอก ชื่อ-นามสกุล">
+              </div>
+              <div class="form-group">
+                <label>ที่อยู่ :</label>
+                <input type="text" name="address" class="form-control" ng-model="formRegister.address" placeholder="ที่อยู่" required title="กรอก ที่อยู่">
+              </div>
+              <div class="form-group">
+                <label>เบอร​์โทรศัพท์ :</label>
+                <input type="text" name="tel" class="form-control" ng-model="formRegister.tel" placeholder="เบอร​์โทรศัพท์" required pattern="\d*" title="กรอกเฉพาะตัวเลขเท่านั้น">
+              </div>
+              <div class="form-group">
+                <label>อีเมล์ :</label>
+                <input type="text" name="email" class="form-control" ng-model="formRegister.email" placeholder="อีเมล์" required title="กรอก อีเมล์">
+              </div>
+<!--              <div class="form-group">
+                <label>รูปภาพ (เอกสาร สำเนาบัตรประชาชน) :</label>
+                <input type="file" class="form-control" ng-model="formRegister.file" placeholder="รูปภาพ (เอกสาร สำเนาบัตรประชาชน)" required title="แนบเอกสาร สำเนาบัตรประชาชน">
+              </div>-->
+              <div class="form-group">
+                <label>Username :</label>
+                <input type="text" name="username" class="form-control" ng-model="formRegister.username" placeholder="Username" required title="กรอก ชื่อผู้้ใช้">
+              </div>
+              <div class="form-group">
+                <label>Password :</label>
+                <input type="password" name="password" class="form-control" ng-model="formRegister.password" placeholder="Password" required title="กรอก รหัสผ่าน">
+<!--                <br>
+                <input type="password" name="passwordConfirm" class="form-control" ng-model="formRegister.passwordConfirm" placeholder="Password Confirm" required title="ยืนยัน รหัสผ่าน">-->
+              </div>
+              <button type="submit" class="btn btn-default btn-lg btn-block">ลงทะเบียน</button>
+              <button type="button" class="btn btn-default btn-lg btn-block"  ng-click="$parent.needToRister = false">ไม่ล่ะ!! ขอบคุณ.</button>
+            </form> 
+          </div>
+      </div>
+<!--      
       <div class="col-md-4 wow animated fadeInLeft">
         <div class="welcome-block">
           <h3>ค้นหาเบี้ยประกันภัย</h3>								
@@ -88,11 +138,11 @@
               </div>
               <div class="form-group">
                 <label>Username :</label>
-                <input type="text" class="form-control" ng-modal="formLogin.username" placeholder="Enter Username" required>
+                <input type="text" class="form-control" ng-model="formLogin.username" placeholder="Enter Username" required>
               </div>
               <div class="form-group">
                 <label>Password :</label>
-                <input type="password" class="form-control" ng-modal="formLogin.password" placeholder="Enter Password" required>
+                <input type="password" class="form-control" ng-model="formLogin.password" placeholder="Enter Password" required>
               </div>
               <button type="submit" class="btn btn-primary btn-lg btn-block">เข้าสู่ระบบ</button>
             </form> 
@@ -104,27 +154,27 @@
               </div>
               <div class="form-group">
                 <label>ชื่อ-นามสกุล :</label>
-                <input type="text" class="form-control" ng-modal="formRegister.fullname" placeholder="ชื่อ-นามสกุล" required>
+                <input type="text" class="form-control" ng-model="formRegister.fullname" placeholder="ชื่อ-นามสกุล" required>
               </div>
               <div class="form-group">
                 <label>ที่อยู่ :</label>
-                <input type="text" class="form-control" ng-modal="formRegister.address" placeholder="ที่อยู่" required>
+                <input type="text" class="form-control" ng-model="formRegister.address" placeholder="ที่อยู่" required>
               </div>
               <div class="form-group">
                 <label>เบอร​์โทรศัพท์ :</label>
-                <input type="text" class="form-control" ng-modal="formRegister.tel" placeholder="เบอร​์โทรศัพท์" required>
+                <input type="text" class="form-control" ng-model="formRegister.tel" placeholder="เบอร​์โทรศัพท์" required>
               </div>
               <div class="form-group">
                 <label>อีเมล์ :</label>
-                <input type="text" class="form-control" ng-modal="formRegister.email" placeholder="อีเมล์" required>
+                <input type="text" class="form-control" ng-model="formRegister.email" placeholder="อีเมล์" required>
               </div>
               <div class="form-group">
                 <label>Username :</label>
-                <input type="text" class="form-control" ng-modal="formRegister.username" placeholder="Username" required>
+                <input type="text" class="form-control" ng-model="formRegister.username" placeholder="Username" required>
               </div>
               <div class="form-group">
                 <label>Password :</label>
-                <input type="password" class="form-control" ng-modal="formRegister.password" placeholder="Password" required>
+                <input type="password" class="form-control" ng-model="formRegister.password" placeholder="Password" required>
               </div>
               <button type="submit" class="btn btn-default btn-lg btn-block">ลงทะเบียน</button>
             </form> 
@@ -156,6 +206,8 @@
           </div>
         </div>
       </div>
+      -->
+      
     </div>
   </div>
 </div>

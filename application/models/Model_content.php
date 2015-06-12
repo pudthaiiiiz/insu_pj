@@ -18,7 +18,6 @@ class Model_content extends CI_Model{
         'detail' => 'content detail'
     );
     return $result;
-   
   }
   
 	

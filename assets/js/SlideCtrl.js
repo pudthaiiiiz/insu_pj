@@ -3,5 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/* global Global, app */
+
 app.controller('SlideCtrl', ['$scope', function ($scope) {
+    $scope.assets = Global.assets;
+    
   }]);
+

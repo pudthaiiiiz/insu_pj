@@ -290,10 +290,10 @@ main > section .container{
 /* ==========================================*/
 .temp-slide{
   margin-top: 90px;
-  padding-top: 80px;
   height: 500px;
   background-color: #000;
   background-image: url(../img/Mercedes-emblem.jpg);
+  padding-top: 80px;
   background-repeat:no-repeat;
   background-position: center center;
   background-size: 100%;

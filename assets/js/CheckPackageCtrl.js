@@ -3,15 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/* global app*/
+
 app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', function ($scope, HomeServices, $timeout) {
+    
     var services = [
       'getYear',
       'getBrand'
     ];
+    
     var params = {};
     $scope.data = {};
     $scope.formSubmit = {};
-    $scope.formRegister = {};
+    $scope.formRegister = {
+      idCard : '',
+      fullname : '',
+      address : '',
+      tel : '',
+      email : '',
+      username : '',
+      password : ''
+    };
     $scope.formLogin = {};
     $scope.formLogin.username = '';
     $scope.formLogin.password = '';
@@ -104,6 +116,17 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
         params = {
           inputIdMain: $scope.formSearch.main
         };
+      } else if (serviceName === 'saveMember') {
+        params = {
+          inputFullName: $scope.formRegister.fullname,
+          inputAddress: $scope.formRegister.address,
+          inputPhone: $scope.formRegister.tel,
+          inputEmail: $scope.formRegister.email,
+          inputUserName: $scope.formRegister.username,
+          inputPassword: $scope.formRegister.password,
+          inputIdCard: $scope.formRegister.idCard,
+          inputLevel: 1
+        };
       }
       var callServiceName = HomeServices[serviceName](params);
       callServiceName.success(function (data) {
@@ -124,5 +147,12 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
     for (name in services) {
       callService(services[name]);
     }
+    
+    $scope.submitRegisterForm = function() {
+//      console.log($scope.formRegister);
+        callService("saveMember");
+    };
+   
+    
     
   }]);

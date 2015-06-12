@@ -21,6 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="${assets}css/owl.carousel.css">
     <link rel="stylesheet" href="${assets}css/slit-slider.css">
     <link rel="stylesheet" href="${assets}css/animate.css">
+    <link rel="stylesheet" href="${assets}css/slide.css">
     <link rel="stylesheet" href="${assets}css/main.css">
     <link rel="stylesheet" href="${assets}css/loading.css">
   </head>
@@ -50,8 +51,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </header>
     <main class="site-content" role="main">
       <section id="home" data-temp-slide></section>    
-      
-      
       <div ng-controller="CheckPackageCtrl" ng-cloak class="check-package">
         <div class="container">
           <div class="row">
@@ -66,9 +65,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
       </div>
       
-      
-      <section id="follow-us" data-temp-follow-us></section> 
-      <section id="contact-us" data-temp-contact-us></section> 
     </main>
     <footer id="footer" data-temp-footer></footer>
 
@@ -96,6 +92,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="${assets}js/plugin/jquery.easing.min.js"></script>
     <script src="${assets}js/plugin/jquery.slitslider.js"></script>
     <script src="${assets}js/plugin/jquery.ba-cond.min.js"></script>
+    <script src="${assets}js/plugin/jquery.slides.min.js"></script>
     <script src="${assets}js/plugin/wow.min.js"></script>
     <script src="${assets}js/plugin/main.js"></script>
   </body>

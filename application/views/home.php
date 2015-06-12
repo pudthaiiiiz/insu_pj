@@ -21,6 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="${assets}css/owl.carousel.css">
     <link rel="stylesheet" href="${assets}css/slit-slider.css">
     <link rel="stylesheet" href="${assets}css/animate.css">
+    <link rel="stylesheet" href="${assets}css/slide.css">
     <link rel="stylesheet" href="${assets}css/main.css">
     <link rel="stylesheet" href="${assets}css/loading.css">
   </head>
@@ -48,14 +49,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </nav>
       </div>
     </header>
-    <main class="site-content" role="main">
+    <main class="site-content" role="main" ng-init="needToRister = false">
       <section id="home" data-temp-slide></section>    
       <section id="searchForm" data-temp-check-package></section>     
       <section id="step" data-temp-step></section> 
       <section id="content" data-temp-content data-url="${assets}"></section> 
-      <section id="whyme" data-temp-why-me data-url="${assets}"></section> 
+<!--      <section id="whyme" data-temp-why-me data-url="${assets}"></section> 
       <section id="follow-us" data-temp-follow-us></section> 
-      <section id="contact-us" data-temp-contact-us></section> 
+      <section id="contact-us" data-temp-contact-us></section> -->
     </main>
     <footer id="footer" data-temp-footer></footer>
 
@@ -83,6 +84,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="${assets}js/plugin/jquery.easing.min.js"></script>
     <script src="${assets}js/plugin/jquery.slitslider.js"></script>
     <script src="${assets}js/plugin/jquery.ba-cond.min.js"></script>
+    <script src="${assets}js/plugin/jquery.slides.min.js"></script>
     <script src="${assets}js/plugin/wow.min.js"></script>
     <script src="${assets}js/plugin/main.js"></script>
   </body>

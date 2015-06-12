@@ -8,3 +8,4 @@
 var app  = angular.module('application', ['ngRoute']);
 var Global = {};
 Global['baseurl'] = "http://local.insu.com/";
+Global['assets'] = "http://local.insu.com/assets/";
