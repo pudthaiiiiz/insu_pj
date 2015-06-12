@@ -4,31 +4,33 @@
  * and open the template in the editor.
  */
 
+/* global app, Global */
+
 app.directive('tempSlide', function () {
   return {
     restrict: 'A',
-    templateUrl: 'assets/templates/temp-slide.html'
+    templateUrl: Global.baseurl+'assets/templates/temp-slide.html'
   };
 });
 
 app.directive('tempCheckPackage', function () {
   return {
     restrict: 'A',
-    templateUrl: 'assets/templates/temp-check-package.html'
+    templateUrl: Global.baseurl+'assets/templates/temp-check-package.html'
   };
 });
 
 app.directive('tempStep', function () {
   return {
     restrict: 'A',
-    templateUrl: 'assets/templates/temp-step.html'
+    templateUrl: Global.baseurl+'assets/templates/temp-step.html'
   };
 });
 
 app.directive('tempContent', function () {
   return {
     restrict: 'A',
-    templateUrl: 'assets/templates/temp-content.html',
+    templateUrl: Global.baseurl+'assets/templates/temp-content.html',
      scope: {
        assets : '@url'
      },
@@ -41,7 +43,7 @@ app.directive('tempContent', function () {
 app.directive('tempWhyMe', function () {
   return {
     restrict: 'A',
-    templateUrl: 'assets/templates/temp-why-me.html',
+    templateUrl: Global.baseurl+'assets/templates/temp-why-me.html',
     scope: {
        assets : '@url'
      }
@@ -54,28 +56,28 @@ app.directive('tempWhyMe', function () {
 app.directive('tempFollowUs', function () {
   return {
     restrict: 'A',
-    templateUrl: 'assets/templates/temp-follow-us.html'
+    templateUrl: Global.baseurl+'assets/templates/temp-follow-us.html'
   };
 });
 
 app.directive('tempContactUs', function () {
   return {
     restrict: 'A',
-    templateUrl: 'assets/templates/temp-contact-us.html'
+    templateUrl: Global.baseurl+'assets/templates/temp-contact-us.html'
   };
 });
 
 app.directive('tempFooter', function () {
   return {
     restrict: 'A',
-    templateUrl: 'assets/templates/temp-footer.html'
+    templateUrl: Global.baseurl+'assets/templates/temp-footer.html'
   };
 });
 
 app.directive('tempLoad', function () {
   return {
     restrict: 'A',
-    templateUrl: 'assets/templates/temp-load.html'
+    templateUrl: Global.baseurl+'assets/templates/temp-load.html'
   };
 });
 

@@ -3,4 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var app  = angular.module('application', ['ngRoute'])
+/* global Global, angular */
+
+var app  = angular.module('application', ['ngRoute']);
+var Global = {};
+Global['baseurl'] = "http://local.insu.com/";
