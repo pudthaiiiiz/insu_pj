@@ -58,7 +58,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               ${if contentTitle != null}
               <div align="center">
                 <h1> ${contentTitle}</h1>
-                <img src="${baseUrl}uploads/${contentImage}">
+                <img src="${baseUrl}uploads/${contentImage}" class="img-responsive">
               </div>
               <div>  ${contentDetail}</div>
               <div> &nbsp;</div>
