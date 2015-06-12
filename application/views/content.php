@@ -56,11 +56,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <div class="row">
             <div class="col-md-12 wow animated fadeInLeft">
               <div align="center">
-                <h1> ${contentTitle}</h1>
-                <img src="${baseUrl}uploads/${contentImage}" class="img-responsive">
-              </div>
-              <div>  ${contentDetail}</div>
-              <div> &nbsp;</div>
+                <div class="pull-right"><a href="${baseUrl}" class="btn btn-primary" style="margin-top:5px;">ย้อนกลับ</a></div>
+                <div class="clearfix"></div>
+                <table class='table table-bordered' style="margin-top:5px;">
+                  <tr>
+                    <td width="80%"><strong>${contentTitle}</strong></td>
+                    <td>${contentCreateAt}</td>
+                  </tr>
+                  <tr>
+                    <td colspan='2'>${contentDetail}</td>
+                  </tr>
+                </table>
             </div>
           </div>
         </div>

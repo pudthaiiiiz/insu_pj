@@ -15,24 +15,19 @@ class ContentCtrl extends CI_Controller {
 
   public function detail($id) {
     $pathAsset = assets();
-    $data = array(
-        'title' => 'insurancebroker360',
-        'baseUrl' => base_url(),
-        'assets' => $pathAsset,
-        'contentTitle' => 'null',
-        'contentDetail' => 'null'
-    );
     $result = $this->Model_content->getContent($id);
-
-    if ($result) {
-      $data = array(
-          'title' => 'insurancebroker360',
-          'baseUrl' => base_url(),
-          'assets' => $pathAsset,
-          'contentTitle' => $result->cTitle,
-          'contentImage' => $result->cImage,
-          'contentDetail' => $result->cDetail
-      );
+    if($result === 0){
+      redirect(base_url());
+    }else{
+        $data = array(
+            'title' => 'insurancebroker360',
+            'baseUrl' => base_url(),
+            'assets' => $pathAsset,
+            'contentTitle' => $result->cTitle,
+            'contentImage' => $result->cImage,
+            'contentDetail' => $result->cDetail,
+            'contentCreateAt' => $result->cCreateAt
+        );
     }
     $this->parser->parse('content', $data);
   }
