@@ -55,12 +55,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="container">
           <div class="row">
             <div class="col-md-12 wow animated fadeInLeft">
+              ${if contentTitle != null}
               <div align="center">
                 <h1> ${contentTitle}</h1>
-                <img src="${baseUrl}uploads/${contentImage}">
+                <img src="${baseUrl}uploads/${contentImage}" class="img-responsive">
               </div>
               <div>  ${contentDetail}</div>
               <div> &nbsp;</div>
+              ${if:else}
+              <div> ไม่พบข้อมูล</div>
+              ${/if}
             </div>
           </div>
         </div>
