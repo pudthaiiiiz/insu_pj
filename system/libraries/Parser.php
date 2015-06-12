@@ -121,7 +121,7 @@ class CI_Parser {
 	 * @param	string
 	 * @return	void
 	 */
-	function set_delimiters($l = '{', $r = '}')
+	function set_delimiters($l = '${', $r = '}')
 	{
 		$this->l_delim = $l;
 		$this->r_delim = $r;

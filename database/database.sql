@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jun 06, 2015 at 05:51 AM
+-- Generation Time: Jun 13, 2015 at 04:37 AM
 -- Server version: 5.5.42
 -- PHP Version: 5.6.7
 
@@ -13,6 +13,57 @@ SET time_zone = "+00:00";
 --
 -- Database: `insure_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_administrator`
+--
+
+CREATE TABLE `tbl_administrator` (
+  `admin_id` int(11) NOT NULL,
+  `admin_username` varchar(16) NOT NULL,
+  `admin_password` varchar(16) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_administrator`
+--
+
+INSERT INTO `tbl_administrator` (`admin_id`, `admin_username`, `admin_password`) VALUES
+(1, 'admin', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_contents`
+--
+
+CREATE TABLE `tbl_contents` (
+  `cId` int(11) NOT NULL,
+  `cTitle` varchar(200) NOT NULL,
+  `cDes` text NOT NULL,
+  `cDetail` longtext NOT NULL,
+  `cImage` text NOT NULL,
+  `cCreateAt` datetime NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_contents`
+--
+
+INSERT INTO `tbl_contents` (`cId`, `cTitle`, `cDes`, `cDetail`, `cImage`, `cCreateAt`) VALUES
+(1, 'Title Insurance broker 360', '<p>Dec</p>\r\n', '<p>Detail</p>\r\n', '1434142743.jpg', '2015-06-13 03:59:03'),
+(2, 'Title Insurance broker 360', '<p>Dec</p>\r\n', '<p>Detail</p>\r\n', '1434142858.jpg', '2015-06-13 04:00:58'),
+(3, 'Title Insurance broker 360', '<p>Dec</p>\r\n', '<p>Detail</p>\r\n', '1434142893.jpg', '2015-06-13 04:01:33'),
+(4, 'xxxxx', '<p>xxxxx</p>\r\n', '<p>xxxxx</p>\r\n', '1434142949.jpg', '2015-06-13 04:02:29'),
+(5, 'ssss', '<p>ssss</p>\r\n', '<p>ssss</p>\r\n', '1434143012.jpg', '2015-06-13 04:03:32'),
+(6, 'ssss', '<p>ssss</p>\r\n', '<p>ssss</p>\r\n', '1434143124.jpg', '2015-06-13 04:05:24'),
+(7, 'ssss', '<p>ssss</p>\r\n', '<p>ssss</p>\r\n', '1434143198.jpg', '2015-06-13 04:06:38'),
+(8, 'ssss', '<p>ssss</p>\r\n', '<p>ssss</p>\r\n', '1434143337.jpg', '2015-06-13 04:08:57'),
+(9, 'ssss', '<p>ssss</p>\r\n', '<p>ssss</p>\r\n', '1434143351.jpg', '2015-06-13 04:09:11'),
+(10, 'ssss', '<p>ssss</p>\r\n', '<p>ssss</p>\r\n', '1434143467.jpg', '2015-06-13 04:11:07'),
+(11, 'xxxx', '<p>xxxx</p>\r\n', '<p>xxxx</p>\r\n', '1434143629.jpg', '2015-06-13 04:13:49');
 
 -- --------------------------------------------------------
 
@@ -29,6 +80,8 @@ CREATE TABLE `tbl_customers` (
   `cusUsername` varchar(16) NOT NULL,
   `cusPassword` varchar(150) NOT NULL,
   `cusToken` text NOT NULL,
+  `cusIdCard` int(13) NOT NULL,
+  `cusLevel` int(11) NOT NULL,
   `cusCreateAt` datetime NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
@@ -36,10 +89,21 @@ CREATE TABLE `tbl_customers` (
 -- Dumping data for table `tbl_customers`
 --
 
-INSERT INTO `tbl_customers` (`cusId`, `cusFullname`, `cusAdrs`, `cusPhone`, `cusEmail`, `cusUsername`, `cusPassword`, `cusToken`, `cusCreateAt`) VALUES
-(1, '', '', '', '', '', '', '', '0000-00-00 00:00:00'),
-(2, 'pudthai pichet', '123/zzzz', '0959356049', 'pudthaiiii@gmail.com', 'pudthai', '55c3b5386c486feb662a0785f340938f518d547f', '4da210603ad12e519341ceeb96f6de28556b4a97280240.26549340', '2015-06-01 00:53:27'),
-(3, 'pichet Kunjai', '123434', '0959356049', 'pudthaiiii@gmail.com', 'pudthaiiii', '10470c3b4b1fed12c3baac014be15fac67c6e815', '8138ef59051cd99c7681e9275dbd2d26556b56c4ea9732.81761580', '2015-06-01 01:45:24');
+INSERT INTO `tbl_customers` (`cusId`, `cusFullname`, `cusAdrs`, `cusPhone`, `cusEmail`, `cusUsername`, `cusPassword`, `cusToken`, `cusIdCard`, `cusLevel`, `cusCreateAt`) VALUES
+(2, 'pudthai pichet', '123/zzzz', '0959356049', 'pudthaiiii@gmail.com', 'pudthai', '55c3b5386c486feb662a0785f340938f518d547f', '4da210603ad12e519341ceeb96f6de28556b4a97280240.26549340', 0, 0, '2015-06-01 00:53:27'),
+(3, 'pichet Kunjai', '123434', '0959356049', 'pudthaiiii@gmail.com', 'pudthaiiii', '10470c3b4b1fed12c3baac014be15fac67c6e815', '8138ef59051cd99c7681e9275dbd2d26556b56c4ea9732.81761580', 0, 0, '2015-06-13 01:45:24');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_invoice`
+--
+
+CREATE TABLE `tbl_invoice` (
+  `inId` int(11) NOT NULL,
+  `inInsurance` int(11) NOT NULL,
+  `inCustomers` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -270,10 +334,28 @@ INSERT INTO `tbl_package_year` (`yId`, `yName`) VALUES
 --
 
 --
+-- Indexes for table `tbl_administrator`
+--
+ALTER TABLE `tbl_administrator`
+  ADD PRIMARY KEY (`admin_id`);
+
+--
+-- Indexes for table `tbl_contents`
+--
+ALTER TABLE `tbl_contents`
+  ADD PRIMARY KEY (`cId`);
+
+--
 -- Indexes for table `tbl_customers`
 --
 ALTER TABLE `tbl_customers`
   ADD PRIMARY KEY (`cusId`);
+
+--
+-- Indexes for table `tbl_invoice`
+--
+ALTER TABLE `tbl_invoice`
+  ADD PRIMARY KEY (`inId`);
 
 --
 -- Indexes for table `tbl_package_brand`
@@ -316,10 +398,25 @@ ALTER TABLE `tbl_package_year`
 --
 
 --
+-- AUTO_INCREMENT for table `tbl_administrator`
+--
+ALTER TABLE `tbl_administrator`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `tbl_contents`
+--
+ALTER TABLE `tbl_contents`
+  MODIFY `cId` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+--
 -- AUTO_INCREMENT for table `tbl_customers`
 --
 ALTER TABLE `tbl_customers`
   MODIFY `cusId` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `tbl_invoice`
+--
+ALTER TABLE `tbl_invoice`
+  MODIFY `inId` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tbl_package_brand`
 --

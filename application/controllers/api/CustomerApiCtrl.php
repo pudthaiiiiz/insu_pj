@@ -23,22 +23,24 @@ class CustomerApiCtrl extends CI_Controller {
     $resp['status'] = 'error';
     $_POST = json_decode(file_get_contents("php://input"), true);
       $this->load->library('form_validation');
-     	$this->form_validation->set_rules('fullName', 'fullname', 'required');
-     	$this->form_validation->set_rules('userName', 'user', 'required');
-     	$this->form_validation->set_rules('password', 'pass', 'required');
-     	$this->form_validation->set_rules('email', 'email', 'required');
-     	$this->form_validation->set_rules('phone', 'phone', 'required');
-     	$this->form_validation->set_rules('address', 'address', 'required');
+     	$this->form_validation->set_rules('InputFullName', 'fullname', 'required');
+     	$this->form_validation->set_rules('InputUserName', 'user', 'required');
+     	$this->form_validation->set_rules('InputPassword', 'pass', 'required');
+     	$this->form_validation->set_rules('InputEmail', 'email', 'required');
+     	$this->form_validation->set_rules('InputPhone', 'phone', 'required');
+     	$this->form_validation->set_rules('InputAddress', 'address', 'required');
 
      		if ($this->form_validation->run() == FALSE){
      			$resp['status'] = 'bot';
      		}else{    
-          $values = array('cusFullname' => $this->input->post('fullName'),
-                          'cusAdrs' => $this->input->post('address'),
-                          'cusPhone' => $this->input->post('phone'),
-                          'cusEmail' => $this->input->post('email'),
-                          'cusUsername' => $this->input->post('userName'),
-                          'cusPassword' => sha1(md5($this->input->post('password'))),
+          $values = array('cusFullname' => $this->input->post('InputFullName'),
+                          'cusAdrs' => $this->input->post('InputAddress'),
+                          'cusPhone' => $this->input->post('InputPhone'),
+                          'cusEmail' => $this->input->post('InputEmail'),
+                          'cusUsername' => $this->input->post('InputUserName'),
+                          'cusPassword' => sha1(md5($this->input->post('InputPassword'))),
+                          'cusIdCard' => $this->input->post('InputIdCard'),
+                          'cusLevel' => $this->input->post('InputLevel'),
                           'cusToken' => uniqid(md5(mt_rand()), true),
                           'cusCreateAt' => $this->dateTime );
 
