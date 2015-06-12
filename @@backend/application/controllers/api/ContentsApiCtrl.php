@@ -55,7 +55,8 @@ class ContentsApiCtrl extends CI_Controller {
       }
     }
     $result = json_encode($resp);
-    print_r($this->upload->data());
+    echo $result;
+    
     
   } 
 
