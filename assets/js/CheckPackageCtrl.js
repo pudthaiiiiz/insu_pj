@@ -15,6 +15,9 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
     var params = {};
     $scope.data = {};
     $scope.formSubmit = {};
+    $scope.saveMember = {
+      status : "error"
+    };
     $scope.formRegister = {
       idCard : '',
       fullname : '',
@@ -131,6 +134,12 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
       var callServiceName = HomeServices[serviceName](params);
       callServiceName.success(function (data) {
         if (data.status === 'success') {
+          if (serviceName === 'saveMember') {
+            $scope.saveMember = {
+              status : "success"
+            };
+            return;
+          }
           var getData = angular.extend(data.data);
           assignData(serviceName,getData);
           if (serviceName === 'getLevelPackage') {
