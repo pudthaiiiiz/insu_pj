@@ -76,24 +76,49 @@
 				</form>
 			</li>
 			<li class="active opened active">
-				<a href="#">
+				<a href="index.html">
 					<i class="entypo-gauge"></i>
 					<span>Dashboard</span>
 				</a>
 				<ul>
-					<li >
+					<li class="active">
 						<a href="main">
 							<span>Dashboard Main</span>
 						</a>
 					</li>
-					<li class="active">
+					<li>
 						<a href="member">
-							<span>Member</span>
+							<span>ระบบสมาชิก แก้ไข/ดูรายชื่อ</span>
 						</a>
 					</li>
 					<li>
 						<a href="content">
-							<span>Content</span>
+							<span>ระบบจัดการเนือหา</span>
+						</a>
+					</li>
+					<li>
+						<a href="payment">
+							<span>ช่องทางการชำระเงิน</span>
+						</a>
+					</li>
+					<li>
+						<a href="accident">
+							<span>เบอร์แจ้งอุบัติเหตุ</span>
+						</a>
+					</li>
+					<li>
+						<a href="products">
+							<span>สินค้าและเบี้ยประกันภัย</span>
+						</a>
+					</li>
+					<li>
+						<a href="history">
+							<span>ประวัติ</span>
+						</a>
+					</li>
+					<li>
+						<a href="service">
+							<span>บริการ</span>
 						</a>
 					</li>
 					<li>
@@ -111,7 +136,6 @@
 				</ul>
 			</li>
 		</ul>
-				
 	</div>	
 	<div class="main-content">
 		
@@ -182,12 +206,12 @@ function getRandomInt(min, max)
   
 
 	<div class="col-sm-12">
-			<div class="pull-right"><a href="#" class="btn btn-success" style="margin-bottom:3px;">Add Member</a></div><br/>
+			<div class="pull-right"><a href="content" class="btn btn-success" style="margin-bottom:3px;">Add Contents</a></div><br/>
       <div class="clearfix"></div>
 		<div class="panel panel-primary">
       
 			<div class="panel-heading">
-				<div class="panel-title">Latest Updated Profiles</div>
+				<div class="panel-title">Latest Updated Contents</div>
 				
 				<div class="panel-options">
 					<a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a>
@@ -200,11 +224,11 @@ function getRandomInt(min, max)
 			<table class="table table-bordered table-responsive">
 				<thead>
 					<tr>
-						<th>Full Name</th>
-						<th>Username</th>
-						<th>Phone</th>
-						<th>Edit</th>
-						<th>Delete</th>
+						<th>Images</th>
+						<th>Title</th>
+						<th width="300px">Descaption</th>
+						<th width="70px">Edit</th>
+						<th width="70px">Delete</th>
 					</tr>
 				</thead>
 				
@@ -212,11 +236,11 @@ function getRandomInt(min, max)
           ${results}
           <tr>
 						
-						<td>${cusFullname}</td>
-						<td>${cusUsername}</td>
-						<td>${cusPhone}</td>
-            <td class='text-center'><a href='#${cusId}' class='btn btn-primary'>Edit</a></td>
-            <td class='text-center'><a href='#' class='btn btn-danger'>Del</a></td>
+            <td width="150px"><img src="<?php echo base_url(); ?>../uploads/${cImage}" width="150px"></td>
+						<td>${cTitle}</td>
+						<td>${cDes}</td>
+            <td class='text-center'><a href='content/${cId}' class='btn btn-primary'>Edit</a></td>
+            <td class='text-center'><a href='javascript:void(0);' onclick="javascript:confirmDel(${cId})"class='btn btn-danger'>Del</a></td>
 					</tr>
           ${/results}
 				</tbody>
@@ -226,7 +250,14 @@ function getRandomInt(min, max)
 	</div>
 	
 </div>
-
+<script>
+    function confirmDel(id){
+    var r = confirm("คุณต้องการลบข้อมูลนี้ ?");
+    if (r == true) {
+         window.location.assign("contentAll/"+ id);
+    }
+    }
+</script>
 <br />
 
 

@@ -55,15 +55,36 @@ class HomeCtrl extends CI_Controller {
     $this->parser->parse('member/temp_main', $data);
    
   }
-  public function content(){
+  
+  public function contentAll($id = null){
+    if($id != null){
+      $arr = array('cId' => $id);
+      $this->db->delete('tbl_contents',$arr);
+      redirect(base_url().'homectrl/contentAll');
+    }else{
+      $pathAsset = assets();
+      $result = $this->Model_contents->getContents();
+      $data = array(
+                    'title' => 'insurancebroker360',
+                    'assets' => $pathAsset,
+                    'results' => $result
+                  );
+      $this->parser->parse('content/temp_contentAll', $data);
+    }
+   
+  }
+  public function content($id = null){
     $pathAsset = assets();
-    
+    $result = null;
+    if($id != null){
+      $result = $this->Model_contents->getContents($id);
+    }
     $data = array(
                   'title' => 'insurancebroker360',
                   'assets' => $pathAsset,
-                  
+                  'result' => $result
                 );
-//    print_r($data);
+    
     $this->parser->parse('content/temp_main', $data);
    
   }

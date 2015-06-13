@@ -20,8 +20,11 @@ class Model_contents extends CI_Model{
   
   # GET
 
-  public function getContents(){
+  public function getContents($ar = null){
      $result = 0;
+     if($ar != null){
+       $this->db->where('cId',$ar);
+     }
      $this->db->from('tbl_contents');
      $isQuery = $this->db->get();
      if($isQuery->num_rows()){

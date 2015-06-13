@@ -76,24 +76,49 @@
 				</form>
 			</li>
 			<li class="active opened active">
-				<a href="#">
+				<a href="index.html">
 					<i class="entypo-gauge"></i>
 					<span>Dashboard</span>
 				</a>
 				<ul>
-					<li >
+					<li class="active">
 						<a href="main">
 							<span>Dashboard Main</span>
 						</a>
 					</li>
-					<li class="active">
+					<li>
 						<a href="member">
-							<span>Member</span>
+							<span>ระบบสมาชิก แก้ไข/ดูรายชื่อ</span>
 						</a>
 					</li>
 					<li>
 						<a href="content">
-							<span>Content</span>
+							<span>ระบบจัดการเนือหา</span>
+						</a>
+					</li>
+					<li>
+						<a href="payment">
+							<span>ช่องทางการชำระเงิน</span>
+						</a>
+					</li>
+					<li>
+						<a href="accident">
+							<span>เบอร์แจ้งอุบัติเหตุ</span>
+						</a>
+					</li>
+					<li>
+						<a href="products">
+							<span>สินค้าและเบี้ยประกันภัย</span>
+						</a>
+					</li>
+					<li>
+						<a href="history">
+							<span>ประวัติ</span>
+						</a>
+					</li>
+					<li>
+						<a href="service">
+							<span>บริการ</span>
 						</a>
 					</li>
 					<li>
@@ -111,7 +136,6 @@
 				</ul>
 			</li>
 		</ul>
-				
 	</div>	
 	<div class="main-content">
 		
