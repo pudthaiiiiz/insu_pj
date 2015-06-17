@@ -22,6 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="${assets}css/slit-slider.css">
     <link rel="stylesheet" href="${assets}css/animate.css">
     <link rel="stylesheet" href="${assets}css/slide.css">
+    <link rel="stylesheet" href="${assets}css/royal-slider-1.0.min.css">
     <link rel="stylesheet" href="${assets}css/main.css">
     <link rel="stylesheet" href="${assets}css/loading.css">
   </head>
@@ -92,8 +93,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </main>
     <footer id="footer" data-temp-footer></footer>
 
-    <script src="${assets}js/plugin/modernizr-2.6.2.min.js"></script>
-    <script src="${assets}js/plugin/jquery-1.11.1.min.js"></script>
+    <!--<script src="${assets}js/plugin/modernizr-2.6.2.min.js"></script>-->
+    <script src="${assets}js/plugin/jquery.js"></script>
+    <script src="${assets}js/plugin/jquery.easing.1.3.min.js"></script>
+    <script src="${assets}js/plugin/royal-slider-1.0.min.js"></script>
+    <script src="${assets}js/plugin/royal-custom.js"></script>
     <script src="${assets}js/plugin/angular.min.js"></script>
     <script src="${assets}js/angular-route/angular-route.js"></script>
     <script src="${assets}js/app.js"></script>
@@ -113,7 +117,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="${assets}js/plugin/jquery.singlePageNav.min.js"></script>
     <script src="${assets}js/plugin/jquery.fancybox.pack.js"></script>
     <script src="${assets}js/plugin/owl.carousel.min.js"></script>
-    <script src="${assets}js/plugin/jquery.easing.min.js"></script>
     <script src="${assets}js/plugin/jquery.slitslider.js"></script>
     <script src="${assets}js/plugin/jquery.ba-cond.min.js"></script>
     <script src="${assets}js/plugin/jquery.slides.min.js"></script>

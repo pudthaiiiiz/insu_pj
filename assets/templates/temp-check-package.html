@@ -5,7 +5,7 @@
      <br><br>
      <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="needToRister = true" ng-show="!needToRister">สมัครสมาชิก</button>
       
-      <div class="col-md-12 wow animated fadeInLeft" ng-if="needToRister">
+      <div class="col-md-12 wow animated fadeInLeft" ng-if="needToRister && saveMember.status !== 'success'">
           <div class="box-register box-form">
             <form ng-submit="submitRegisterForm()">
               <div class="input-field">

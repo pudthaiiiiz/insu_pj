@@ -9,34 +9,53 @@
 app.directive('tempSlide', function () {
   return {
     restrict: 'A',
-    templateUrl: Global.baseurl+'assets/templates/temp-slide.html'
+    templateUrl: Global.baseurl + 'assets/templates/temp-slide.html',
+    link: function () {
+
+//      setTimeout(function () {
+        new RoyalSlider("#myGallery1", {
+          captionShowEffects: ["moveleft", "fade"],
+          captionShowDelay: 200,
+          captionShowSpeed: 400,
+          captionShowEasing: "easeOutBack",
+          directionNavEnabled: true,
+          controlNavEnabled: true,
+          slideshowEnabled: true,
+          slideshowPauseOnHover: true,
+          autoScaleSlider: false,
+          loop: true,
+          slideshowDelay: 7000
+        });
+
+//      }, 300);
+    }
   };
 });
 
 app.directive('tempCheckPackage', function () {
   return {
     restrict: 'A',
-    templateUrl: Global.baseurl+'assets/templates/temp-check-package.html'
+    templateUrl: Global.baseurl + 'assets/templates/temp-check-package.html'
   };
 });
 
 app.directive('tempStep', function () {
   return {
     restrict: 'A',
-    templateUrl: Global.baseurl+'assets/templates/temp-step.html'
+    templateUrl: Global.baseurl + 'assets/templates/temp-step.html'
   };
 });
 
 app.directive('tempContent', function () {
   return {
     restrict: 'A',
-    templateUrl: Global.baseurl+'assets/templates/temp-content.html',
-     scope: {
-       assets : '@url',
-       contents : '@contents'
-     },
-     link: function(scope) {
-        console.log(scope.contents);
+    templateUrl: Global.baseurl + 'assets/templates/temp-content.html',
+    scope: {
+      assets: '@url',
+      contents: '@contents'
+    },
+    link: function (scope) {
+      console.log(scope.contents);
     }
   };
 });
@@ -44,10 +63,10 @@ app.directive('tempContent', function () {
 app.directive('tempWhyMe', function () {
   return {
     restrict: 'A',
-    templateUrl: Global.baseurl+'assets/templates/temp-why-me.html',
+    templateUrl: Global.baseurl + 'assets/templates/temp-why-me.html',
     scope: {
-       assets : '@url'
-     }
+      assets: '@url'
+    }
 //     link: function(scope) {
 //        do
 //    }
@@ -57,36 +76,36 @@ app.directive('tempWhyMe', function () {
 app.directive('tempFollowUs', function () {
   return {
     restrict: 'A',
-    templateUrl: Global.baseurl+'assets/templates/temp-follow-us.html'
+    templateUrl: Global.baseurl + 'assets/templates/temp-follow-us.html'
   };
 });
 
 app.directive('tempContactUs', function () {
   return {
     restrict: 'A',
-    templateUrl: Global.baseurl+'assets/templates/temp-contact-us.html'
+    templateUrl: Global.baseurl + 'assets/templates/temp-contact-us.html'
   };
 });
 
 app.directive('tempFooter', function () {
   return {
     restrict: 'A',
-    templateUrl: Global.baseurl+'assets/templates/temp-footer.html'
+    templateUrl: Global.baseurl + 'assets/templates/temp-footer.html'
   };
 });
 
 app.directive('tempLoad', function () {
   return {
     restrict: 'A',
-    templateUrl: Global.baseurl+'assets/templates/temp-load.html'
+    templateUrl: Global.baseurl + 'assets/templates/temp-load.html'
   };
 });
 
-app.directive('selectSearch',['HomeServices', function (HomeServices) {
-  return {
-    restrict: 'A',
-    require: 'ngModel',
-    link : function (scope, element, attrs, ngModel) {
+app.directive('selectSearch', ['HomeServices', function (HomeServices) {
+    return {
+      restrict: 'A',
+      require: 'ngModel',
+      link: function (scope, element, attrs, ngModel) {
 //           scope.$watch(function (oldValue, newValue) {
 //             if (attrs.ngModel === 'formSearch.brand') {
 //              if(newValue !== undefined){
@@ -95,6 +114,6 @@ app.directive('selectSearch',['HomeServices', function (HomeServices) {
 ////               HomeServices.showLoad(true);
 //             }
 //           });
-    }
-  };
-}]);
+      }
+    };
+  }]);
