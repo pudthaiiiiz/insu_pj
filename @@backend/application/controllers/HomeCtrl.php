@@ -16,6 +16,17 @@ class HomeCtrl extends CI_Controller {
                 );
     $this->parser->parse('temp_login', $data);
 	}
+  
+  public function testajax(){
+    $pathAsset = assets();
+    $data = array(
+                  'title' => 'insurancebroker360',
+                  'assets' => $pathAsset
+                
+                  
+                );
+    $this->parser->parse('testajax', $data);
+  }
   public function main(){
     $pathAsset = assets();
    
@@ -73,19 +84,29 @@ class HomeCtrl extends CI_Controller {
     }
    
   }
-  public function content($id = null){
+  public function content(){
     $pathAsset = assets();
-    $result = null;
-    if($id != null){
-      $result = $this->Model_contents->getContents($id);
-    }
+    $data = array('title' => 'insurancebroker360',
+                  'assets' => $pathAsset      
+                );
+    $this->parser->parse('content/temp_main', $data);
+   
+  }
+  public function contentEdit($id = null){
+    $pathAsset = assets();
+    
+      $result = $this->Model_contents->getRowContent($id);
+    
     $data = array(
                   'title' => 'insurancebroker360',
                   'assets' => $pathAsset,
-                  'result' => $result
+                  'cTitle' => $result->cTitle,
+                  'cDes' => $result->cDes,
+                  'cDetail' => $result->cDetail,
+                  'cImage' => $result->cImage
                 );
     
-    $this->parser->parse('content/temp_main', $data);
+    $this->parser->parse('content/temp_edit', $data);
    
   }
 }

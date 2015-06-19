@@ -20,11 +20,9 @@ class Model_contents extends CI_Model{
   
   # GET
 
-  public function getContents($ar = null){
+  public function getContents(){
      $result = 0;
-     if($ar != null){
-       $this->db->where('cId',$ar);
-     }
+   
      $this->db->from('tbl_contents');
      $isQuery = $this->db->get();
      if($isQuery->num_rows()){
@@ -32,6 +30,20 @@ class Model_contents extends CI_Model{
      }
      return $result;
   }
+  
+  
+  public function getRowContent($ar = null){
+     $result = 0;
+     $this->db->where('cId',$ar);
+     $this->db->from('tbl_contents');
+     $isQuery = $this->db->get();
+     if($isQuery->num_rows()){
+      $result = $isQuery->row();
+     }
+     return $result;
+  }
+  
+  
      
   # NUMBER
      

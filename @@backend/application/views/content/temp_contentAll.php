@@ -61,8 +61,7 @@
 		
 		
 				
-		
-				
+					
 		<ul id="main-menu" class="">
 			<!-- add class "multiple-expanded" to allow multiple submenus to open -->
 			<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
@@ -76,48 +75,48 @@
 				</form>
 			</li>
 			<li class="active opened active">
-				<a href="index.html">
+				<a href="#">
 					<i class="entypo-gauge"></i>
 					<span>Dashboard</span>
 				</a>
 				<ul>
 					<li class="active">
-						<a href="main">
+						<a href="<?php echo base_url(); ?>homectrl/main">
 							<span>Dashboard Main</span>
 						</a>
 					</li>
 					<li>
-						<a href="member">
+						<a href="<?php echo base_url(); ?>homectrl/member">
 							<span>ระบบสมาชิก แก้ไข/ดูรายชื่อ</span>
 						</a>
 					</li>
 					<li>
-						<a href="content">
+						<a href="<?php echo base_url(); ?>homectrl/content">
 							<span>ระบบจัดการเนือหา</span>
 						</a>
 					</li>
 					<li>
-						<a href="payment">
+						<a href="<?php echo base_url(); ?>homectrl/payment">
 							<span>ช่องทางการชำระเงิน</span>
 						</a>
 					</li>
 					<li>
-						<a href="accident">
+						<a href="<?php echo base_url(); ?>homectrl/accident">
 							<span>เบอร์แจ้งอุบัติเหตุ</span>
 						</a>
 					</li>
 					<li>
-						<a href="products">
+						<a href="<?php echo base_url(); ?>homectrl/products">
 							<span>สินค้าและเบี้ยประกันภัย</span>
 						</a>
 					</li>
 					<li>
-						<a href="history">
+						<a href="<?php echo base_url(); ?>homectrl/history">
 							<span>ประวัติ</span>
 						</a>
 					</li>
 					<li>
-						<a href="service">
+						<a href="<?php echo base_url(); ?>homectrl/service">
 							<span>บริการ</span>
 						</a>
 					</li>
@@ -136,6 +135,8 @@
 				</ul>
 			</li>
 		</ul>
+    
+    
 	</div>	
 	<div class="main-content">
 		
@@ -239,7 +240,7 @@ function getRandomInt(min, max)
             <td width="150px"><img src="<?php echo base_url(); ?>../uploads/${cImage}" width="150px"></td>
 						<td>${cTitle}</td>
 						<td>${cDes}</td>
-            <td class='text-center'><a href='content/${cId}' class='btn btn-primary'>Edit</a></td>
+            <td class='text-center'><a href='contentEdit/${cId}' class='btn btn-primary'>Edit</a></td>
             <td class='text-center'><a href='javascript:void(0);' onclick="javascript:confirmDel(${cId})"class='btn btn-danger'>Del</a></td>
 					</tr>
           ${/results}

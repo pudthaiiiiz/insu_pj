@@ -19,45 +19,43 @@ class ContentsApiCtrl extends CI_Controller {
 //		$this->load->view('welcome_message');
   }
 
-  public function callAddContent(){
+ 
+
+  public function callAddContent2() {
+    
+    $getName = moveFile("uploads/temp/","../uploads/content/",$this->input->post('temp'));
+    echo $getName;
+
+  }
+
+  public function callAddContent() {
     $resp['status'] = 'error';
     ## VALIDA
-    
+
     $this->load->library('form_validation');
     $this->form_validation->set_rules('title', 'title', 'required');
     $this->form_validation->set_rules('detail', 'detail', 'required');
     $this->form_validation->set_rules('des', 'des', 'required');
-    
+    $this->form_validation->set_rules('temp', 'temp', 'required');
+
     ## UPLOAD 
-  
-    $new_name = time().'.jpg';
-		$config['upload_path'] = './../uploads/';
-		$config['new_image']= './../uploads/'.$new_name.'.jpg';
-		$config['allowed_types'] = 'gif|jpg|png|jpeg';
-		$config['file_name'] = $new_name;
-    $this->load->library('upload', $config);
-    $this->upload->initialize($config);
+    $getName = moveFile("uploads/temp/","../uploads/content/",$this->input->post('temp'));
     ## WORK
-    if ($this->form_validation->run() == FALSE ) {
+    if ($this->form_validation->run() == FALSE) {
       $resp['result'] = 'bot';
-    }else{
-      if($this->upload->do_upload("img")){
-      $values = array('cTitle' => $this->input->post('title'),
-                      'cDes' => $this->input->post('des'),
-                      'cDetail' => $this->input->post('detail'),
-                      'cImage' => $new_name,
-                      'cCreateAt' => $this->dateTime);
+    } else {
       
-      $isContents = $this->Model_contents->addContent($values);
-      $resp['status'] = 'success';
-      }else{
-        $resp['result'] ="noupload";
-      }
+        $values = array('cTitle' => $this->input->post('title'),
+            'cDes' => $this->input->post('des'),
+            'cDetail' => $this->input->post('detail'),
+            'cImage' => $getName,
+            'cCreateAt' => $this->dateTime);
+
+        $isContents = $this->Model_contents->addContent($values);
+        $resp['status'] = 'success';
     }
     $result = json_encode($resp);
     echo $result;
-    
-    
-  } 
+  }
 
 }
