@@ -14,24 +14,32 @@ app.controller('MenuCtrl', ['$scope',  function ($scope) {
     link : Global.baseurl
     },
     {
-    name : 'ค้นหาเบี้ยประกันภัย',
-    link : '#searchForm'
+    name : 'ประวัติ',
+    link : '#'
     },
     {
-    name : 'สมัครง่าย',
+    name : 'สมัครสมาชิก',
     link : '#step'
     },
     {
-    name : 'บทความ',
-    link : '#content'
+    name : 'เบี้ยประกันภัย',
+    link : '#'
     },
     {
-    name : 'ทำไมต้องเรา',
-    link : '#whyme'
+    name : 'บริการ',
+    link : '#'
+    },
+    {
+    name : 'ช่องทางการชำระเงิน',
+    link : '#'
     },
     {
     name : 'ติดต่อเรา',
     link : '#contact-us'
+    },
+    {
+    name : 'เบอร์แจ้งอุบัติเหตุ',
+    link : '#'
     }
   ];
 }]);

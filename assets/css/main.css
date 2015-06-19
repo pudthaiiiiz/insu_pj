@@ -1320,6 +1320,11 @@ textarea.form-control {
 
 @media only screen and (max-width: 767px) {
 
+    .temp-slide{
+      padding-top: 110px;
+    }
+
+
     body {
         font-size: 14px;
     }
@@ -1482,6 +1487,7 @@ textarea.form-control {
     .caption-content strong {
         font-size: 35px;
     }
+
 
 /*about*/
 
