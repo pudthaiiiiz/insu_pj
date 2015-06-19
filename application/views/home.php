@@ -54,42 +54,80 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <section id="home" data-temp-slide></section>    
       <section id="searchForm" data-temp-check-package></section>     
       <section id="step" data-temp-step></section> 
-      
-      <div ng-controller="ContentCtrl">
-  <div class="container">
-    <div class="row">
 
-      <div class="sec-title text-center wow animated fadeInDown">
-        <h2>บทความ</h2>
-        <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+      <div ng-controller="ContentCtrl">
+        <div class="container">
+          <div class="row">
+
+            <div class="sec-title text-center wow animated fadeInDown">
+              <h2>บทความ</h2>
+              <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+            </div>
+
+
+            <ul class="project-wrapper wow animated fadeInUp">
+              ${contents}
+              <li class="portfolio-item">
+                <div class="img-crop" style="background-image: url('${baseUrl}uploads/${cImage}')"></div>
+                <img src="${baseUrl}uploads/${cImage}" class="img-responsive transparent" alt="${cDes}">
+              <figcaption class="mask">
+                <h3>${cTitle}</h3>
+                <p>${cDes} </p>
+              </figcaption>
+              <ul class="external">
+                <!--<li><a class="fancybox" title="Araund The world" data-fancybox-group="works" href="{{assets}}img/portfolio/item.jpg"><i class="fa fa-search"></i></a></li>-->
+                <li><a href="${baseUrl}content/${cId}"><i class="fa fa-link"></i></a></li>
+              </ul>
+              </li>
+              ${/contents}
+            </ul>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
+              <h2>&nbsp;</h2>
+            </div>
+            
+            <div class="col-md-8 col-sm-8 col-xs-12 wow animated zoomIn">
+              <h2>ขั้นตอนการเคลมประกันภัยรถยนต์</h2>
+              <p>insurancebroker360.com จะทำให้การเคลมประกันภัยรถยนต์เป็นเรื่องที่ง่ายเหลือเชื่อ</p>
+              <p>ทุกครั้งที่คุณต้องการแจ้งเคลมหลังเกิดอุบัติเหตุ ผู้เชี่ยวชาญของเราจะดูแลคุณตั้งแต่การให้คำแนะนำ จนถึงการส่งมอบรถ โดยแจ้งความคืบหน้าเป็นระยะ และไม่มีค่าใช้จ่ายใดๆเพิ่มเติม</p>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12 text-center wow animated zoomIn">
+              <p><img alt="Special Offer" src="http://www.directasia.co.th/DirectAsiaThailand/media/assets/images/content/process-icon.png" /><br />
+                &nbsp;</p>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
+              <h2>ช่องทางการชำระเงิน</h2>
+              <p>&nbsp;</p>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12 wow animated zoomIn">
+              <p><img alt="Pay Securely Online" src="http://www.directasia.co.th/DirectAsiaThailand/media/assets/images/content/online-icon.png" style="float:left; margin-right:20px" /></p>
+              <p><a href="#">จ่ายออนไลน์</a></p>
+              <p>จ่ายได้ทันทีและปลอดภัย ด้วยบัตรวีซ่าหรือมาสเตอร์การ์ดของคุณ</p>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12 wow animated zoomIn">
+              <p><img alt="Pay Securely Online" src="http://www.directasia.co.th/DirectAsiaThailand/media/assets/images/content/over-phone-icon.png" style="float:left; margin-right:20px" /></p><p><a href="http://www.directasia.co.th/online-car-insurance/buy-save/#ways-to-buy">ผ่านทางโทรศัพท์</a></p>
+              <p>โทร.หาเราเพื่อชำระเงิน<br />
+                ได้ที่ 02-627-7777</p>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12 wow animated zoomIn">
+              <p><img alt="Pay Securely Online" src="http://www.directasia.co.th/DirectAsiaThailand/media/assets/images/content/service-count.png" style="float:left; margin-right:20px" /></p>
+              <p><a href="#">เคาน์เตอร์เซอร์วิส</a></p>
+              <p>จ่ายเงินได้ที่เคาน์เตอร์เซอร์วิสทุกแห่ง (7-Eleven, Max Value, Tops)</p>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
+              <h2>&nbsp;</h2>
+            </div>
+            
+          </div>
+        </div>
       </div>
 
-
-      <ul class="project-wrapper wow animated fadeInUp">
-        ${contents}
-        <li class="portfolio-item">
-          <div class="img-crop" style="background-image: url('${baseUrl}uploads/${cImage}')"></div>
-          <img src="${baseUrl}uploads/${cImage}" class="img-responsive transparent" alt="${cDes}">
-        <figcaption class="mask">
-          <h3>${cTitle}</h3>
-          <p>${cDes} </p>
-        </figcaption>
-        <ul class="external">
-          <!--<li><a class="fancybox" title="Araund The world" data-fancybox-group="works" href="{{assets}}img/portfolio/item.jpg"><i class="fa fa-search"></i></a></li>-->
-          <li><a href="${baseUrl}content/${cId}"><i class="fa fa-link"></i></a></li>
-        </ul>
-        </li>
-        ${/contents}
-      </ul>
-
-    </div>
-  </div>
-</div>
-      
-      <!--<section id="content" data-temp-content data-url="${assets}" data-contents="${contents}"></section>--> 
+<!--<section id="content" data-temp-content data-url="${assets}" data-contents="${contents}"></section>--> 
 <!--      <section id="whyme" data-temp-why-me data-url="${assets}"></section> 
-      <section id="follow-us" data-temp-follow-us></section> 
-      <section id="contact-us" data-temp-contact-us></section> -->
+<section id="follow-us" data-temp-follow-us></section> 
+<section id="contact-us" data-temp-contact-us></section> -->
     </main>
     <footer id="footer" data-temp-footer></footer>
 
