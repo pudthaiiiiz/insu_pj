@@ -152,10 +152,10 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
         console.log('API Timeout');
       });
     };
-    //loop call service
-    for (name in services) {
-      callService(services[name]);
-    }
+//    loop call service
+//    for (name in services) {
+//      callService(services[name]);
+//    }
     
     $scope.submitRegisterForm = function() {
 //      console.log($scope.formRegister);

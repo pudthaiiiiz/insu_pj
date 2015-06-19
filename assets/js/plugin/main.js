@@ -49,14 +49,15 @@ $(document).ready(function(){
       });
 //  $('#slides').css( 'display', 'block');
   },1000);
-	jQuery('.nav').singlePageNav({
-		offset: jQuery('.nav').outerHeight(),
-		filter: ':not(.external)',
-		speed: 2000,
-		currentClass: 'current',
-		easing: 'easeInOutExpo',
-		updateHash: true,
-	});
+//  
+//	jQuery('.nav').singlePageNav({
+//		offset: jQuery('.nav').outerHeight(),
+//		filter: ':not(.external)',
+//		speed: 2000,
+//		currentClass: 'current',
+//		easing: 'easeInOutExpo',
+//		updateHash: true
+//	});
 
 	
 	
