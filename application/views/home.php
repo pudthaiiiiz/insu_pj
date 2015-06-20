@@ -137,6 +137,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="${assets}js/plugin/royal-slider-1.0.min.js"></script>
     <script src="${assets}js/plugin/royal-custom.js"></script>
     <script src="${assets}js/plugin/angular.min.js"></script>
+    <script src="${assets}js/plugin/angular-sanitize.js"></script>
     <script src="${assets}js/angular-route/angular-route.js"></script>
     <script src="${assets}js/app.js"></script>
     <script src="${assets}js/MenuCtrl.js"></script>
