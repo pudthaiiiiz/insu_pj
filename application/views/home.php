@@ -51,9 +51,110 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </div>
     </header>
     <main class="site-content" role="main" ng-init="needToRister = false">
-      <section id="home" data-temp-slide></section>    
-      <section id="searchForm" data-temp-check-package></section>     
-      <section id="step" data-temp-step></section> 
+      <!--<section id="home" data-temp-slide></section>-->    
+      <div ng-controller="SlideCtrl" ng-cloak class="temp-slide">
+
+        <div id="wrapper"> 
+          <div id="myGallery1" class="royalSlider clearfix">
+
+            <ul class="royalSlidesContainer" id="testId">
+              <li class="royalSlide"> 
+
+                <!--<div  style="background-image:url({site_url()}content/images/slide/{$slide[i]->SlidePic});">-->
+                <div class="royalCaption">
+                  <div class="royalCaptionItem title" data-show-effect="moveleft fade"  data-move-offset="10">จ่ายแพงกว่าทำไม</div>
+                  <div class="royalCaptionItem content" data-show-effect="moveleft fade" data-delay="400" data-move-offset="15" >วันนี้ต่อประกันในราคาต้นทุน ดีกว่ามั้ย
+
+<!--<p><a href="#" target="_self" class="" title="BTN">BTN</a><p>-->
+                    <button type="button" class="btn_link btn btn-primary btn-lg">อ่านต่อ</button>
+
+                  </div>
+                </div>                               	
+
+                <img src="${assets}img/piggy-bank_2283301b.jpg">
+                <!--</div>-->
+              </li>
+              <li class="royalSlide"> 
+
+                <!--<div  style="background-image:url({site_url()}content/images/slide/{$slide[i]->SlidePic});">-->
+                <div class="royalCaption">
+                  <div class="royalCaptionItem title" data-show-effect="moveleft fade"  data-move-offset="10">ที่ปรึกษาด้านประกันรถยนต์</div>
+                  <div class="royalCaptionItem content" data-show-effect="moveleft fade" data-delay="400" data-move-offset="15" >เข้ามาเป็นส่วนหนึ่งของเรา มาเป็นที่ปรึกษาด้านประกันรถยนต์
+
+<!--<p><a href="#" target="_self" class="" title="BTN">BTN</a><p>-->
+                    <button type="button" class="btn_link btn btn-primary btn-lg">สมัครเป็นที่ปรึกษา</button>
+
+                  </div>
+                </div>                               	
+
+                <img src="${assets}img/kick-your-own-butt-2-professionalvas.jpg">
+                <!--</div>-->
+              </li>
+            </ul>                 
+          </div> <!-- Gallery End -->        
+        </div> <!-- #wrapper end -->
+
+
+
+      </div>
+            <!--<section id="searchForm" data-temp-check-package></section>-->     
+            <!--<section id="step" data-temp-step></section>--> 
+      <section id="step" data-temp-step>
+        <div ng-controller="StepCtrl">
+          <div class="container">
+            <div class="row">
+              <!--      <div class="sec-title text-center">
+                      <h2 class="wow animated bounceInLeft">สมัครง่าย คลิกเลย</h2>
+                    </div>-->
+
+              <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.9s">
+                <div class="service-item">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/L7rgmUov1xE?list=PLwkyYG-MjCyOP-dboCXSc27S_HXUtq6H_" frameborder="0" allowfullscreen></iframe>						
+                  <br>
+                  <br>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn">
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa fa-home fa-3x"></i>
+                  </div>
+                  <h3>การันตีราคาดีที่สุด</h3>
+                  <p>เราให้ราคาโดนใจ ผู้ขับขี่ปลอดภัยทุกท่าน</p>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.3s">
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa fa-tasks fa-3x"></i>
+                  </div>
+                  <h3>การันตีคุณภาพ</h3>
+                  <p>ความสำเร็จที่ผ่านการพิสูจน์ จากทั่วเอเชีย</p>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.6s">
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa fa-clock-o fa-3x"></i>
+                  </div>
+                  <h3>การันตีถึงจุดเกิดเหตุเร็ว</h3>
+                  <p>เราจะมาถึงจุดเกิดเหตุภายใน 30 นาที หากช้ากว่านี้ รับฟรี บัตรเติมน้ำมันมูลค่า 1,000 บาท </p>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.9s">
+                <div class="service-item">
+                  <div class="service-icon">
+                    <i class="fa fa-heart fa-3x"></i>
+                  </div>
+                  <h3>การันตีบริการอบอุ่น</h3>
+                  <p>แม้เราจะเป็นบริษัทออนไลน์ แต่เราดูแลเอาใจใส่อย่างใกล้ชิดและเป็นกันเอง </p>							
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       <div ng-controller="ContentCtrl">
         <div class="container">
@@ -85,7 +186,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
               <h2>&nbsp;</h2>
             </div>
-            
+
             <div class="col-md-8 col-sm-8 col-xs-12 wow animated zoomIn">
               <h2>ขั้นตอนการเคลมประกันภัยรถยนต์</h2>
               <p>insurancebroker360.com จะทำให้การเคลมประกันภัยรถยนต์เป็นเรื่องที่ง่ายเหลือเชื่อ</p>
@@ -119,7 +220,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
               <h2>&nbsp;</h2>
             </div>
-            
+
           </div>
         </div>
       </div>
@@ -129,15 +230,46 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <section id="follow-us" data-temp-follow-us></section> 
 <section id="contact-us" data-temp-contact-us></section> -->
     </main>
-    <footer id="footer" data-temp-footer></footer>
+    <!--<footer id="footer" data-temp-footer></footer>-->
+    <footer id="footer" data-temp-footer>
+      <div ng-controller="FooterCtrl">
+        <div class="container">
+          <div class="row text-center">
+            <div class="footer-content">
+              <div class="wow animated fadeInDown">
+                <p>INSURANCE BROKER 360</p>
+              </div>
+              <!--
+                      <form action="#" method="post" class="subscribe-form wow animated fadeInUp">
+                        <div class="input-field">
+                          <input type="email" class="subscribe form-control" placeholder="Enter Your Email...">
+                          <button type="submit" class="submit-icon">
+                            <i class="fa fa-paper-plane fa-lg"></i>
+                          </button>
+                        </div>
+                      </form>-->
+              <div class="footer-social">
+                <ul>
+                  <li class="wow animated zoomIn"><a href="#"><i class="fa fa-thumbs-up fa-3x"></i></a></li>
+                  <li class="wow animated zoomIn" data-wow-delay="0.3s"><a href="#"><i class="fa fa-twitter fa-3x"></i></a></li>
+                  <li class="wow animated zoomIn" data-wow-delay="0.6s"><a href="#"><i class="fa fa-skype fa-3x"></i></a></li>
+                  <li class="wow animated zoomIn" data-wow-delay="0.9s"><a href="#"><i class="fa fa-dribbble fa-3x"></i></a></li>
+                  <li class="wow animated zoomIn" data-wow-delay="1.2s"><a href="#"><i class="fa fa-youtube fa-3x"></i></a></li>
+                </ul>
+              </div>
 
-    <!--<script src="${assets}js/plugin/modernizr-2.6.2.min.js"></script>-->
+              <p>Copyright &copy; 2015 Design and Developed By <a href="http://th-script.com/">TH-SCRIPT.COM</a> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+        <!--<script src="${assets}js/plugin/modernizr-2.6.2.min.js"></script>-->
     <script src="${assets}js/plugin/jquery.js"></script>
     <script src="${assets}js/plugin/jquery.easing.1.3.min.js"></script>
     <script src="${assets}js/plugin/royal-slider-1.0.min.js"></script>
     <script src="${assets}js/plugin/royal-custom.js"></script>
     <script src="${assets}js/plugin/angular.min.js"></script>
-    <script src="${assets}js/plugin/angular-sanitize.js"></script>
     <script src="${assets}js/angular-route/angular-route.js"></script>
     <script src="${assets}js/app.js"></script>
     <script src="${assets}js/MenuCtrl.js"></script>
@@ -150,7 +282,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="${assets}js/ContactUsCtrl.js"></script>
     <script src="${assets}js/FooterCtrl.js"></script>
     <script src="${assets}js/LoadCtrl.js"></script>
-    <script src="${assets}js/directives.js"></script>
+    <!--<script src="${assets}js/directives.js"></script>-->
     <script src="${assets}js/services/HomeServices.js"></script>
     <script src="${assets}js/plugin/bootstrap.min.js"></script>
     <script src="${assets}js/plugin/jquery.singlePageNav.min.js"></script>
@@ -161,5 +293,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="${assets}js/plugin/jquery.slides.min.js"></script>
     <script src="${assets}js/plugin/wow.min.js"></script>
     <script src="${assets}js/plugin/main.js"></script>
+    <script>
+      setTimeout(function () {
+
+
+        new RoyalSlider("#myGallery1", {
+          captionShowEffects: ["moveleft", "fade"],
+          captionShowDelay: 200,
+          captionShowSpeed: 400,
+          captionShowEasing: "easeOutBack",
+          directionNavEnabled: true,
+          controlNavEnabled: true,
+          slideshowEnabled: true,
+          slideshowPauseOnHover: true,
+          autoScaleSlider: false,
+          loop: true,
+          slideshowDelay: 7000
+        });
+
+      }, 200);
+
+    </script>
   </body>
 </html>
