@@ -7,5 +7,6 @@
 
 var app  = angular.module('application', ['ngRoute']);
 var Global = {};
-Global['baseurl'] = "http://local.insu.com/";
-Global['assets'] = "http://local.insu.com/assets/";
+var baseurl = angular.element('meta[name="baseUrl"]').attr('content');
+Global['baseurl'] = baseurl;
+Global['assets'] = baseurl+"assets/";

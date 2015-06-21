@@ -10,6 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>insurancebroker360</title>		
+    <meta name="baseUrl" content="${baseUrl}">
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
