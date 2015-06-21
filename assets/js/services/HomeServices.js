@@ -56,6 +56,24 @@ app.factory('HomeServices', function ($http, $rootScope) {
               data: formData
           });
           return promise;
+        },
+        getSlide : function (data) {
+          var formData = data;
+          var promise = $http({
+              method: 'post',
+              url: 'api-get-slide',
+              data: formData
+          });
+          return promise;
+        },
+        getContent : function (data) {
+          var formData = data;
+          var promise = $http({
+              method: 'post',
+              url: 'api-get-content',
+              data: formData
+          });
+          return promise;
         }
     };
 });

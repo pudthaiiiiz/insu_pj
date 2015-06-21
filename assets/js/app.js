@@ -6,6 +6,20 @@
 /* global Global, angular */
 
 var app  = angular.module('application', ['ngRoute']);
+var messageConfig = {};
+messageConfig['loseInternet'] = 'No internet access.';
+messageConfig['apiError'] = 'API STATUS ERROR';
+var baseurl = angular.element('meta[name="baseUrl"]').attr('content');
 var Global = {};
-Global['baseurl'] = "http://local.insu.com/";
-Global['assets'] = "http://local.insu.com/assets/";
+Global['handle'] = {};
+Global['baseurl'] = baseurl;
+Global['uploads'] = baseurl+"uploads/";
+Global['assets'] = baseurl+"assets/";
+Global.handle = {
+  loseInternet : function(){
+    console.log(messageConfig.loseInternet);
+  },
+  apiError : function(){
+    console.log(messageConfig.apiError);
+  }
+};
