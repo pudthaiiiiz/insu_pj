@@ -12,22 +12,6 @@ app.directive('tempSlide', function () {
     templateUrl: Global.baseurl + 'assets/templates/temp-slide.html',
     link: function () {
 
-//      setTimeout(function () {
-        new RoyalSlider("#myGallery1", {
-          captionShowEffects: ["moveleft", "fade"],
-          captionShowDelay: 200,
-          captionShowSpeed: 400,
-          captionShowEasing: "easeOutBack",
-          directionNavEnabled: true,
-          controlNavEnabled: true,
-          slideshowEnabled: true,
-          slideshowPauseOnHover: true,
-          autoScaleSlider: false,
-          loop: true,
-          slideshowDelay: 7000
-        });
-
-//      }, 300);
     }
   };
 });
@@ -51,11 +35,10 @@ app.directive('tempContent', function () {
     restrict: 'A',
     templateUrl: Global.baseurl + 'assets/templates/temp-content.html',
     scope: {
-      assets: '@url',
       contents: '@contents'
     },
     link: function (scope) {
-      console.log(scope.contents);
+//      console.log(scope.contents);
     }
   };
 });
@@ -94,12 +77,12 @@ app.directive('tempFooter', function () {
   };
 });
 
-app.directive('tempLoad', function () {
-  return {
-    restrict: 'A',
-    templateUrl: Global.baseurl + 'assets/templates/temp-load.html'
-  };
-});
+//app.directive('tempLoad', function () {
+//  return {
+//    restrict: 'A',
+//    templateUrl: Global.baseurl + 'assets/templates/temp-load.html'
+//  };
+//});
 
 app.directive('selectSearch', ['HomeServices', function (HomeServices) {
     return {
