@@ -37,7 +37,7 @@ class AdminApiCtrl extends CI_Controller {
 
     if($login_status == 'success')
     {
-      $resp['redirect_url'] = 'homectrl/main';
+      $resp['redirect_url'] = base_url().'HomeCtrl/main';
     }
 
 

@@ -34,4 +34,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   $route['api-delete-level-package']['post'] = '';
   
   
+  // Slide
+  
+   $route['api-get-slide']['post'] = '';
+   $route['api-get-contest']['post'] = '';
+  
+  
   $route['api-get-profile']['post'] = 'api/CustomerApiCtrl/getProfile';
