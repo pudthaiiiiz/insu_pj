@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="${assets}css/neon-theme.css">
     <link rel="stylesheet" href="${assets}css/neon-forms.css">
     <link rel="stylesheet" href="${assets}css/custom.css">
+    <link rel="stylesheet" href="${assets}css/bootstrap-dialog.css">
 
     <script src="${assets}js/jquery-1.11.0.min.js"></script>
 
@@ -85,42 +86,47 @@
             </a>
             <ul>
               <li class="active">
-                <a href="<?php echo base_url(); ?>homectrl/main">
+                <a href="<?php echo base_url(); ?>HomeCtrl/main">
                   <span>Dashboard Main</span>
                 </a>
               </li>
               <li>
-                <a href="<?php echo base_url(); ?>homectrl/member">
-                  <span>ระบบสมาชิก แก้ไข/ดูรายชื่อ</span>
+                <a href="<?php echo base_url(); ?>HomeCtrl/member">
+                  <span>ระบบจัดการสมาชิก</span>
                 </a>
               </li>
               <li>
-                <a href="<?php echo base_url(); ?>homectrl/content">
+                <a href="<?php echo base_url(); ?>HomeCtrl/content">
                   <span>ระบบจัดการเนือหา</span>
                 </a>
               </li>
               <li>
-                <a href="<?php echo base_url(); ?>homectrl/payment">
+                <a href="<?php echo base_url(); ?>HomeCtrl/slide">
+                  <span>ระบบจัดการภาพ Slide</span>
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo base_url(); ?>HomeCtrl/payment">
                   <span>ช่องทางการชำระเงิน</span>
                 </a>
               </li>
               <li>
-                <a href="<?php echo base_url(); ?>homectrl/accident">
+                <a href="<?php echo base_url(); ?>HomeCtrl/accident">
                   <span>เบอร์แจ้งอุบัติเหตุ</span>
                 </a>
               </li>
               <li>
-                <a href="<?php echo base_url(); ?>homectrl/products">
+                <a href="<?php echo base_url(); ?>HomeCtrl/products">
                   <span>สินค้าและเบี้ยประกันภัย</span>
                 </a>
               </li>
               <li>
-                <a href="<?php echo base_url(); ?>homectrl/history">
+                <a href="<?php echo base_url(); ?>HomeCtrl/history">
                   <span>ประวัติ</span>
                 </a>
               </li>
               <li>
-                <a href="<?php echo base_url(); ?>homectrl/service">
+                <a href="<?php echo base_url(); ?>HomeCtrl/service">
                   <span>บริการ</span>
                 </a>
               </li>
@@ -129,11 +135,7 @@
                   <span>Popup</span>
                 </a>
               </li>
-              <li>
-                <a href="#">
-                  <span>Silde</span>
-                </a>
-              </li>
+             
 
 
             </ul>

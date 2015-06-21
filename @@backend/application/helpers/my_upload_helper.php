@@ -24,9 +24,13 @@ function removeDir($path = '') {
 
 function moveFile($pathTemp, $pathConfig, $inputFile) {
   $times = time();
+  $getImage = substr($inputFile , -4);
+  if(($getImage == "jpeg") && ($getImage == "JPEG")){
+    $getImage = ".jpeg";
+  }
   makeDir($pathConfig);
-  @copy($pathTemp . $inputFile, $pathConfig . $times . '.jpeg');
+  @copy($pathTemp . $inputFile, $pathConfig . $times . $getImage);
   removeDir($pathTemp);
   makeDir($pathTemp);
-  return $times.'jpeg';
+  return $times. $getImage;
 }

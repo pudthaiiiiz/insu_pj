@@ -16,17 +16,7 @@ class HomeCtrl extends CI_Controller {
                 );
     $this->parser->parse('temp_login', $data);
 	}
-  
-  public function testajax(){
-    $pathAsset = assets();
-    $data = array(
-                  'title' => 'insurancebroker360',
-                  'assets' => $pathAsset
-                
-                  
-                );
-    $this->parser->parse('testajax', $data);
-  }
+ 
   public function main(){
     $pathAsset = assets();
    
@@ -49,11 +39,6 @@ class HomeCtrl extends CI_Controller {
     $this->parser->parse('temp_main', $data);
    
   }
-  public function test(){
-    $MemberToDay = $this->Model_customer->numCustomerNow();
-    
-    $MemberToDay;
-  }
   public function member(){
     $pathAsset = assets();
     $result = $this->Model_customer->getCustomer();
@@ -66,6 +51,22 @@ class HomeCtrl extends CI_Controller {
     $this->parser->parse('member/temp_main', $data);
    
   }
+  
+  
+  // Sildes
+  
+  public function slide(){
+    $pathAsset = assets();
+    $data = array('title' => 'insurancebroker360',
+                  'assets' => $pathAsset      
+                );
+    $this->parser->parse('slide/temp_main', $data);
+   
+  }
+  
+  
+  
+  // Contents
   
   public function contentAll($id = null){
     if($id != null){
