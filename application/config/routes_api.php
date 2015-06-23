@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   
   // Slide
   
-   $route['api-get-slide']['post'] = '';
+   $route['api-get-slide']['post'] = 'SildeApiCtrl/callGetService';
    $route['api-get-contest']['post'] = '';
   
   
