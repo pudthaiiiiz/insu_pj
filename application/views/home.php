@@ -53,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </header>
     <main class="site-content" role="main" ng-init="needToRister = false">
       <section id="home" data-temp-slide></section>   
-            <!--<section id="searchForm" data-temp-check-package></section>-->     
+      <section id="searchForm" data-temp-check-package></section>     
       <section id="step" data-temp-step></section> 
       <section id="content" data-temp-content data-contents="${contents}"></section> 
       <!--      <section id="whyme" data-temp-why-me data-url="${assets}"></section> 
