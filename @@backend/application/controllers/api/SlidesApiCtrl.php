@@ -30,7 +30,6 @@ class SlidesApiCtrl extends CI_Controller {
     if ($this->form_validation->run() == FALSE) {
       $resp['status'] = 'bot';
     } else {
-      
         $values = array('slTitle' => $this->input->post('title'),
             'slDes' => $this->input->post('des'),
             'slImage' => $getName,
