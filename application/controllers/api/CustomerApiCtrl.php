@@ -30,6 +30,7 @@ class CustomerApiCtrl extends CI_Controller {
      	$this->form_validation->set_rules('inputEmail', 'email', 'required');
      	$this->form_validation->set_rules('inputPhone', 'phone', 'required');
      	$this->form_validation->set_rules('inputAddress', 'address', 'required');
+    
 
      		if ($this->form_validation->run() == FALSE){
      			$resp['status'] = "bot";
@@ -42,6 +43,9 @@ class CustomerApiCtrl extends CI_Controller {
                           'cusPassword' => sha1(md5($this->input->post('inputPassword'))),
                           'cusIdCard' => $this->input->post('inputIdCard'),
                           'cusLevel' => $this->input->post('inputLevel'),
+                          'oldCompany' => $this->input->post('inputOldInsurance'),
+                          'oldInsurance' => $this->input->post('inputBrand'),
+                          'oldRegister' => $this->input->post('inputOldInsuranceRegister'),
                           'cusToken' => uniqid(md5(mt_rand()), true),
                           'cusCreateAt' => $this->dateTime );
 
