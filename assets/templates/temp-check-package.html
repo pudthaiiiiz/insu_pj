@@ -1,6 +1,6 @@
 <div ng-controller="CheckPackageCtrl" ng-cloak class="check-package">
   <div class="container">
-    <div class="row" ng-init="needToRister = false">
+    <div class="row" ng-init="needToRister = true">
       
      <br><br>
      <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="needToRister = true" ng-show="!needToRister">สมัครสมาชิก</button>
@@ -30,6 +30,30 @@
               <div class="form-group">
                 <label>อีเมล์ :</label>
                 <input type="text" name="email" class="form-control" ng-model="formRegister.email" placeholder="อีเมล์" required title="กรอก อีเมล์">
+              </div>
+              <div class="form-group">
+                <label>ประกันที่เคยทำ :</label>
+                <input type="text" name="text" class="form-control" ng-model="formRegister.oldInsurance" placeholder="อีเมล์" required title="กรอก อีเมล์">
+              </div>
+              <div class="form-group">
+                <label>สนใจต่อจากเจ้าเดิมหรือป่าว :</label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="text" ng-model="formRegister.oldInsuranceRegister" value="0" required>
+                  ต่อเจ้าเดิม
+                </label>
+                <label>
+                  <input type="radio" name="text" ng-model="formRegister.oldInsuranceRegister" value="1" required>
+                  ต่อเจ้าใหม่
+                </label>
+              </div>
+              <div class="input-field" ng-if="data.Brands">
+                <label>รถที่ใช้งานปัจจุบัน :</label>
+                <select class="form-control" ng-model="formRegister.brand" data-select-search ng-change="selectWatch('brand')" required>
+                  <option value="">เลือกยี้ห้อ</option>
+                  <option ng-repeat="brand in data.Brands" value="{{brand.bName}}">{{brand.bName}}</option>
+                </select>
               </div>
 <!--              <div class="form-group">
                 <label>รูปภาพ (เอกสาร สำเนาบัตรประชาชน) :</label>

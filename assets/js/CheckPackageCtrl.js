@@ -153,9 +153,9 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
       });
     };
 //    loop call service
-//    for (name in services) {
-//      callService(services[name]);
-//    }
+    for (name in services) {
+      callService(services[name]);
+    }
     
     $scope.submitRegisterForm = function() {
 //      console.log($scope.formRegister);

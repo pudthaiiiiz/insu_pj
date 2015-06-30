@@ -33,9 +33,10 @@ app.controller('SlideCtrl', ['$scope', 'HomeServices', function ($scope, HomeSer
     var callService = function (serviceName) {
       var callServiceName = HomeServices[serviceName](params);
       callServiceName.success(function (data) {
-        var getData = angular.extend(data.data);
-        if (getData) {
+        if (data.status == 'success') {
+          var getData = angular.extend(data.data);
           $scope.slides = getData;
+          console.log($scope.slides);
           setTimeout(function(){
             setSlide(); 
           }, 1000);

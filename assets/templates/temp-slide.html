@@ -3,23 +3,23 @@
   <div id="wrapper" ng-if="slides"> 
     <div id="myGallery1" class="royalSlider clearfix">
       <ul class="royalSlidesContainer" id="testId">
-<!--        <li class="royalSlide" ng-repeat="slide in slides"> 
-          <div style="background-image:url({upload}/slide/{slide.slImage});">
+        <li class="royalSlide" ng-repeat="slide in slides"> 
+          <div style="background-image:url({{uploads}}slides/{{slide.slImage}});">
             <div class="royalCaption">
-              <div class="royalCaptionItem title" data-show-effect="moveleft fade"  data-move-offset="10">{slide.slTitle}</div>
-              <div class="royalCaptionItem content" data-show-effect="moveleft fade" data-delay="400" data-move-offset="15" >{slide.slDes}
+              <div class="royalCaptionItem title" data-show-effect="moveleft fade"  data-move-offset="10">{{slide.slTitle}}</div>
+              <div class="royalCaptionItem content" data-show-effect="moveleft fade" data-delay="400" data-move-offset="15" >{{slide.slDes}}
                 <p><a href="slide.slLink" target="_self" ng-if="slide.slLink">
-                    <button type="button" class="btn_link btn btn-primary btn-lg" ng-if="slide.slLinkName">{slide.slLinkName}</button>
+                    <button type="button" class="btn_link btn btn-primary btn-lg" ng-if="slide.slLinkName">{{slide.slLinkName}}</button>
                     <button type="button" class="btn_link btn btn-primary btn-lg" ng-if="!slide.slLinkName">คลิก</button>
                   </a><p>
               </div>
             </div>   
-            <img src="{upload}/slide/{slide.slImage}">
+            <img src="{{uploads}}slides/{{slide.slImage}}">
           </div>
-        </li>-->
+        </li>
 
                     
-                    <li class="royalSlide"> 
+<!--                    <li class="royalSlide"> 
         
                        <div  style="background-image:url({site_url()}content/images/slide/{$slide[i]->SlidePic});">
                        <div class="royalCaption">
@@ -50,12 +50,11 @@
                       
                       <img src="{{assets}}img/kick-your-own-butt-2-professionalvas.jpg">
                         </div>
-                    </li>
+                    </li>-->
 
       </ul>                 
     </div>        
   </div>
-
 
 
 </div>
