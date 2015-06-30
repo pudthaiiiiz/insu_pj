@@ -6,6 +6,7 @@
 /* global app, Global */
 
 app.controller('MenuCtrl', ['$scope',  function ($scope) {
+  $scope.assets = Global.assets;
   $scope.menu = {};
   $scope.menu.title = "insurancebroker360";
   $scope.menu.lists = [

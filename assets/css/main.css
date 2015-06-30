@@ -30,6 +30,10 @@
 .transparent{
   opacity: 0;
 }
+.logo-header{
+  width: 180px;
+  margin: -10px 20px;
+}
 body {
     background-color: #fff;
     font-family: 'Open Sans', sans-serif;
@@ -37,7 +41,10 @@ body {
     font-size: 16px;
     color: #818181;
 }
-
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
+  
+  border-color: rgb(227, 95, 0) !important;
+}
 figure, p, address {
     margin: 0;
 }

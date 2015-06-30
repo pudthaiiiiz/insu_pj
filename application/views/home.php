@@ -38,9 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <h1 class="navbar-brand">
-            <a href="#body" class="white"><span ng-bind="menu.title"></span> </a>
-          </h1>
+            <img src="{{assets}}img/logo_web.png" class="logo-header">
         </div>
         <nav class="collapse navbar-collapse navbar-right" role="navigation">
           <ul id="nav" class="nav navbar-nav">
