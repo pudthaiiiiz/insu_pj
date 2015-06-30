@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   
   
   ## API Slide
-  $route['api-add-slide']['post'] = 'SildeApiCtrl/callGetService';
+  $route['api-add-slide']['post'] = 'api/SlidesApiCtrl/callAddSlides';
   $route['api-edit-content']['post'] = 'api/ContentsApiCtrl/callEditContent';
   
   
