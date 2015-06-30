@@ -128,6 +128,9 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
           inputUserName: $scope.formRegister.username,
           inputPassword: $scope.formRegister.password,
           inputIdCard: $scope.formRegister.idCard,
+          inputOldInsurance: $scope.formRegister.oldInsurance,
+          inputOldInsuranceRegister: $scope.formRegister.oldInsuranceRegister,
+          inputBrand: $scope.formRegister.brand,
           inputLevel: 1
         };
       }
