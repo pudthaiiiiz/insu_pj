@@ -9,7 +9,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>insurancebroker360</title>		
+    <title>insurancebroker360</title>	
+    <meta name="baseUrl" content="${baseUrl}">	
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
@@ -37,9 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <h1 class="navbar-brand">
-            <a href="#body" class="white"><span ng-bind="menu.title"></span> </a>
-          </h1>
+            <img src="{{assets}}img/logo_web.png" class="logo-header">
         </div>
         <nav class="collapse navbar-collapse navbar-right" role="navigation">
           <ul id="nav" class="nav navbar-nav">
@@ -50,9 +49,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </nav>
       </div>
     </header>
-    <main class="site-content" role="main">
-      <section id="home" data-temp-slide></section>    
-      <div ng-controller="CheckPackageCtrl" ng-cloak class="check-package">
+    <main class="site-content" role="main">  
+      <!--<section id="home" data-temp-slide></section>-->   
+      <div ng-controller="CheckPackageCtrl" ng-cloak class="check-package" style="padding-top: 140px;">
         <div class="container">
           <div class="row">
             <div class="col-md-12 wow animated fadeInLeft">
@@ -76,8 +75,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     </main>
     <footer id="footer" data-temp-footer></footer>
-
-    <!--<script src="${assets}js/plugin/modernizr-2.6.2.min.js"></script>-->
+    <script src="${assets}js/plugin/modernizr-2.6.2.min.js"></script>
     <script src="${assets}js/plugin/jquery.js"></script>
     <script src="${assets}js/plugin/jquery.easing.1.3.min.js"></script>
     <script src="${assets}js/plugin/royal-slider-1.0.min.js"></script>
