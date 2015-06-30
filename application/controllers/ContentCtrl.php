@@ -31,5 +31,18 @@ class ContentCtrl extends CI_Controller {
     }
     $this->parser->parse('content', $data);
   }
-
+  public function getContentList(){
+  
+    $resp['status'] = 'error';
+    $resp['data'] = null;
+    $isData = $this->Model_content->getContentAll();
+      if($isData != 0 ){
+        $resp['status'] = 'success';
+        $resp['data'] = $isData;
+      }
+    $result = json_encode($resp);
+    echo $result;
+    
+    
+  }
 }
