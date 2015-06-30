@@ -35,8 +35,10 @@ app.controller('SlideCtrl', ['$scope', 'HomeServices', function ($scope, HomeSer
       callServiceName.success(function (data) {
         var getData = angular.extend(data.data);
         if (getData) {
-          setSlide();
           $scope.slides = getData;
+          setTimeout(function(){
+            setSlide(); 
+          }, 1000);
         }
 //        HomeServices.showLoad(false);
       }).error(function () {
@@ -49,7 +51,6 @@ app.controller('SlideCtrl', ['$scope', 'HomeServices', function ($scope, HomeSer
       callService(services[name]);
     }
 //    
-
     
   }]);
 
