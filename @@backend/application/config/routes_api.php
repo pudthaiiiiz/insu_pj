@@ -14,6 +14,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   $route['api-edit-content']['post'] = 'api/ContentsApiCtrl/callEditContent';
   
   
+  ## API Menu
+  $route['api-edit-menu']['post'] = 'api/MenuApiCtrl/editMenu';
+  
+  
  
   
   $route['api-get-profile']['post'] = 'api/CustomerApiCtrl/getProfile';
