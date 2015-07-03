@@ -6,6 +6,7 @@ class HomeCtrl extends CI_Controller {
     parent::__construct();
     $this->load->model('Model_customer');
     $this->load->model('Model_contents');
+    $this->load->model('Model_slide');
     $this->load->model('Model_menu');
   }
 	public function index()
@@ -62,6 +63,16 @@ class HomeCtrl extends CI_Controller {
                   'assets' => $pathAsset      
                 );
     $this->parser->parse('slide/temp_main', $data);
+   
+  }
+  public function slideAll(){
+    $pathAsset = assets();
+    $result = $this->Model_slide->getSlide();
+    $data = array('title' => 'insurancebroker360',
+                  'assets' => $pathAsset,
+                  'results' => $result
+                );
+    $this->parser->parse('slide/temp_slideAll', $data);
    
   }
   

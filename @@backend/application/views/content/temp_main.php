@@ -1,5 +1,5 @@
       <?php $this->load->view('template/header'); ?>
-        <div class="pull-right"> <a href="<?php echo base_url(); ?>homec, CKEDITOR, CKEDITORtrl/contentAll" class="btn btn-success">ดูเนื้อหามั้งหมด</a></div>
+        <div class="pull-right"> <a href="<?php echo base_url(); ?>HomeCtrl/contentAll" class="btn btn-success">ดูเนื้อหามั้งหมด</a></div>
         <div class="clearfix"></div>
         <br />
         <div class="panel panel-primary" data-collapsed="0">
@@ -73,7 +73,24 @@
         </div>
         <?php $this->load->view('template/footer'); ?>
         <script>
-         
+           function alertSuccess(){
+             var modal = BootstrapDialog.show({
+                    title: 'Success',
+                    type:BootstrapDialog.TYPE_SUCCESS,
+                    closable: true,
+                    
+                });
+                modal.getModalBody().hide();
+          }
+            function alertError(txt){
+             var modal = BootstrapDialog.show({
+                    title: txt,
+                    type:BootstrapDialog.TYPE_WARNING,
+                    closable: true
+                });
+                modal.getModalBody().hide();
+          }
+          
           
           /* global Global, CKEDTIOR */
             CKEDITOR.replace('detail');
@@ -91,9 +108,17 @@
               data: formData
             })
               .success(function(res) {
-//                alert( "Data Saved: " );
-                console.log(res);
-                
+              var result = JSON.parse(res);
+                if(result.status == "success"){
+                  alertSuccess();
+                  setTimeout(function() {
+                     window.location.href = Global.baseUrl+'HomeCtrl/contentAll';
+                  }, 3000);
+                }else if(result.status == "bot"){
+                  alertError('กรุณากรอกข้อมูลให้ครบ');
+                }else{
+                  console.log(result.status);
+                }
               });
           }
         </script>

@@ -7,12 +7,12 @@
   
 
 	<div class="col-sm-12">
-			<div class="pull-right"><a href="content" class="btn btn-success" style="margin-bottom:3px;">Add Contents</a></div><br/>
+			<div class="pull-right"><a href="<?php echo base_url();?>HomeCtrl/slide" class="btn btn-success" style="margin-bottom:3px;">Add Slide</a></div><br/>
       <div class="clearfix"></div>
 		<div class="panel panel-primary">
       
 			<div class="panel-heading">
-				<div class="panel-title">Latest Updated Contents</div>
+				<div class="panel-title">Latest Updated Slide</div>
 				
 				<div class="panel-options">
 					<a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a>
@@ -28,8 +28,8 @@
 						<th>Images</th>
 						<th>Title</th>
 						<th width="300px">Descaption</th>
-						<th width="70px">Edit</th>
-						<th width="70px">Delete</th>
+<!--						<th width="70px">Edit</th>
+						<th width="70px">Delete</th>-->
 					</tr>
 				</thead>
 				
@@ -37,11 +37,11 @@
           ${results}
           <tr>
 						
-            <td width="150px"><img src="<?php echo base_url(); ?>../uploads/content/${cImage}" width="150px"></td>
-						<td>${cTitle}</td>
-						<td>${cDes}</td>
-            <td class='text-center'><a href='contentEdit/${cId}' class='btn btn-primary'>Edit</a></td>
-            <td class='text-center'><a href='javascript:void(0);' onclick="javascript:confirmDel(${cId})"class='btn btn-danger'>Del</a></td>
+            <td width="150px"><img src="<?php echo base_url(); ?>../uploads/slides/${slImage}" width="150px"></td>
+						<td>${slTitle}</td>
+						<td>${slDes}</td>
+<!--            <td class='text-center'><a href='contentEdit/${cId}' class='btn btn-primary'>Edit</a></td>
+            <td class='text-center'><a href='javascript:void(0);' onclick="javascript:confirmDel(${cId})"class='btn btn-danger'>Del</a></td>-->
 					</tr>
           ${/results}
 				</tbody>

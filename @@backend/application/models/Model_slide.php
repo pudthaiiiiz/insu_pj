@@ -20,10 +20,10 @@ class Model_slide extends CI_Model{
   
   # GET
 
-  public function getContents(){
+  public function getSlide(){
      $result = 0;
    
-     $this->db->from('tbl_contents');
+     $this->db->from('tbl_slide_main');
      $isQuery = $this->db->get();
      if($isQuery->num_rows()){
       $result = $isQuery->result();

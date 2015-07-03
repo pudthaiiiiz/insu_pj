@@ -1,5 +1,5 @@
       <?php $this->load->view('template/header'); ?>
-        <div class="pull-right"> <a href="<?php echo base_url(); ?>HomeCtrl/sildeAll" class="btn btn-success">ดูเนื้อหามั้งหมด</a></div>
+        <div class="pull-right"> <a href="<?php echo base_url(); ?>HomeCtrl/slideAll" class="btn btn-success">ดูเนื้อหามั้งหมด</a></div>
         <div class="clearfix"></div>
         <br />
         <div class="panel panel-primary" data-collapsed="0">
@@ -66,7 +66,7 @@
                 <div class="col-sm-10">
 
                   <input type="submit" name="send" class="btn btn-success" value="Add News" onclick="onSend();">
-                  <input type="submit" name="send" class="btn btn-success" value="Add ss" onclick="ok();">
+                
 
                 </div>
               </div>
