@@ -16,7 +16,7 @@ app.controller('MenuCtrl', ['$scope',  function ($scope) {
     },
     {
     name : 'ประวัติ',
-    link : '#'
+    link : Global.baseurl+'profile'
     },
     {
     name : 'สมัครสมาชิก',
@@ -24,23 +24,23 @@ app.controller('MenuCtrl', ['$scope',  function ($scope) {
     },
     {
     name : 'เบี้ยประกันภัย',
-    link : '#'
+    link : Global.baseurl+'product'
     },
     {
     name : 'บริการ',
-    link : '#'
+    link : Global.baseurl+'service'
     },
     {
     name : 'ช่องทางการชำระเงิน',
-    link : '#'
+    link : Global.baseurl+'payment'
     },
     {
     name : 'ติดต่อเรา',
-    link : '#contact-us'
+    link : Global.baseurl+'/contact'
     },
     {
     name : 'เบอร์แจ้งอุบัติเหตุ',
-    link : '#'
+    link : Global.baseurl+'/pagedetail'
     }
   ];
 }]);
