@@ -32,17 +32,14 @@ app.controller('ContentCtrl', ['$scope', 'HomeServices', function ($scope, HomeS
     }
  //    
  
- setTimeout(function(){
-   setCompany();
- },1000);
  var setCompany = function () {
 	$('.center').slick({
 	  centerMode: true,
 	  centerPadding: '40px',
-  slidesToShow:6,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,
+    slidesToShow:6,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
 	  responsive: [
 	    {
 	      breakpoint: 768,
@@ -64,6 +61,11 @@ app.controller('ContentCtrl', ['$scope', 'HomeServices', function ($scope, HomeS
 	    }
 	  ]
 	});
+  
+  //
+ setTimeout(function(){
+   setCompany();
+ },1000);
 					
 
  };

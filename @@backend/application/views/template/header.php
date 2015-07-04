@@ -111,17 +111,17 @@
                 </a>
               </li>
               <li>
-                <a href="<?php echo base_url(); ?>HomeCtrl/accident">
+                <a href="<?php echo base_url(); ?>HomeCtrl/pagedetail">
                   <span>เบอร์แจ้งอุบัติเหตุ</span>
                 </a>
               </li>
               <li>
-                <a href="<?php echo base_url(); ?>HomeCtrl/products">
+                <a href="<?php echo base_url(); ?>HomeCtrl/product">
                   <span>สินค้าและเบี้ยประกันภัย</span>
                 </a>
               </li>
               <li>
-                <a href="<?php echo base_url(); ?>HomeCtrl/history">
+                <a href="<?php echo base_url(); ?>HomeCtrl/profile">
                   <span>ประวัติ</span>
                 </a>
               </li>
@@ -130,11 +130,11 @@
                   <span>บริการ</span>
                 </a>
               </li>
-              <li>
+<!--              <li>
                 <a href="#">
                   <span>Popup</span>
                 </a>
-              </li>
+              </li>-->
              
 
 
