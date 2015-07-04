@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="${assets}css/royal-slider-1.0.min.css">
     <link rel="stylesheet" href="${assets}css/slick.css">
     <link rel="stylesheet" href="${assets}css/slick-theme.css">
-    <link rel="stylesheet" href="${assets}css/main.css">
+    <link rel="stylesheet" href="${assets}css/main.css?v=1">
     <link rel="stylesheet" href="${assets}css/loading.css">
   </head>
   <body id="body" ng-app="application">
@@ -79,7 +79,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       </div>
       <div class="col-sm-6 col-md-3">
-        <h4 class="uppercase">เกี่ยวกับ DirectAsia.com</h4>
+        <h4 class="uppercase">INSURANCE BROKER 360</h4>
         <div class="widget">
           <div class="widget-inner">
             <ul>
@@ -109,10 +109,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <p>สายด่วนแจ้งอุบัติเหตุ:<br>02-627-7788 ตลอด 24 ชั่วโมง</p> </div>  
       <!--end--> 
     </div>
-  </div>
       <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
         <h2>&nbsp;</h2>
       </div>
+  </div>
       
   </div>
       
