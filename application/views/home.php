@@ -59,6 +59,63 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <!--      <section id="whyme" data-temp-why-me data-url="${assets}"></section> 
       <section id="follow-us" data-temp-follow-us></section> 
       <section id="contact-us" data-temp-contact-us></section> -->
+      
+      
+  <div style="background-color: #f6f6f6;">
+  <div class="container">
+      <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
+        <h2>&nbsp;</h2>
+      </div>
+    <div class="row"> 
+      <!--start-->
+      <div class="col-sm-6 col-md-3"> 
+
+        <h4 class="uppercase">ที่ตั้งสำนักงาน</h4>
+        <p> 173/21 อาคารเอเชีย เซนเตอร์ ชั้น 20 ถนนสาทรใต้ แขวงทุ่งมหาเมฆ เขตสาทร กรุงเทพ 10120<br> (เลขที่ใบอนุญาต : ว00004/2556) </p> 
+        <img src="/DirectAsiaThailand/media/assets/images/trust-logo.png" alt="Direct Asia" class="visible-xs">
+
+
+
+
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <h4 class="uppercase">เกี่ยวกับ DirectAsia.com</h4>
+        <div class="widget">
+          <div class="widget-inner">
+            <ul>
+              <li class="cat-item cat-item-2"> <a href="#" title="">ข่าวประชาสัมพันธ์</a> </li>
+              <li class="cat-item cat-item-3"> <a href="#" title="">ร่วมงานกับเรา</a> </li>
+              <li class="cat-item cat-item-4"> <a href="#" title="">นโยบายการรักษาความปลอดภัย</a> </li>
+              <li class="cat-item cat-item-1"> <a href="#" title="">ข้อตกลงและเงื่อนไข</a> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix visible-sm"></div>
+      <div class="col-sm-6 col-md-3 footer-newsletter">
+
+
+        <div class="widget">
+          <div class="widget-inner">
+            <h4 class="uppercase">ช่องทางชำระเงิน</h4>
+            <div class="tagcloud"> <img src="http://www.directasia.co.th/DirectAsiaThailand/media/assets/icons/payment-channel.png" class="img-responsive"> </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3 footer-contact-us">
+        <h4 class="uppercase">ติดต่อฝ่ายลูกค้าสัมพันธ์</h4>
+        <p class="contact-number">02-627-7777</p>    <p>จันทร์-ศุกร์ : 08.00 – 20.30 น.<br>เสาร์-อาทิตย์ : 09.00 – 18.00 น.</p>
+        <br class="hidden-xs">
+        <p>สายด่วนแจ้งอุบัติเหตุ:<br>02-627-7788 ตลอด 24 ชั่วโมง</p> </div>  
+      <!--end--> 
+    </div>
+  </div>
+      <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
+        <h2>&nbsp;</h2>
+      </div>
+      
+  </div>
+      
     </main>
     <footer id="footer" data-temp-footer></footer>
     <script src="${assets}js/plugin/modernizr-2.6.2.min.js"></script>
