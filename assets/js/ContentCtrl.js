@@ -30,5 +30,42 @@ app.controller('ContentCtrl', ['$scope', 'HomeServices', function ($scope, HomeS
     for (name in services) {
       callService(services[name]);
     }
-//    
+ //    
+ 
+ setTimeout(function(){
+   setCompany();
+ },1000);
+ var setCompany = function () {
+	$('.center').slick({
+	  centerMode: true,
+	  centerPadding: '40px',
+  slidesToShow:6,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+	  responsive: [
+	    {
+	      breakpoint: 768,
+	      settings: {
+	        arrows: false,
+	        centerMode: true,
+	        centerPadding: '40px',
+	        slidesToShow: 4
+	      }
+	    },
+	    {
+	      breakpoint: 480,
+	      settings: {
+	        arrows: false,
+	        centerMode: true,
+	        centerPadding: '40px',
+	        slidesToShow: 1
+	      }
+	    }
+	  ]
+	});
+					
+
+ };
+
   }]);
