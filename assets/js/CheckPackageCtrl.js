@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-/* global app*/
+/* global Global, angular, app */
+
 
 app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', function ($scope, HomeServices, $timeout) {
     
@@ -12,6 +13,9 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
       'getBrand'
     ];
     
+    $scope.assets = Global.assets;
+    $scope.uploads = Global.uploads;
+    $scope.baseUrl = Global.baseurl;
     var params = {};
     $scope.data = {};
     $scope.formSubmit = {};

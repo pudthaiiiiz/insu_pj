@@ -1,12 +1,16 @@
 <div ng-controller="CheckPackageCtrl" ng-cloak class="check-package">
+  <div style="background-color: #E35F00;">
   <div class="container">
-    <div class="row" ng-init="needToRister = false">
       
      <br><br>
-     <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="needToRister = true" ng-show="!needToRister">สมัครสมาชิก</button>
+     <button type="button" class="btn btn-primary" ng-click="needToRister = true" ng-show="!needToRister">สมัครเลย</button> 
+     
+     <span style="color:#ffffff;" style="float: left;" ng-show="!needToRister">ลองเข้ามาเป็นที่ปรึกษาด้านรถยนต์</span>
+     <span style="color:#ffffff;" style="float: left;" ng-show="needToRister">กรอกรายละเอียดเลย</span>
+        <img src="{{assets}}images/sign-up-icon-800x800.png" style="display: inline;float: left;margin-top: -4px; margin-right: 10px; width: 40px;  height: 40px;" />
       
       <div class="col-md-12 wow animated fadeInLeft" ng-if="needToRister && saveMember.status !== 'success'">
-          <div class="box-register box-form">
+          <div class="box-register box-form" style="background-color: #ffffff;">
             <form ng-submit="submitRegisterForm()">
               <div class="input-field">
                 <label>ลงทะเบียน :</label>
@@ -88,6 +92,11 @@
         <h2>&nbsp;</h2>
       </div>
      
+  </div>
+  </div>
+  <div style="background-color: #F6F6F6;">
+  <div class="container">
+    <div class="row" ng-init="needToRister = false">
       <div class="col-md-4 wow animated fadeInLeft">
         <div class="welcome-block">
           <h3>ค้นหาเบี้ยประกันภัย</h3>								
@@ -249,7 +258,12 @@
         </div>
       </div>
       
+      <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
+        <h2>&nbsp;</h2>
+      </div>
+      
       
     </div>
   </div>
+</div>
 </div>
