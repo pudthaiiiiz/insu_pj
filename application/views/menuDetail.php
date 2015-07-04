@@ -10,6 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>insurancebroker360</title>		
+    <meta name="baseUrl" content="${baseUrl}">	
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
@@ -37,9 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <h1 class="navbar-brand">
-            <a href="#body" class="white"><span ng-bind="menu.title"></span> </a>
-          </h1>
+            <img src="{{assets}}img/logo_web.png" class="logo-header">
         </div>
         <nav class="collapse navbar-collapse navbar-right" role="navigation">
           <ul id="nav" class="nav navbar-nav">

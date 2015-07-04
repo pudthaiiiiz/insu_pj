@@ -6,7 +6,9 @@
 /* global app, Global */
 
 app.controller('MenuCtrl', ['$scope',  function ($scope) {
-  $scope.assets = Global.assets;
+    $scope.assets = Global.assets;
+    $scope.uploads = Global.uploads;
+    $scope.baseUrl = Global.baseurl;
   $scope.menu = {};
   $scope.menu.title = "insurancebroker360";
   $scope.menu.lists = [
@@ -20,7 +22,7 @@ app.controller('MenuCtrl', ['$scope',  function ($scope) {
     },
     {
     name : 'สมัครสมาชิก',
-    link : '#step'
+    link : Global.baseurl
     },
     {
     name : 'เบี้ยประกันภัย',

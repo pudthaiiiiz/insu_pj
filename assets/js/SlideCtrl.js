@@ -6,6 +6,9 @@
 /* global Global, app, angular */
 
 app.controller('SlideCtrl', ['$scope', 'HomeServices', function ($scope, HomeServices) {
+    $scope.assets = Global.assets;
+    $scope.uploads = Global.uploads;
+    $scope.baseUrl = Global.baseurl;
     var services = [
       'getSlide'
     ];

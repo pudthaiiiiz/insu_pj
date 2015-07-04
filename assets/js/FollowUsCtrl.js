@@ -3,5 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/* global Global, angular, app */
+
 app.controller('FollowUsCtrl', ['$scope', function ($scope) {
+    $scope.assets = Global.assets;
+    $scope.uploads = Global.uploads;
+    $scope.baseUrl = Global.baseurl;
   }]);
