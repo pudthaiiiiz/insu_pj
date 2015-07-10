@@ -11,7 +11,7 @@ app.directive('tempSlide', function () {
     restrict: 'A',
     templateUrl: Global.baseurl + 'assets/templates/temp-slide.html',
     link: function () {
-
+      
     }
   };
 });

@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </ul>
         </nav>
       </div>
-<div class="line-gold"></div>
+      <div class="line-gold"></div>
     </header>
     <main class="site-content" role="main" ng-init="needToRister = false">
       <section id="home" data-temp-slide></section>   
@@ -101,7 +101,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <p>เคาน์เตอร์เซอร์วิส</p>
             <p>จ่ายเงินได้ที่เคาน์เตอร์เซอร์วิสทุกแห่ง (7-Eleven, Max Value, Tops)</p>
           </div>
-            <p>&nbsp;</p>
+          <p>&nbsp;</p>
 
         </div>
       </div>
@@ -211,7 +211,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="${assets}js/ContentCtrl.js"></script>
     <script src="${assets}js/WhyMeCtrl.js"></script>
     <script src="${assets}js/FollowUsCtrl.js"></script>
-    <script src="${assets}js/ContactUsCtrl.js"></script>
     <script src="${assets}js/FooterCtrl.js"></script>
     <script src="${assets}js/LoadCtrl.js"></script>
     <script src="${assets}js/directives.js"></script>

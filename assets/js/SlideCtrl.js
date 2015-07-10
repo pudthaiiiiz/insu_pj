@@ -6,9 +6,9 @@
 /* global Global, app, angular */
 
 app.controller('SlideCtrl', ['$scope', 'HomeServices', function ($scope, HomeServices) {
-    $scope.assets = Global.assets;
-    $scope.uploads = Global.uploads;
-    $scope.baseUrl = Global.baseurl;
+    $scope.assets = window.location.origin+'/assets/';
+    $scope.uploads = window.location.origin+'/uploads/';
+    $scope.baseUrl = window.location.origin+'/';
     var services = [
       'getSlide'
     ];
@@ -28,18 +28,18 @@ app.controller('SlideCtrl', ['$scope', 'HomeServices', function ($scope, HomeSer
           slideshowDelay: 7000
         });
     };
-    $scope.assets = Global.assets;
-    $scope.uploads = Global.uploads;
-    $scope.baseUrl = Global.baseurl;
     $scope.slides = [];
 //        HomeServices.showLoad(true);
     var callService = function (serviceName) {
+//          console.log(serviceName);
       var callServiceName = HomeServices[serviceName](params);
+//          console.log(serviceName);
       callServiceName.success(function (data) {
-        if (data.status == 'success') {
+//          console.log(data);
+        if (data.status === 'success') {
           var getData = angular.extend(data.data);
           $scope.slides = getData;
-          console.log($scope.slides);
+          console.log(data);
           setTimeout(function(){
             setSlide(); 
           }, 1000);

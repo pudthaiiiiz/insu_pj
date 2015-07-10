@@ -24,7 +24,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="${assets}css/animate.css">
     <link rel="stylesheet" href="${assets}css/slide.css">
     <link rel="stylesheet" href="${assets}css/royal-slider-1.0.min.css">
-    <link rel="stylesheet" href="${assets}css/main.css">
+    <link rel="stylesheet" href="${assets}css/slick.css">
+    <link rel="stylesheet" href="${assets}css/slick-theme.css">
+    <link rel="stylesheet" href="${assets}css/main.css?v=1">
     <link rel="stylesheet" href="${assets}css/loading.css">
     <link rel="shortcut icon" href="${baseUrl}/uploads/ico/favicon.ico" />
   </head>
@@ -39,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-            <img src="{{assets}}img/logo_web.png" class="logo-header">
+          <img src="{{assets}}img/logo_web.png" class="logo-header">
         </div>
         <nav class="collapse navbar-collapse navbar-right" role="navigation">
           <ul id="nav" class="nav navbar-nav">
@@ -49,8 +51,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </ul>
         </nav>
       </div>
+      <div class="line-gold"></div>
     </header>
-    <main class="site-content" role="main">  
+    <main class="site-content" role="main">     
       <!--<section id="home" data-temp-slide></section>-->   
       <div ng-controller="CheckPackageCtrl" ng-cloak class="check-package" style="padding-top: 140px;">
         <div class="container">
@@ -68,12 +71,130 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </table>
               </div>
               <div class="pull-left"><a href="${baseUrl}" class="btn btn-lg btn-primary" style="margin:15px;">ย้อนกลับ</a></div>
-              
+
               <br>
             </div>
           </div>
         </div>
+      </div>
+      
+      
+      
+      
+      <div style="background-color: #f6f6f6;">
+        <div class="container">
+          <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
+            <h2>ช่องทางการชำระเงิน</h2>
+            <p>&nbsp;</p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-12 wow animated zoomIn">
+            <p><img alt="Pay Securely Online" src="${assets}img/ic1.png" style="float:left; margin-right:20px" /></p>
+            <p>จ่ายออนไลน์</p>
+            <p>จ่ายได้ทันทีและปลอดภัย ด้วยบัตรวีซ่าหรือมาสเตอร์การ์ดของคุณ</p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-12 wow animated zoomIn">
+            <p><img alt="Pay Securely Online" src="${assets}img/ic2.png" style="float:left; margin-right:20px" /></p>
+            <p>โทร.หาเราเพื่อชำระเงิน<br />
+              ได้ที่ 02-627-7777</p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-12 wow animated zoomIn">
+            <p><img alt="Pay Securely Online" src="${assets}img/ic3.png" style="float:left; margin-right:20px" /></p>
+            <p>เคาน์เตอร์เซอร์วิส</p>
+            <p>จ่ายเงินได้ที่เคาน์เตอร์เซอร์วิสทุกแห่ง (7-Eleven, Max Value, Tops)</p>
+          </div>
+          <p>&nbsp;</p>
+
         </div>
+      </div>
+
+      <div class="bg-color-theme-default">
+        <div class="container">
+          <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
+            <p>&nbsp;</p>
+            <h2>ประกันรถยนต์ต่างๆ </h2>
+            <p>&nbsp;</p>
+          </div>
+          <div class="center">
+            <img src="${assets}images/company/company-logo_01.png" />
+            <img src="${assets}images/company/company-logo_02.png" />
+            <img src="${assets}images/company/company-logo_03.png" />
+            <img src="${assets}images/company/company-logo_04.png" />
+            <img src="${assets}images/company/company-logo_05.png" />
+            <img src="${assets}images/company/company-logo_07.png" />
+            <img src="${assets}images/company/company-logo_08.png" />
+            <img src="${assets}images/company/company-logo_09.png" />
+            <img src="${assets}images/company/company-logo_10.png" />
+            <img src="${assets}images/company/company-logo_11.png" />
+            <img src="${assets}images/company/company-logo_13.png" />
+            <img src="${assets}images/company/company-logo_14.png" />
+            <img src="${assets}images/company/company-logo_15.png" />
+            <img src="${assets}images/company/company-logo_16.png" />
+            <img src="${assets}images/company/company-logo_17.png" />
+            <img src="${assets}images/company/company-logo_19.png" />
+            <img src="${assets}images/company/company-logo_20.png" />
+            <img src="${assets}images/company/company-logo_21.png" />
+            <img src="${assets}images/company/company-logo_22.png" />
+            <img src="${assets}images/company/company-logo_23.png" />
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-color-theme-gray">
+        <div class="container">
+          <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
+            <h2>&nbsp;</h2>
+          </div>
+          <div class="row"> 
+            <!--start-->
+            <div class="col-sm-6 col-md-3"> 
+
+              <h4 class="uppercase">ที่ตั้งสำนักงาน</h4>
+              <p> 173/21 อาคารเอเชีย เซนเตอร์ ชั้น 20 ถนนสาทรใต้ แขวงทุ่งมหาเมฆ เขตสาทร กรุงเทพ 10120<br> (เลขที่ใบอนุญาต : ว00004/2556) </p> 
+              <img src="/DirectAsiaThailand/media/assets/images/trust-logo.png" alt="Direct Asia" class="visible-xs">
+
+
+
+
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <h4 class="uppercase">INSURANCE BROKER 360</h4>
+              <div class="widget">
+                <div class="widget-inner">
+                  <ul>
+                    <li class="cat-item cat-item-2"> <a href="#" title="">ข่าวประชาสัมพันธ์</a> </li>
+                    <li class="cat-item cat-item-3"> <a href="#" title="">ร่วมงานกับเรา</a> </li>
+                    <li class="cat-item cat-item-4"> <a href="#" title="">นโยบายการรักษาความปลอดภัย</a> </li>
+                    <li class="cat-item cat-item-1"> <a href="#" title="">ข้อตกลงและเงื่อนไข</a> </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix visible-sm"></div>
+            <div class="col-sm-6 col-md-3 footer-newsletter">
+
+
+              <div class="widget">
+                <div class="widget-inner">
+                  <h4 class="uppercase">ช่องทางชำระเงิน</h4>
+                  <div class="tagcloud"> <img src="http://www.directasia.co.th/DirectAsiaThailand/media/assets/icons/payment-channel.png" class="img-responsive"> </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3 footer-contact-us">
+              <h4 class="uppercase">ติดต่อฝ่ายลูกค้าสัมพันธ์</h4>
+              <p class="contact-number">02-627-7777</p>    <p>จันทร์-ศุกร์ : 08.00 – 20.30 น.<br>เสาร์-อาทิตย์ : 09.00 – 18.00 น.</p>
+              <br class="hidden-xs">
+              <p>สายด่วนแจ้งอุบัติเหตุ:<br>02-627-7788 ตลอด 24 ชั่วโมง</p> </div>  
+            <!--end--> 
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
+            <h2>&nbsp;</h2>
+          </div>
+        </div>
+
+      </div>
+      
+      
 
     </main>
     <footer id="footer" data-temp-footer></footer>
@@ -83,6 +204,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="${assets}js/plugin/royal-slider-1.0.min.js"></script>
     <script src="${assets}js/plugin/royal-custom.js"></script>
     <script src="${assets}js/plugin/angular.min.js"></script>
+    <script src="${assets}js/plugin/slick.min.js"></script>
     <script src="${assets}js/angular-route/angular-route.js"></script>
     <script src="${assets}js/app.js"></script>
     <script src="${assets}js/MenuCtrl.js"></script>
@@ -92,7 +214,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="${assets}js/ContentCtrl.js"></script>
     <script src="${assets}js/WhyMeCtrl.js"></script>
     <script src="${assets}js/FollowUsCtrl.js"></script>
-    <script src="${assets}js/ContactUsCtrl.js"></script>
     <script src="${assets}js/FooterCtrl.js"></script>
     <script src="${assets}js/LoadCtrl.js"></script>
     <script src="${assets}js/directives.js"></script>

@@ -15,6 +15,9 @@ Global['handle'] = {};
 Global['baseurl'] = baseurl;
 Global['uploads'] = baseurl+"uploads/";
 Global['assets'] = baseurl+"assets/";
+//Global['baseurl'] = window.location.origin;
+//Global['uploads'] = window.location.origin+'/uploads/';
+//Global['assets'] = window.location.origin+'/assets/';
 Global.handle = {
   loseInternet : function(){
     console.log(messageConfig.loseInternet);
