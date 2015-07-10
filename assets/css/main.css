@@ -364,6 +364,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b8814d', end
   background-color: #2E2E2E;
   position: relative;
 }
+.padding-style{
+  padding: 20px !important;
+}
 .line {
   position: absolute;
   width: 100%;
