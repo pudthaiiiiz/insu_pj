@@ -73,6 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
           </div>
         </div>
+        </div>
 
     </main>
     <footer id="footer" data-temp-footer></footer>
