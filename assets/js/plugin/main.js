@@ -12,6 +12,41 @@ jQuery(window).load(function(){
 
 $(document).ready(function(){
 
+ var setCompany = function () {
+	$('.center').slick({
+	  centerMode: true,
+	  centerPadding: '44px',
+    slidesToShow:6,
+    slidesToScroll: 1,
+    autoplay: true,
+    pauseOnHover: false,
+    autoplaySpeed: 2000,
+	  responsive: [
+	    {
+	      breakpoint: 768,
+	      settings: {
+	        arrows: false,
+	        centerMode: true,
+	        centerPadding: '40px',
+	        slidesToShow: 4
+	      }
+	    },
+	    {
+	      breakpoint: 480,
+	      settings: {
+	        arrows: false,
+	        centerMode: true,
+	        centerPadding: '40px',
+	        slidesToShow: 1
+	      }
+	    }
+	  ]
+	});
+ };
+  //
+ setTimeout(function(){
+   setCompany();
+ },1000);
 
 
 	/* ========================================================================= */

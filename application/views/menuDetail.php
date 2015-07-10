@@ -26,6 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="${assets}css/royal-slider-1.0.min.css">
     <link rel="stylesheet" href="${assets}css/main.css">
     <link rel="stylesheet" href="${assets}css/loading.css">
+    <link rel="shortcut icon" href="${baseUrl}/uploads/ico/favicon.ico" />
   </head>
   <body id="body" ng-app="application">
     <div data-temp-load></div>
