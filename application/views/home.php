@@ -138,7 +138,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
       </div>
 
-      <div style="background-color: #f6f6f6;">
+      <div class="bg-color-theme-gray">
         <div class="container">
           <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
             <h2>&nbsp;</h2>

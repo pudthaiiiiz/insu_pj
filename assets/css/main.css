@@ -366,6 +366,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b8814d', end
   background-color: #FFFFFF;
   position: relative;
 }
+.bg-color-theme-gray {
+  background-color: #DDDDDD;
+  position: relative;
+}
 .bg-color-theme {
   background-color: #2E2E2E;
   position: relative;
