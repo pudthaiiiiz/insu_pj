@@ -24,7 +24,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="${assets}css/animate.css">
     <link rel="stylesheet" href="${assets}css/slide.css">
     <link rel="stylesheet" href="${assets}css/royal-slider-1.0.min.css">
-    <link rel="stylesheet" href="${assets}css/main.css">
+    <link rel="stylesheet" href="${assets}css/slick.css">
+    <link rel="stylesheet" href="${assets}css/slick-theme.css">
+    <link rel="stylesheet" href="${assets}css/main.css?v=1">
     <link rel="stylesheet" href="${assets}css/loading.css">
     <link rel="shortcut icon" href="${baseUrl}/uploads/ico/favicon.ico" />
   </head>
@@ -195,11 +197,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <footer id="footer" data-temp-footer></footer>
 
     <!--<script src="${assets}js/plugin/modernizr-2.6.2.min.js"></script>-->
+    <script src="${assets}js/plugin/modernizr-2.6.2.min.js"></script>
     <script src="${assets}js/plugin/jquery.js"></script>
     <script src="${assets}js/plugin/jquery.easing.1.3.min.js"></script>
     <script src="${assets}js/plugin/royal-slider-1.0.min.js"></script>
     <script src="${assets}js/plugin/royal-custom.js"></script>
     <script src="${assets}js/plugin/angular.min.js"></script>
+    <script src="${assets}js/plugin/slick.min.js"></script>
     <script src="${assets}js/angular-route/angular-route.js"></script>
     <script src="${assets}js/app.js"></script>
     <script src="${assets}js/MenuCtrl.js"></script>
