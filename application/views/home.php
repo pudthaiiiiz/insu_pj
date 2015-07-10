@@ -106,7 +106,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
       </div>
 
-      <div class="">
+      <div class="bg-color-theme-default">
         <div class="container">
           <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
             <p>&nbsp;</p>
@@ -136,8 +136,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <img src="${assets}images/company/company-logo_23.png" />
           </div>
         </div>
-        <div class="line line-top"></div>
-        <div class="line line-bottom"></div>
       </div>
 
       <div style="background-color: #f6f6f6;">

@@ -356,8 +356,8 @@ background: linear-gradient(to bottom,  #b8814d 0%,#faefa6 58%,#f1c787 90%,#e1b1
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b8814d', endColorstr='#e1b16e',GradientType=0 ); /* IE6-8 */
 
 }
-.bg-color-theme-defult {
-  background-color: #E1B16E;
+.bg-color-theme-default {
+  background-color: #FFFFFF;
   position: relative;
 }
 .bg-color-theme {
