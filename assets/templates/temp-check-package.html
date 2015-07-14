@@ -37,7 +37,7 @@
               </div>
               <div class="form-group">
                 <label>ประกันที่เคยทำ :</label>
-                <input type="text" name="text" class="form-control" ng-model="formRegister.oldInsurance" placeholder="ประกันที่เคยทำ" required title="กรอก อีเมล์">
+                <input type="text" name="text" class="form-control" ng-model="formRegister.oldInsurance" placeholder="ประกันที่เคยทำ" required title="กรอก ประกันที่เคยทำ">
               </div>
               <div class="form-group">
                 <label>สนใจต่อจากเจ้าเดิมหรือป่าว :</label>
@@ -63,6 +63,9 @@
                 <label>รูปภาพ (เอกสาร สำเนาบัตรประชาชน) :</label>
                 <input type="file" class="form-control" ng-model="formRegister.file" placeholder="รูปภาพ (เอกสาร สำเนาบัตรประชาชน)" required title="แนบเอกสาร สำเนาบัตรประชาชน">
               </div>-->
+              <div class="input-field">
+                <label>ผู้ใช้งาน :</label>
+              </div>
               <div class="form-group">
                 <label>Username :</label>
                 <input type="text" name="username" class="form-control" ng-model="formRegister.username" placeholder="Username" required title="กรอก ชื่อผู้้ใช้">
@@ -72,6 +75,12 @@
                 <input type="password" name="password" class="form-control" ng-model="formRegister.password" placeholder="Password" required title="กรอก รหัสผ่าน">
 <!--                <br>
                 <input type="password" name="passwordConfirm" class="form-control" ng-model="formRegister.passwordConfirm" placeholder="Password Confirm" required title="ยืนยัน รหัสผ่าน">-->
+              </div>
+              <div class="input-field">
+                <label>ผู้แนะนำ :</label>
+              </div>
+              <div class="form-group">
+                <input type="text" name="invite" class="form-control" ng-model="formRegister.invite" placeholder="ผู้แนะนำ" title="ผู้แนะนำ">
               </div>
               <button type="submit" class="btn btn-default btn-lg btn-block">ลงทะเบียน</button>
               <button type="button" class="btn btn-default btn-lg btn-block"  ng-click="$parent.needToRister = false">ไม่ล่ะ!! ขอบคุณ.</button>

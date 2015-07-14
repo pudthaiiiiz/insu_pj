@@ -135,6 +135,7 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
           inputOldInsurance: $scope.formRegister.oldInsurance,
           inputOldInsuranceRegister: $scope.formRegister.oldInsuranceRegister,
           inputBrand: $scope.formRegister.brand,
+          inputInvite: $scope.formRegister.invite,
           inputLevel: 1
         };
       }
