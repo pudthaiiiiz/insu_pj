@@ -36,9 +36,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   
   
   // Slide
-  
-   $route['api-get-slide']['post'] = 'SildeApiCtrl/callGetService';
-   $route['api-get-content']['post'] = 'ContentCtrl/getContentList';
+  $route['api-get-slide']['post'] = 'SildeApiCtrl/callGetService';
+  $route['api-get-content']['post'] = 'ContentCtrl/getContentList';
+
+  // Province
+  $route['api-get-province']['get'] = 'ProvinceCtrl/getProvince';
+  $route['api-get-amphoe']['get'] = 'ProvinceCtrl/getAmphoe';
+  $route['api-get-district']['get'] = 'ProvinceCtrl/getDistrict';
+  $route['api-get-zipcode']['get'] = 'ProvinceCtrl/getZipcode';
   
   
   $route['api-get-profile']['post'] = 'api/CustomerApiCtrl/getProfile';
