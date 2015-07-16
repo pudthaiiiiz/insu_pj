@@ -9,10 +9,10 @@
 app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', function ($scope, HomeServices, $timeout) {
     
     var services = [
+      'getProvince',
       'getYear',
       'getBrand'
     ];
-    
     $scope.assets = Global.assets;
     $scope.uploads = Global.uploads;
     $scope.baseUrl = Global.baseurl;
@@ -47,8 +47,10 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
     $scope.showFromLoginAndRegister = 0;
     $scope.showStep = 0;
     
-    var assignData = function (serviceName,getData) {
-      if (serviceName === 'getYear') {
+    var assignData = function (serviceName, getData) {
+      if (serviceName === 'getProvince') {
+        $scope.data.Provinces = getData;
+      } else if (serviceName === 'getYear') {
         $scope.data.Years = getData;
       } else if (serviceName === 'getBrand') {
         $scope.data.Brands = getData;
@@ -68,11 +70,11 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
     };
     
     $scope.submitLoginForm = function () {
-            $scope.showStep = 3;
+        $scope.showStep = 3;
     };
     
     $scope.submitRegisterForm = function () {
-            $scope.showStep = 3;
+        $scope.showStep = 3;
     };
     
     $scope.selectWatch = function (selectWhere) {
@@ -89,11 +91,30 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
         $scope.formSearch.main = '';
         callService('getMainPackage');
         HomeServices.showLoad(true);
+      } else if (selectWhere === 'province') {
+        delete $scope.formRegister.amphur;
+        delete $scope.formRegister.district;
+        delete $scope.formRegister.zipcode;
+        delete $scope.data.Amphurs;
+        delete $scope.data.Districts;
+        delete $scope.data.Zipcodes;
+        getAmphur();
+      } else if (selectWhere === 'amphur') {
+        delete $scope.formRegister.district;
+        delete $scope.formRegister.zipcodel;
+        delete $scope.data.Districts;
+        delete $scope.data.Zipcodes;
+        getDistrict();
+      } else if (selectWhere === 'district') {
+        delete $scope.formRegister.zipcode;
+        delete $scope.data.Zipcodes;
+        getZipcode();
+
       }
     };
 
     
-    var assignData = function (serviceName,getData) {
+    var assignData = function (serviceName, getData) {
       if (serviceName === 'getYear') {
         $scope.data.Years = getData;
       } else if (serviceName === 'getBrand') {
@@ -104,10 +125,19 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
         $scope.data.Mains = getData;
       } else if (serviceName === 'getLevelPackage') {
         $scope.data.Levels = getData;
+      } else if (serviceName === 'getProvince') {
+        $scope.data.Provinces = getData;
+      } else if (serviceName === 'getAmphur') {
+        $scope.data.Amphurs = getData;
+      } else if (serviceName === 'getDistrict') {
+        $scope.data.Districts = getData;
+      } else if (serviceName === 'getZipcode') {
+        $scope.data.Zipcodes = getData;
       }
     };
     
     var callService = function (serviceName) {
+      console.log(serviceName);
       if (serviceName === 'getSeries') {
         params = {
           inputYear: $scope.formSearch.year,
@@ -136,7 +166,24 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
           inputOldInsuranceRegister: $scope.formRegister.oldInsuranceRegister,
           inputBrand: $scope.formRegister.brand,
           inputInvite: $scope.formRegister.invite,
+          inputProvince: $scope.formRegister.province,
+          inputAmphur: $scope.formRegister.amphur,
+          inputDistrict: $scope.formRegister.district,
+          inputZipcode: $scope.formRegister.zipcode,
           inputLevel: 1
+        };
+      } else if (serviceName === 'getAmphur') {
+        params = {
+          inputProvinceId: $scope.formRegister.province
+        };
+      } else if (serviceName === 'getDistrict') {
+        params = {
+          inputProvinceId: $scope.formRegister.province,
+          inputAmphurId: $scope.formRegister.amphur
+        };
+      } else if (serviceName === 'getZipcode') {
+        params = {
+          inputAmphurId: $scope.formRegister.amphur
         };
       }
       var callServiceName = HomeServices[serviceName](params);
@@ -166,10 +213,19 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
     }
     
     $scope.submitRegisterForm = function() {
-//      console.log($scope.formRegister);
-        callService("saveMember");
+      callService("saveMember");
+    };
+
+    var getAmphur = function() {
+      callService('getAmphur');
+    };
+
+    var getDistrict = function() {
+      callService('getDistrict');
+    };
+
+    var getZipcode = function() {
+      callService('getZipcode');
     };
    
-    
-    
   }]);
