@@ -27,17 +27,45 @@
                 <label>ที่อยู่ :</label>
                 <input type="text" name="address" class="form-control" ng-model="formRegister.address" placeholder="ที่อยู่" required title="กรอก ที่อยู่">
               </div>
+              <div class="input-field" ng-if="data.Provinces">
+                <label>จังหวัด :</label>
+                <select id="province" class="form-control" ng-model="formRegister.province" data-select-search ng-change="selectWatch('province')" required>
+                  <option value="">เลือกจังหวัด</option>
+                  <option ng-repeat="province in data.Provinces" value="{{province.PROVINCE_ID}}">{{province.PROVINCE_NAME}}</option>
+                </select>
+              </div>
+              <div class="input-field" ng-if="data.Amphurs">
+                <label>อำเภอ :</label>
+                <select id="amphur" class="form-control" ng-model="formRegister.amphur" data-select-search ng-change="selectWatch('amphur')" required>
+                  <option value="">เลือกอำเภอ</option>
+                  <option ng-repeat="amphur in data.Amphurs" value="{{amphur.AMPHUR_ID}}">{{amphur.AMPHUR_NAME}}</option>
+                </select>
+              </div>
+              <div class="input-field" ng-if="data.Districts">
+                <label>ตำบล :</label>
+                <select id="district" class="form-control" ng-model="formRegister.district" data-select-search ng-change="selectWatch('district')" required>
+                  <option value="">เลือกตำบล</option>
+                  <option ng-repeat="district in data.Districts" value="{{district.DISTRICT_ID}}">{{district.DISTRICT_NAME}}</option>
+                </select>
+              </div>
+              <div class="input-field" ng-if="data.Zipcodes">
+                <label>รหัสไปรษณีย์ :</label>
+                <select id="zipcode" class="form-control" ng-model="formRegister.zipcode" data-select-search ng-change="selectWatch('zipcode')" required>
+                  <option value="">เลือกรหัสไปรษณีย์</option>
+                  <option ng-repeat="zipcode in data.Zipcodes" value="{{zipcode.POST_CODE}}">{{zipcode.POST_CODE}}</option>
+                </select>
+              </div>
               <div class="form-group">
                 <label>เบอร​์โทรศัพท์ :</label>
-                <input type="text" name="tel" class="form-control" ng-model="formRegister.tel" placeholder="เบอร​์โทรศัพท์" required pattern="\d*" title="กรอกเฉพาะตัวเลขเท่านั้น">
+                <input type="text" name="tel" class="form-control" ng-model="formRegister.tel" placeholder="เบอร​์โทรศัพท์" required pattern="\d*" title="กรอกเฉพาะตัวเลขเท่านั้น" maxlength="10">
               </div>
               <div class="form-group">
                 <label>อีเมล์ :</label>
                 <input type="text" name="email" class="form-control" ng-model="formRegister.email" placeholder="อีเมล์" required title="กรอก อีเมล์">
               </div>
               <div class="form-group">
-                <label>ประกันที่เคยทำ :</label>
-                <input type="text" name="text" class="form-control" ng-model="formRegister.oldInsurance" placeholder="ประกันที่เคยทำ" required title="กรอก ประกันที่เคยทำ">
+                <label>บริษัทประกันที่เคยทำ :</label>
+                <input type="text" name="text" class="form-control" ng-model="formRegister.oldInsurance" placeholder="บริษัทประกันที่เคยทำ" required title="กรอก ประกันที่เคยทำ">
               </div>
               <div class="form-group">
                 <label>สนใจต่อจากเจ้าเดิมหรือป่าว :</label>

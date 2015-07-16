@@ -41,10 +41,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   $route['api-get-content']['post'] = 'ContentCtrl/getContentList';
 
   // Province
-  $route['api-get-province']['get'] = 'ProvinceCtrl/getProvince';
-  $route['api-get-amphoe/(:num)']['get'] = 'ProvinceCtrl/getAmphoe/$1';
-  $route['api-get-district/(:num)/(:num)']['get'] = 'ProvinceCtrl/getDistrict/$1/$2';
-  $route['api-get-zipcode/(:num)']['get'] = 'ProvinceCtrl/getZipcode/$1';
+  // $route['api-get-province']['get'] = 'ProvinceCtrl/getProvince';
+  // $route['api-get-amphoe/(:num)']['get'] = 'ProvinceCtrl/getAmphoe/$1';
+  // $route['api-get-district/(:num)/(:num)']['get'] = 'ProvinceCtrl/getDistrict/$1/$2';
+  // $route['api-get-zipcode/(:num)']['get'] = 'ProvinceCtrl/getZipcode/$1';
+  $route['api-get-province']['post'] = 'ProvinceCtrl/getProvince';
+  $route['api-get-amphur']['post'] = 'ProvinceCtrl/getAmphoe';
+  $route['api-get-district']['post'] = 'ProvinceCtrl/getDistrict';
+  $route['api-get-zipcode']['post'] = 'ProvinceCtrl/getZipcode';
   
   
   $route['api-get-profile']['post'] = 'api/CustomerApiCtrl/getProfile';

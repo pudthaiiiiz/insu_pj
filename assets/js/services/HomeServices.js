@@ -74,6 +74,42 @@ app.factory('HomeServices', function ($http, $rootScope) {
               data: formData
           });
           return promise;
+        },
+        getProvince : function (data) {
+          var formData = data;
+          var promise = $http({
+              method: 'post',
+              url: 'api-get-province',
+              data: formData
+          });
+          return promise;
+        },
+        getAmphur : function (data) {
+          var formData = data;
+          var promise = $http({
+              method: 'post',
+              url: 'api-get-amphur',
+              data: formData
+          });
+          return promise;
+        },
+        getDistrict : function (data) {
+          var formData = data;
+          var promise = $http({
+              method: 'post',
+              url: 'api-get-district',
+              data: formData
+          });
+          return promise;
+        },
+        getZipcode : function (data) {
+          var formData = data;
+          var promise = $http({
+              method: 'post',
+              url: 'api-get-zipcode',
+              data: formData
+          });
+          return promise;
         }
     };
 });
