@@ -6,6 +6,43 @@ class Model_customer extends CI_Model{
 		
 	}
 
+  public function getProfile($token){
+    $result = 0;
+    $this->db->select('*');
+    $this->db->where('cusToken' , $token);
+    $this->db->from('tbl_customers');
+    $isQuery = $this->db->get();
+    if($isQuery->num_rows()){
+      $result = $isQuery->row();
+    }
+    return $result;
+
+  }
+
+  public function getDownline($name){
+    $result = 0;
+    $this->db->select('*');
+    $this->db->where('cusInvite' , $name);
+    $this->db->from('tbl_customers');
+    $isQuery = $this->db->get();
+    if($isQuery->num_rows()){
+      $result = $isQuery->result();
+    }
+    return $result;
+
+  }
+  public function countDownline($name){
+    $result = 0;
+    $this->db->select('*');
+    $this->db->where('cusInvite' , $name);
+    $this->db->from('tbl_customers');
+    $isQuery = $this->db->get();
+    if($isQuery->num_rows()){
+      $result = $isQuery->num_rows();
+    }
+    return $result;
+
+  }
 
   public function getCustomer(){
      $result = 0;

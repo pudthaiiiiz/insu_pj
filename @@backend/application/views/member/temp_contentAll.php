@@ -38,7 +38,7 @@
           ${results}
           <tr>
 						
-						<td>${cusFullname}</td>
+						<td><a href='<?php echo base_url(); ?>HomeCtrl/viewProfile/${cusToken}'>${cusFullname}</a></td>
 						<td>${cusUsername}</td>
 						<td>${cusPhone}</td>
             <td class='text-center'><a href='#${cusId}' class='btn btn-primary'>Edit</a></td>

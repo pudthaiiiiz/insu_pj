@@ -65,6 +65,42 @@ class HomeCtrl extends CI_Controller {
     $this->parser->parse('slide/temp_main', $data);
    
   }
+
+  public function viewProfile($token = null){
+    if ($token == null){
+      redirect(base_url()."/HomeCtrl");
+    }else{
+      $pathAsset = assets();
+      $getProfile = $this->Model_customer->getProfile($token);
+      $getDownline = $this->Model_customer->getDownline($getProfile->cusFullname);
+      $countDownline = $this->Model_customer->countDownline($getProfile->cusFullname);
+
+      if($getDownline != 0){
+        $downline = $getDownline;
+      }else{
+        $downline = 0;
+      }
+
+      if($getProfile->cusInvite != NULL){
+        $invite = $getProfile->cusInvite;
+      }else{
+        $invite = "บริษัท";
+      }
+      $data = array('title' => 'insurancebroker360',
+                    'assets' => $pathAsset , 
+                    'pFullname' => $getProfile->cusFullname,
+                    'pAddress' => $getProfile->cusAdrs,
+                    'pPhone' => $getProfile->cusPhone,
+                    'pDate' => $getProfile->cusCreateAt,
+                    'pInvite' => $invite,
+                    'pDownline' => $downline,
+                    'countDownline' => $countDownline
+                  );
+      $this->parser->parse('member/temp_profile', $data);
+    }
+   
+  }
+
   public function slideAll(){
     $pathAsset = assets();
     $result = $this->Model_slide->getSlide();
