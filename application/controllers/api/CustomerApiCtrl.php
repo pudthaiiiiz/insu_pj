@@ -40,6 +40,7 @@ class CustomerApiCtrl extends CI_Controller {
                           'cusPhone' => $this->input->post('inputPhone'),
                           'cusEmail' => $this->input->post('inputEmail'),
                           'cusUsername' => $this->input->post('inputUserName'),
+                          'cusInvite' => $this->input->post('inputInvite'),
                           'cusPassword' => sha1(md5($this->input->post('inputPassword'))),
                           'cusIdCard' => $this->input->post('inputIdCard'),
                           'cusLevel' => $this->input->post('inputLevel'),
@@ -60,6 +61,18 @@ class CustomerApiCtrl extends CI_Controller {
         $result = json_encode($resp);
         echo $result;
       
+  }
+  public function callback_username(){
+    $resp['status'] = 'error';
+    $_POST = json_decode(file_get_contents("php://input"), true);
+
+    $isUsername = $this->Model_customer->callReisterService($this->input->post('inputUserName'));
+    if($isUsername === 0){
+      $resp['status'] = 'success';
+    }
+    
+    $result = json_encode($resp);
+    echo $result;
   }
 
   public function callLogin() {

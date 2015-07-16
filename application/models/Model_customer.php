@@ -24,16 +24,24 @@ class Model_customer extends CI_Model{
 		}
 		return $result;
 	}
-
-  public function getProfileService($attb){
-     $result = 0;
-     $this->db->where('cusId',$attb);
-     $this->db->from('tbl_customers');
-     $isQuery = $this->db->get();
-     if($isQuery->num_rows()){
-      $result = $isQuery->row();
-     }
-     return $result;
-  }
+	public function callCheckUsername($user){
+		$result  = 0;
+		$this->db->where('cusUsername',$user);
+		$isQuery = $this->db->get();
+		if($isQuery->num_rows()){
+			$result = $isQuery->row();
+		}
+		return $result;
+	}
+	public function getProfileService($attb){
+	     $result = 0;
+	     $this->db->where('cusId',$attb);
+	     $this->db->from('tbl_customers');
+	     $isQuery = $this->db->get();
+	     if($isQuery->num_rows()){
+	      $result = $isQuery->row();
+	     }
+	     return $result;
+	}
 
 }
