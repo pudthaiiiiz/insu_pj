@@ -67,7 +67,7 @@ class CustomerApiCtrl extends CI_Controller {
     $_POST = json_decode(file_get_contents("php://input"), true);
 
     $isUsername = $this->Model_customer->callReisterService($this->input->post('inputUserName'));
-    if($isUsername === 0){
+    if($isUsername == 0){
       $resp['status'] = 'success';
     }
     
