@@ -29,7 +29,7 @@ class Model_customer extends CI_Model{
 		$this->db->where('cusUsername',$user);
 		$isQuery = $this->db->get('tbl_customers');
 		if($isQuery->num_rows()){
-			$result = $isQuery->row();
+			$result = 1;
 		}
 		return $result;
 	}
