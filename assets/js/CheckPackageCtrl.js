@@ -13,7 +13,8 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
       'getYear',
       'getBrand'
     ];
-    delete $scope.hasUser;
+    $scope.hasUserAlraedy;
+    $scope.hasUserYet;
     $scope.assets = Global.assets;
     $scope.uploads = Global.uploads;
     $scope.baseUrl = Global.baseurl;
@@ -199,23 +200,29 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
       var callServiceName = HomeServices[serviceName](params);
       callServiceName.success(function (data) {
         if (data.status === 'success') {
+          if (serviceName === 'checkUser') {
+            $scope.hasUserAlraedy = true;
+            $scope.hasUserYet = false;
+          }
           if (serviceName === 'saveMember') {
+            $scope.scrollTo('searchForm');
             $scope.saveMember = {
               status : "success"
             };
             return;
           }
-          var getData = angular.extend(data.data);
+          var getData = '';
+          if (data.data){
+            getData = angular.extend(data.data);
+          }
           assignData(serviceName,getData);
           if (serviceName === 'getLevelPackage') {
             $scope.showStep = 1;
           }
-          if (serviceName === 'checkUser') {
-            $scope.hasUser = false;
-          }
         } else {
           if (serviceName === 'checkUser') {
-            $scope.hasUser = true;
+            $scope.hasUserAlraedy = false;
+            $scope.hasUserYet = true;
           }
         }
         HomeServices.showLoad(false);
@@ -230,7 +237,9 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
     }
     
     $scope.submitRegisterForm = function() {
-      callService("saveMember");
+      if (!$scope.hasUserAlraedy) {
+        callService("saveMember");
+      }
     };
 
     var getAmphur = function() {
@@ -243,6 +252,10 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
 
     var getZipcode = function() {
       callService('getZipcode');
+    };
+    $scope.scrollTo = function(div) {
+      console.log(div);
+      $("#"+div).offset().top;
     };
    
   }]);

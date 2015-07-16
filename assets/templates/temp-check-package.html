@@ -1,7 +1,16 @@
 <div ng-controller="CheckPackageCtrl" ng-cloak class="check-package">
   <div class="bg-color-theme">
   <div class="container padding-style">
-      
+
+      <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.9s" ng-if="needToRister">
+          <br>
+
+        <div class="service-item">          
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/Qfr1kQ-ogOo" frameborder="0" allowfullscreen></iframe>
+        </div>
+          <br>
+
+      </div>
      <br>
      <button type="button" class="btn btn-primary" ng-click="needToRister = true" ng-show="!needToRister">สมัครเลย</button> 
      
@@ -94,15 +103,15 @@
               <div class="input-field">
                 <label>ผู้ใช้งาน :</label>
               </div>
-              <div class="form-group has-feedback" ng-class="{'has-success' : hasUser ,'has-warning' : !hasUser }">
+              <div class="form-group has-feedback" ng-class="{'has-success' : hasUserAlraedy ,'has-warning' : hasUserYet }">
                 <label>Username :</label>
-                <label class="control-label" ng-if="hasUser">สามารถใช้งานได้</label>
-                <label class="control-label" ng-if="!hasUser">ไม่สามารถใช้งานได้</label>
+                <label class="control-label" ng-if="hasUserAlraedy">สามารถใช้งานได้</label>
+                <label class="control-label" ng-if="hasUserYet">ไม่สามารถใช้งานได้</label>
                 <input type="text" name="username" class="form-control" ng-model="formRegister.username" placeholder="Username" required title="กรอก ชื่อผู้้ใช้" aria-describedby="inputSuccess2Status" ng-blur="checkUser()">
-                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-if="hasUser"></span>
-                <span id="inputSuccess2Status" class="sr-only" ng-if="hasUser">(success)</span>
-                <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true" ng-if="!hasUser"></span>
-                <span id="inputWarning2Status" class="sr-only" ng-if="!hasUser">(warning)</span>
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-if="hasUserAlraedy"></span>
+                <span id="inputSuccess2Status" class="sr-only" ng-if="hasUserAlraedy">(success)</span>
+                <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true" ng-if="hasUserYet"></span>
+                <span id="inputWarning2Status" class="sr-only" ng-if="hasUserYet">(warning)</span>
 
               </div>
               <div class="form-group">
@@ -118,7 +127,7 @@
                 <input type="text" name="invite" class="form-control" ng-model="formRegister.invite" placeholder="ผู้แนะนำ" title="ผู้แนะนำ">
               </div>
               <button type="submit" class="btn btn-default btn-lg btn-block">ลงทะเบียน</button>
-              <button type="button" class="btn btn-default btn-lg btn-block"  ng-click="$parent.needToRister = false">ไม่ล่ะ!! ขอบคุณ.</button>
+              <button type="button" class="btn btn-default btn-lg btn-block"  ng-click="$parent.needToRister = false;">ไม่ล่ะ!! ขอบคุณ.</button>
             </form> 
           </div>
       </div>
@@ -126,7 +135,7 @@
           <div class="box-register box-form">
             <form>
               <div class="input-field" align="center">
-                <h1>ลงทะเบียนเสร็จสิ้น</h1>
+                <h1 class="white">ลงทะเบียนเสร็จสิ้น</h1>
               </div>
             </form> 
           </div>
@@ -135,7 +144,7 @@
      <br>
   </div>
   </div>
-  <div class="bg-form-login">
+  <!-- <div class="bg-form-login">
   <div class="container padding-style">
     <div class="row" ng-init="needToRister = false">
       <div class="col-md-4 wow animated fadeInLeft">
@@ -303,5 +312,5 @@
       
     </div>
   </div>
-</div>
+  </div> -->
 </div>
