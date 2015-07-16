@@ -35,10 +35,10 @@ class ProvinceCtrl extends CI_Controller {
     $result = json_encode($resp);
     echo $result;
   }
-  public function getDistrict($where=''){
+  public function getDistrict($amphurId='', $provicneId=''){
     $resp['status'] = 'error';
     $resp['data'] = null;
-    $isData = $this->Model_province->getDistrict($where);
+    $isData = $this->Model_province->getDistrict($amphurId, $provicneId);
       if($isData != 0 ){
         $resp['status'] = 'success';
         $resp['data'] = $isData;
