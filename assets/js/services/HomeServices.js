@@ -110,6 +110,15 @@ app.factory('HomeServices', function ($http, $rootScope) {
               data: formData
           });
           return promise;
+        },
+        checkUser : function (data) {
+          var formData = data;
+          var promise = $http({
+              method: 'post',
+              url: 'api-check-username',
+              data: formData
+          });
+          return promise;
         }
     };
 });

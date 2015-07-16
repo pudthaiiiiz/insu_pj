@@ -94,9 +94,16 @@
               <div class="input-field">
                 <label>ผู้ใช้งาน :</label>
               </div>
-              <div class="form-group">
+              <div class="form-group has-feedback" ng-class="{'has-success' : hasUser ,'has-warning' : !hasUser }">
                 <label>Username :</label>
-                <input type="text" name="username" class="form-control" ng-model="formRegister.username" placeholder="Username" required title="กรอก ชื่อผู้้ใช้">
+                <label class="control-label" ng-if="hasUser">สามารถใช้งานได้</label>
+                <label class="control-label" ng-if="!hasUser">ไม่สามารถใช้งานได้</label>
+                <input type="text" name="username" class="form-control" ng-model="formRegister.username" placeholder="Username" required title="กรอก ชื่อผู้้ใช้" aria-describedby="inputSuccess2Status" ng-blur="checkUser()">
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-if="hasUser"></span>
+                <span id="inputSuccess2Status" class="sr-only" ng-if="hasUser">(success)</span>
+                <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true" ng-if="!hasUser"></span>
+                <span id="inputWarning2Status" class="sr-only" ng-if="!hasUser">(warning)</span>
+
               </div>
               <div class="form-group">
                 <label>Password :</label>

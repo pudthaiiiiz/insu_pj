@@ -13,6 +13,7 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
       'getYear',
       'getBrand'
     ];
+    delete $scope.hasUser;
     $scope.assets = Global.assets;
     $scope.uploads = Global.uploads;
     $scope.baseUrl = Global.baseurl;
@@ -75,6 +76,11 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
     
     $scope.submitRegisterForm = function () {
         $scope.showStep = 3;
+    };
+    $scope.checkUser = function () {
+      if ($scope.formRegister.username) {
+        callService('checkUser');
+      }
     };
     
     $scope.selectWatch = function (selectWhere) {
@@ -185,6 +191,10 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
         params = {
           inputAmphurId: $scope.formRegister.amphur
         };
+      } else if (serviceName === 'checkUser') {
+        params = {
+          inputUserName: $scope.formRegister.username
+        };
       }
       var callServiceName = HomeServices[serviceName](params);
       callServiceName.success(function (data) {
@@ -199,6 +209,13 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
           assignData(serviceName,getData);
           if (serviceName === 'getLevelPackage') {
             $scope.showStep = 1;
+          }
+          if (serviceName === 'checkUser') {
+            $scope.hasUser = false;
+          }
+        } else {
+          if (serviceName === 'checkUser') {
+            $scope.hasUser = true;
           }
         }
         HomeServices.showLoad(false);
