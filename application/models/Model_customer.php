@@ -27,7 +27,7 @@ class Model_customer extends CI_Model{
 	public function callCheckUsername($user){
 		$result  = 0;
 		$this->db->where('cusUsername',$user);
-		$isQuery = $this->db->get();
+		$isQuery = $this->db->get('tbl_customers');
 		if($isQuery->num_rows()){
 			$result = $isQuery->row();
 		}
