@@ -130,6 +130,13 @@
                   <span>บริการ</span>
                 </a>
               </li>
+
+               <li>
+                <a href="<?php echo base_url(); ?>HomeCtrl/popup">
+                  <span>Popup</span>
+                </a>
+              </li>
+
 <!--              <li>
                 <a href="#">
                   <span>Popup</span>
