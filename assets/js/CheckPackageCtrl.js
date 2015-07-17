@@ -254,8 +254,9 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
       callService('getZipcode');
     };
     $scope.scrollTo = function(div) {
-      console.log(div);
-      $("#"+div).offset().top;
+      // searchForm
+      var divTop = $("#"+div).offset().top;
+      $('html,body').animate({scrollTop: (divTop-100)}, 0);
     };
    
   }]);
