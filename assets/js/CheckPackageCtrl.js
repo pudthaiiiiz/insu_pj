@@ -237,7 +237,7 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
     }
     
     $scope.submitRegisterForm = function() {
-      if (!$scope.hasUserAlraedy) {
+      if (!$scope.hasUserYet) {
         callService("saveMember");
       }
     };
