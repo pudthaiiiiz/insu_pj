@@ -69,7 +69,7 @@ app.controller('SlideCtrl', ['$scope', 'HomeServices', function ($scope, HomeSer
 
     var popupShow = function(){
       setTimeout(function(){
-        $(".popup").colorbox({open:true, rel:'popup', transition:"none"/*, width:"75%", height:"75%"*/});
+        $(".popup").colorbox({open:true, rel:'popup', transition:"none", width:"75%", height:"75%"});
       },1000);
     }
     
