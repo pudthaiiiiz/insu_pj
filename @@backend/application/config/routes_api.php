@@ -13,7 +13,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   $route['api-add-slide']['post'] = 'api/SlidesApiCtrl/callAddSlides';
   $route['api-edit-content']['post'] = 'api/ContentsApiCtrl/callEditContent';
   
-  
+   ## API Popup
+  $route['api-add-popup']['post'] = 'api/PopupApiCtrl/callAddPopup';
+  $route['api-off-popup']['post'] = 'api/PopupApiCtrl/callAlertOff';
+  $route['api-on-popup']['post'] = 'api/PopupApiCtrl/callAlertOn';
+
+
   ## API Menu
   $route['api-edit-menu']['post'] = 'api/MenuApiCtrl/editMenu';
   

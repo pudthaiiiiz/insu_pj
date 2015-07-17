@@ -52,3 +52,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   
   
   $route['api-get-profile']['post'] = 'api/CustomerApiCtrl/getProfile';
+
+
+
+  // Popup
+  $route['api-get-popup']['post'] = 'api/PopupApiCtrl/getPopup';
+
+
+
+
+

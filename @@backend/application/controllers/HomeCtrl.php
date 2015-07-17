@@ -54,6 +54,17 @@ class HomeCtrl extends CI_Controller {
    
   }
   
+  // popup
+
+
+  public function popup(){
+    $pathAsset = assets();
+    $data = array('title' => 'insurancebroker360',
+                  'assets' => $pathAsset      
+                );
+    $this->parser->parse('popup/temp_main', $data);
+   
+  }
   
   // Sildes
   
