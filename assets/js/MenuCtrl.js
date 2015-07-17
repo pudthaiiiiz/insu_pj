@@ -21,10 +21,6 @@ app.controller('MenuCtrl', ['$scope',  function ($scope) {
     link : Global.baseurl+'profile'
     },
     {
-    name : 'สมัครสมาชิก',
-    link : Global.baseurl
-    },
-    {
     name : 'เบี้ยประกันภัย',
     link : Global.baseurl+'product'
     },
@@ -38,7 +34,11 @@ app.controller('MenuCtrl', ['$scope',  function ($scope) {
     },
     {
     name : 'ติดต่อเรา',
-    link : Global.baseurl+'/contact'
+    link : Global.baseurl+'#contact'
+    },
+    {
+    name : 'สมัครเลย',
+    link : Global.baseurl+'#'
     },
     {
     name : 'เบอร์แจ้งอุบัติเหตุ',
