@@ -20,7 +20,7 @@ function getRandomInt(min, max)
   
 
 	<div class="col-sm-12">
-			<div class="pull-right"><a href="#" class="btn btn-success" style="margin-bottom:3px;">Add Member</a></div><br/>
+			<!-- <div class="pull-right"><a href="#" class="btn btn-success" style="margin-bottom:3px;">Add Member</a></div><br/> -->
       <div class="clearfix"></div>
 		<div class="panel panel-primary">
 			<div class="panel-heading">
@@ -37,22 +37,34 @@ function getRandomInt(min, max)
 <table class="table table-bordered datatable" id="table-1">
 	<thead>
 		<tr>
-			<th width="230px">ชื่อ - นามสกุล</th>
+			<th width="120px">ชื่อ - นามสกุล</th>
 			<th>ที่อยู่</th>
-			<th width="150px">รถปัจจุบัน</th>
+			<th width="70px">เบอร์โทรศัพท์</th>
+			<th width="150px">บริษัทเดิม</th>
+			<th width="120px">ต่อจาก ?</th>
 			<th width="150px">ลงทะเบียนเมื่อ</th>
 		</tr>
 	</thead>
 	<tbody>
-	 ${results}
+		<?php foreach ($results as $key => $value) { ?>
          			<tr>
-						<td><a href='<?php echo base_url(); ?>HomeCtrl/viewProfile/${cusToken}'>${cusFullname}</a></td>
-						<td>${cusAdrs}</td>
-						<td>${oldInsurance}</td>
-            			<td>${cusCreateAt}</td>
+						<td><a href='<?php echo base_url(); ?>HomeCtrl/viewProfile/<?php echo $value->cusToken; ?>'><?php echo $value->cusFullname; ?></a></td>
+						<td><?php echo $value->cusAdrs." ".$value->PROVINCE_NAME." ".$value->AMPHUR_NAME; ?></td>
+						<td><?php echo $value->cusPhone; ?></td>
+		
+						<td><?php echo $value->oldCompany; ?></td>
+						<?php 	
+						if($value->cusInvite == null){ ?>
+
+						<td><a href="<?php echo base_url(); ?>HomeCtrl/getInvite/<?php echo $value->cusToken; ?>" class="btn btn-warning" style="color:#000;">หาทีมให้</a></td>
+						<?php } else { ?>
+						<td><a href='<?php echo base_url(); ?>HomeCtrl/viewProfile/<?php echo $value->cusToken; ?>'><?php echo $value->cusInvite; ?></a></td>
+						<?php }  ?>
+            			<td><?php echo $value->cusCreateAt; ?></td>
+            			
 					</tr>
           
-          ${/results}
+       <?php } ?>
 		
 	</tbody>
 	
