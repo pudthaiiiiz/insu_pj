@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jul 17, 2015 at 02:38 AM
+-- Generation Time: Jul 18, 2015 at 01:25 AM
 -- Server version: 5.5.42
 -- PHP Version: 5.6.7
 
@@ -25,6 +25,10 @@ CREATE TABLE `tbl_customers` (
   `cusFullname` varchar(80) NOT NULL,
   `cusInvite` varchar(100) DEFAULT NULL,
   `cusAdrs` text NOT NULL,
+  `cusProvince` varchar(100) NOT NULL,
+  `cusAmphur` varchar(100) NOT NULL,
+  `cusDistrict` varchar(100) NOT NULL,
+  `cusZipcode` varchar(20) NOT NULL,
   `cusPhone` varchar(10) NOT NULL,
   `cusEmail` varchar(80) NOT NULL,
   `cusUsername` varchar(16) NOT NULL,
@@ -42,9 +46,9 @@ CREATE TABLE `tbl_customers` (
 -- Dumping data for table `tbl_customers`
 --
 
-INSERT INTO `tbl_customers` (`cusId`, `cusFullname`, `cusInvite`, `cusAdrs`, `cusPhone`, `cusEmail`, `cusUsername`, `cusPassword`, `cusToken`, `cusIdCard`, `cusLevel`, `oldCompany`, `oldInsurance`, `oldRegister`, `cusCreateAt`) VALUES
-(1, 'พิเชษฐ์ ขุนใจ', NULL, '123', '0959356049', 'pudthai@coolradio.in.th', 'pudthai', 'a346bc80408d9b2a5063fd1bddb20e2d5586ec30', '34856905a305ec510aadb211cab19cb155a7d8553a0db7.05992641', '2147483647', 1, 'วิริยะ', 'MERCEDES-BENZ', '0', '2015-07-16 23:14:13'),
-(2, 'สมสี นามเท่ห์', 'พิเชษฐ์ ขุนใจ', '444', '9123123123', 'asad@sadas.asd', 'xxxxx', '51bc13d4c2a6f2d77bc1b28c66725321e4ce151d', '7612dbdf0e0ac714a79c299d3d00accb55a80262bdc958.35044574', '2147483647', 1, 'วิริยะ', 'AMC', '1', '2015-07-17 02:13:38');
+INSERT INTO `tbl_customers` (`cusId`, `cusFullname`, `cusInvite`, `cusAdrs`, `cusProvince`, `cusAmphur`, `cusDistrict`, `cusZipcode`, `cusPhone`, `cusEmail`, `cusUsername`, `cusPassword`, `cusToken`, `cusIdCard`, `cusLevel`, `oldCompany`, `oldInsurance`, `oldRegister`, `cusCreateAt`) VALUES
+(1, 'พิเชษฐ์ ขุนใจ', NULL, '123', '', '', '', '', '0959356049', 'pudthai@coolradio.in.th', 'pudthai', 'a346bc80408d9b2a5063fd1bddb20e2d5586ec30', '34856905a305ec510aadb211cab19cb155a7d8553a0db7.05992641', '2147483647', 1, 'วิริยะ', 'MERCEDES-BENZ', '0', '2015-07-16 23:14:13'),
+(2, 'สมสี นามเท่ห์', 'พิเชษฐ์ ขุนใจ', '444', '', '', '', '', '9123123123', 'asad@sadas.asd', 'xxxxx', '51bc13d4c2a6f2d77bc1b28c66725321e4ce151d', '7612dbdf0e0ac714a79c299d3d00accb55a80262bdc958.35044574', '2147483647', 1, 'วิริยะ', 'AMC', '1', '2015-07-17 02:13:38');
 
 --
 -- Indexes for dumped tables

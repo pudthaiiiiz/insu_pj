@@ -37,6 +37,10 @@ class CustomerApiCtrl extends CI_Controller {
      		}else{    
           $values = array('cusFullname' => $this->input->post('inputFullName'),
                           'cusAdrs' => $this->input->post('inputAddress'),
+                          'cusProvince' => $this->input->post('inputProvince'),
+                          'cusAmphur' => $this->input->post('inputAmphur'),
+                          'cusDistrict' => $this->input->post('inputDistrict'),
+                          'cusZipcode' => $this->input->post('inputZipcode'),
                           'cusPhone' => $this->input->post('inputPhone'),
                           'cusEmail' => $this->input->post('inputEmail'),
                           'cusUsername' => $this->input->post('inputUserName'),
