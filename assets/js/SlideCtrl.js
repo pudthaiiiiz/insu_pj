@@ -9,6 +9,9 @@ app.controller('SlideCtrl', ['$scope', 'HomeServices', function ($scope, HomeSer
     $scope.assets = window.location.origin+'/assets/';
     $scope.uploads = window.location.origin+'/uploads/';
     $scope.baseUrl = window.location.origin+'/';
+    $scope.assets = Global.assets;
+    $scope.uploads = Global.uploads;
+    $scope.baseUrl = Global.baseurl;
     var services = [
       'getSlide',
       'getPopup'
@@ -48,7 +51,7 @@ app.controller('SlideCtrl', ['$scope', 'HomeServices', function ($scope, HomeSer
           } else if  (serviceName === 'getPopup') {
             if (getData) {
               //popup
-              $scope.popupUrl = getData;
+              $scope.popupUrl = Global.uploads+'popup/'+getData;
               popupShow();
             }
           }
