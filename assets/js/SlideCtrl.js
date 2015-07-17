@@ -10,7 +10,8 @@ app.controller('SlideCtrl', ['$scope', 'HomeServices', function ($scope, HomeSer
     $scope.uploads = window.location.origin+'/uploads/';
     $scope.baseUrl = window.location.origin+'/';
     var services = [
-      'getSlide'
+      'getSlide',
+      'getPopup'
     ];
     var params = {};
     var setSlide = function() {
@@ -36,13 +37,21 @@ app.controller('SlideCtrl', ['$scope', 'HomeServices', function ($scope, HomeSer
 //          console.log(serviceName);
       callServiceName.success(function (data) {
 //          console.log(data);
+        var getData = angular.extend(data.data);
         if (data.status === 'success') {
-          var getData = angular.extend(data.data);
-          $scope.slides = getData;
-          console.log(data);
-          setTimeout(function(){
-            setSlide(); 
-          }, 1000);
+          if (serviceName === 'getSlide') {
+            $scope.slides = getData;
+            console.log(data);
+            setTimeout(function(){
+              setSlide(); 
+            }, 1000);
+          } else if  (serviceName === 'getPopup') {
+            if (getData) {
+              //popup
+              $scope.popupUrl = getData;
+              popupShow();
+            }
+          }
         }
 //        HomeServices.showLoad(false);
       }).error(function () {
@@ -54,7 +63,12 @@ app.controller('SlideCtrl', ['$scope', 'HomeServices', function ($scope, HomeSer
     for (name in services) {
       callService(services[name]);
     }
-//    
+
+    var popupShow = function(){
+      setTimeout(function(){
+        $(".popup").colorbox({open:true, rel:'popup', transition:"none", width:"75%", height:"75%"});
+      },1000);
+    }
     
   }]);
 

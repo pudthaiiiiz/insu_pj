@@ -66,6 +66,15 @@ app.factory('HomeServices', function ($http, $rootScope) {
           });
           return promise;
         },
+        getPopup : function (data) {
+          var formData = data;
+          var promise = $http({
+              method: 'post',
+              url: 'api-get-popup',
+              data: formData
+          });
+          return promise;
+        },
         getContent : function (data) {
           var formData = data;
           var promise = $http({

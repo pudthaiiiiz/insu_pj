@@ -16,6 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="${assets}css/font.css">
+    <link rel="stylesheet" href="${assets}css/colorbox.css">
     <link rel="stylesheet" href="${assets}css/font-awesome.min.css">
     <link rel="stylesheet" href="${assets}css/jquery.fancybox.css">
     <link rel="stylesheet" href="${assets}css/bootstrap.min.css">
@@ -223,6 +224,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="${assets}js/plugin/jquery.ba-cond.min.js"></script>
     <script src="${assets}js/plugin/jquery.slides.min.js"></script>
     <script src="${assets}js/plugin/wow.min.js"></script>
+    <script src="${assets}js/plugin/jquery.colorbox-min.js"></script>
     <script src="${assets}js/plugin/main.js"></script>
   </body>
 </html>
