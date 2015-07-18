@@ -78,9 +78,16 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
     $scope.submitRegisterForm = function () {
         $scope.showStep = 3;
     };
+
     $scope.checkUser = function () {
       if ($scope.formRegister.username) {
         callService('checkUser');
+      }
+    };
+
+    $scope.checkInvite = function () {
+      if ($scope.formRegister.invite) {
+        callService('checkInvite');
       }
     };
     
@@ -195,6 +202,10 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
         params = {
           inputUserName: $scope.formRegister.username
         };
+      } else if (serviceName === 'checkInvite') {
+        params = {
+          inputInvite: $scope.formRegister.invite
+        };
       }
       var callServiceName = HomeServices[serviceName](params);
       callServiceName.success(function (data) {
@@ -202,6 +213,10 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
           if (serviceName === 'checkUser') {
             $scope.hasUserAlraedy = true;
             $scope.hasUserYet = false;
+          }
+          if (serviceName === 'checkInvite') {
+            $scope.hasInviteAlraedy = true;
+            $scope.hasInviteYet = false;
           }
           if (serviceName === 'saveMember') {
             $scope.scrollTo('searchForm');
@@ -222,6 +237,10 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
           if (serviceName === 'checkUser') {
             $scope.hasUserAlraedy = false;
             $scope.hasUserYet = true;
+          }
+          if (serviceName === 'checkInvite') {
+            $scope.hasInviteAlraedy = false;
+            $scope.hasInviteYet = true;
           }
         }
         HomeServices.showLoad(false);

@@ -128,6 +128,15 @@ app.factory('HomeServices', function ($http, $rootScope) {
               data: formData
           });
           return promise;
+        },
+        checkInvite : function (data) {
+          var formData = data;
+          var promise = $http({
+              method: 'post',
+              url: 'api-check-invite',
+              data: formData
+          });
+          return promise;
         }
     };
 });

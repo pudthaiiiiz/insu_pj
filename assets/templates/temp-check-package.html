@@ -112,7 +112,6 @@
                 <span id="inputSuccess2Status" class="sr-only" ng-if="hasUserAlraedy">(success)</span>
                 <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true" ng-if="hasUserYet"></span>
                 <span id="inputWarning2Status" class="sr-only" ng-if="hasUserYet">(warning)</span>
-
               </div>
               <div class="form-group">
                 <label>Password :</label>
@@ -120,11 +119,15 @@
 <!--                <br>
                 <input type="password" name="passwordConfirm" class="form-control" ng-model="formRegister.passwordConfirm" placeholder="Password Confirm" required title="ยืนยัน รหัสผ่าน">-->
               </div>
-              <div class="input-field">
+              <div class="form-group has-feedback" ng-class="{'has-success' : hasInviteAlraedy ,'has-warning' : hasInviteYet }">
                 <label>ผู้แนะนำ :</label>
-              </div>
-              <div class="form-group">
-                <input type="text" name="invite" class="form-control" ng-model="formRegister.invite" placeholder="ผู้แนะนำ" title="ผู้แนะนำ">
+                <label class="control-label" ng-if="hasInviteAlraedy">มีผู้แนะนำที่ระบุ</label>
+                <label class="control-label" ng-if="hasInviteYet">ไม่มีผู้แนะนำที่ระบุ</label>
+                <input type="text" name="invite" class="form-control" ng-model="formRegister.invite" placeholder="ผู้แนะนำ" required title="ผู้แนะนำ" aria-describedby="inputSuccess2Status" ng-blur="checkInvite()">
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-if="hasInviteAlraedy"></span>
+                <span id="inputSuccess2Status" class="sr-only" ng-if="hasInviteAlraedy">(success)</span>
+                <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true" ng-if="hasInviteYet"></span>
+                <span id="inputWarning2Status" class="sr-only" ng-if="hasInviteYet">(warning)</span>
               </div>
               <button type="submit" class="btn btn-default btn-lg btn-block">ลงทะเบียน</button>
               <button type="button" class="btn btn-default btn-lg btn-block"  ng-click="$parent.needToRister = false; scrollTo('searchForm');">ไม่ล่ะ!! ขอบคุณ.</button>
