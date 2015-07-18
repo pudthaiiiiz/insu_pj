@@ -144,7 +144,6 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
     };
     
     var callService = function (serviceName) {
-      console.log(serviceName);
       if (serviceName === 'getSeries') {
         params = {
           inputYear: $scope.formSearch.year,
