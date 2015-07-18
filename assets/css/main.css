@@ -13,11 +13,21 @@
 /* =================================== */
 /*	Basic Style 
 /* =================================== */
-#navigation{
+#navigation {
   position: relative;
 }
 .glyphicon {
   top:36px !important;
+}
+.fix-btn-scroll {
+  bottom: 10px;
+  right: 10px;
+  padding: 20px;
+  display: none;
+  position: fixed;
+  cursor: pointer;
+  background: #454545;
+  top: inherit !important;
 }
 .white {
   color: white !important;

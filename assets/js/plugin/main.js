@@ -114,6 +114,35 @@ $(document).ready(function () {
     }
   });
 
+
+  //create btnScrollTop
+  var btnScrollTop = function () {
+    $btnScrollTop = '<span class="fix-btn-scroll'+
+                    ' glyphicon glyphicon-eject"'+
+                    ' aria-hidden="true"></span>';
+    $body = $('#body');
+    $body.append($btnScrollTop);
+    var $elBtn = $body.find('.fix-btn-scroll');
+    $elBtn.on( "click", function() {
+      $('html,body').animate({scrollTop: (0) }, 1000);
+      
+    });
+  };
+
+  btnScrollTop();
+
+  //checkScroll
+  $(window).on( "scroll", function(e) {
+    $body = $('#body');
+    var $elBtn = $body.find('.fix-btn-scroll');
+    $scroll = $(window).scrollTop();
+    if ($scroll > 300) {
+      $elBtn.fadeIn();  
+    } else {
+      $elBtn.fadeOut();  
+    }
+  });
+
 });
 
 

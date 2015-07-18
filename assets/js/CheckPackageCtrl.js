@@ -276,5 +276,7 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
       var divTop = $("#"+div).offset().top;
       $('html,body').animate({scrollTop: (divTop-100)}, 0);
     };
+    
+
    
   }]);

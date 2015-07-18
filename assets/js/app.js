@@ -26,3 +26,4 @@ Global.handle = {
     console.log(messageConfig.apiError);
   }
 };
+
