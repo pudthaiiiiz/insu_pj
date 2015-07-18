@@ -112,6 +112,56 @@ class HomeCtrl extends CI_Controller {
    
   }
 
+   public function getInvite($token = null){
+    if ($token == null){
+      redirect(base_url()."/HomeCtrl");
+    }else{
+      $pathAsset = assets();
+      $getProfile = $this->Model_customer->getProfile($token);
+      $userInvite = $this->Model_customer->userInvite();
+      $countDownline = $this->Model_customer->countDownline($getProfile->cusFullname);
+
+    
+
+      if($getProfile->cusInvite != NULL){
+        redirect(base_url()."HomeCtrl/viewProfile");
+      }else{
+        $invite = "ไม่มี";
+      }
+
+      if($getProfile->oldRegister === 0){
+        $reg = "ต่อเจ้าเดิม";
+      }else{
+        $reg = "เปลี่ยนเจ้า";
+      }
+      $data = array('title' => 'insurancebroker360',
+                    'assets' => $pathAsset , 
+                    'pFullname' => $getProfile->cusFullname,
+                    'pAddress' => $getProfile->cusAdrs,
+                    'pProvince' => $getProfile->PROVINCE_NAME,
+                    'pAmphur' => $getProfile->AMPHUR_NAME,
+                    'pDistrict' => $getProfile->DISTRICT_NAME,
+                    'pZippost' => $getProfile->cusZipcode,
+                    'cusIdCard' => $getProfile->cusIdCard,
+                    'cusUsername' => $getProfile->cusUsername,
+                    'cusEmail' => $getProfile->cusEmail,
+                    'oldCompany' => $getProfile->oldCompany,
+                    'oldInsurance' => $getProfile->oldInsurance,
+                    'oldRegister' => $reg,
+                    'thisToken' => $token,
+
+                    'pPhone' => $getProfile->cusPhone,
+                    'pDate' => $getProfile->cusCreateAt,
+                    'pInvite' => $invite,
+                    
+                    'userInvite' => $userInvite,
+                    'countDownline' => $countDownline
+                  );
+      $this->parser->parse('member/temp_getinvite', $data);
+    }
+   
+  }
+
   public function slideAll(){
     $pathAsset = assets();
     $result = $this->Model_slide->getSlide();
