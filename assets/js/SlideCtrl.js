@@ -35,11 +35,8 @@ app.controller('SlideCtrl', ['$scope', 'HomeServices', function ($scope, HomeSer
     $scope.slides = [];
 //        HomeServices.showLoad(true);
     var callService = function (serviceName) {
-//          console.log(serviceName);
       var callServiceName = HomeServices[serviceName](params);
-//          console.log(serviceName);
       callServiceName.success(function (data) {
-//          console.log(data);
         if (data.status === 'success' && data.data) {
         var getData = angular.extend(data.data);
           if (serviceName === 'getSlide') {
