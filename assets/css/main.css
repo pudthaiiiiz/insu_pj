@@ -13,6 +13,9 @@
 /* =================================== */
 /*	Basic Style 
 /* =================================== */
+#navigation{
+  position: relative;
+}
 .glyphicon {
   top:36px !important;
 }
@@ -315,7 +318,7 @@ main > section .container{
   background-color: #000;
   background-image: url(../img/Mercedes-emblem.jpg);
 */
-  padding-top: 90px;
+  /*padding-top: 90px;*/
   background-repeat:no-repeat;
   background-position: center center;
   background-size: 100%;
@@ -1410,7 +1413,7 @@ iframe {
   width: 100%;
 }
     .temp-slide{
-      padding-top: 110px;
+      /*padding-top: 110px;*/
     }
 
 

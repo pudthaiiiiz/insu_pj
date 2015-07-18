@@ -54,7 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <div class="line-gold"></div>
     </header>
     <main class="site-content" role="main">
-      <section id="home" data-temp-slide></section>    
+      <!-- <section id="home" data-temp-slide></section>     -->
       <div ng-controller="CheckPackageCtrl" ng-cloak class="check-package">
         <div class="container">
           <div class="row">
