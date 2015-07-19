@@ -16,6 +16,10 @@
 #navigation {
   position: relative;
 }
+.img-member{
+  width: 160px;
+  height: 160px;
+}
 .glyphicon {
   top:36px !important;
 }
@@ -230,7 +234,7 @@ main > section .container{
 }
 
 .sec-title h2:after {
-    border-bottom: 1px solid #2E2E2E;
+    border-bottom: 0px solid #2E2E2E;
     content: "";
     display: block;
     left: 45%;
@@ -1086,7 +1090,11 @@ ul.external li a:hover {
 .input-field {
     margin-bottom: 10px;
 }
+.form-file{
 
+    border: 1px solid #DDDDDD;
+    padding: 20px;
+}
 .form-control {
     border: 1px solid #ececec;
     border-radius: 0;

@@ -18,8 +18,10 @@ app.controller('ContentCtrl', ['$scope', 'HomeServices', function ($scope, HomeS
     var callService = function (serviceName) {
       var callServiceName = HomeServices[serviceName](params);
       callServiceName.success(function (data) {
-        var getData = angular.extend(data.data);
-        $scope.contents = getData;
+        if (data.data) {
+          var getData = angular.extend(data.data);
+          $scope.contents = getData;
+        }
 //        HomeServices.showLoad(false);
       }).error(function () {
 //        HomeServices.showLoad(false);
@@ -50,8 +52,10 @@ app.controller('ContentListCtrl', ['$scope', 'HomeServices', function ($scope, H
     var callService = function (serviceName) {
       var callServiceName = HomeServices[serviceName](params);
       callServiceName.success(function (data) {
-        var getData = angular.extend(data.data);
-        $scope.contents = getData;
+        if (data.data) {
+          var getData = angular.extend(data.data);
+          $scope.contents = getData;
+        }
 //        HomeServices.showLoad(false);
       }).error(function () {
 //        HomeServices.showLoad(false);
