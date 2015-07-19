@@ -23,6 +23,7 @@ app.controller('SlideCtrl', ['$scope', 'HomeServices', function ($scope, HomeSer
           captionShowDelay: 200,
           captionShowSpeed: 400,
           captionShowEasing: "easeOutBack",
+          arrowsNav: false,
           directionNavEnabled: true,
           controlNavEnabled: true,
           slideshowEnabled: true,
@@ -46,7 +47,6 @@ app.controller('SlideCtrl', ['$scope', 'HomeServices', function ($scope, HomeSer
             }, 1000);
           } else if  (serviceName === 'getPopup') {
             if (getData) {
-              //popup
               $scope.popupUrl = Global.uploads+'popup/'+getData;
               popupShow();
             }

@@ -1152,7 +1152,7 @@ textarea.form-control {
 /*============================================================
 	Footer
 ==============================================================*/
-#footer h1,h2,h3,h4,h5,p,span,li,a{
+#footer h1,h2,h3,h4,h5,p,span,ul li,a{
   list-style: none;
   /*color: #ffffff;*/
   
@@ -1326,6 +1326,12 @@ textarea.form-control {
 .box-register{
   border: 1px solid #2E2E2E;
 }
+
+.box-term{
+  max-height: 500px;
+  overflow:auto;
+}
+
 .color-success{
   color: green;
 }
