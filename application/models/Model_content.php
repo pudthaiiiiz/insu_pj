@@ -18,9 +18,20 @@ class Model_content extends CI_Model{
       return $result;
   }
   
+  public function getContentHome(){
+    $result  = 0;
+    $this->db->limit(6);
+    $this->db->order_by('cCreateAt','DESC');
+    $query = $this->db->get('tbl_contents');
+    $isData = $query->num_rows();
+      if($isData > 0){
+        $result = $query->result();
+      }
+      return $result;
+  }
+  
   public function getContentAll(){
-		$result  = 0;
-		$this->db->limit(6);
+    $result  = 0;
     $this->db->order_by('cCreateAt','DESC');
     $query = $this->db->get('tbl_contents');
     $isData = $query->num_rows();

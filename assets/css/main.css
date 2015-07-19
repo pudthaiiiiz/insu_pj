@@ -58,8 +58,8 @@ body {
     color: #818181;
 }
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
-  
-  border-color: rgb(227, 95, 0) !important;
+  position: relative;
+  border-color: rgb(241, 225, 154) !important;
 }
 figure, p, address {
     margin: 0;

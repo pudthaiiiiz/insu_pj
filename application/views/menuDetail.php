@@ -58,19 +58,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <div ng-controller="CheckPackageCtrl" ng-cloak class="check-package">
         <div class="container">
           <div class="row">
+            <br>
             <div class="col-md-12 wow animated fadeInLeft">
-              <div align="center">
-                <table class='table table-bordered' style="margin-top:95px;">
-                  <tr>
-                    <td width="80%"><strong><a href="${baseUrl}">หน้าแรก</a> > ${contentName}</strong></td>
-                    <td>อัพเดทล่าสุด : ${contentDate}</td>
-                  </tr>
-                  <tr>
-                    <td colspan='2'><center>${contentDetail}</center></td>
-                  </tr>
-                </table>
+              <ol class="breadcrumb">
+                <li><a href="${baseUrl}">หน้าแรก</a></li>
+                <li class="active">${contentName}</li>
+              </ol>
+              <span>อัพเดทล่าสุด : <span class="label label-primary">${contentDate}</span></span>
+              <div>
+                ${contentDetail}
               </div>
-              <div class="pull-left"><a href="${baseUrl}" class="btn btn-lg btn-primary" style="margin:15px;">ย้อนกลับ</a></div>
+              <div class="pull-left"><a href="${baseUrl}" class="btn btn-lg btn-primary" style="margin:15px;"><span class="glyphicon glyphicon-chevron-left" style="top:0px !important">ย้อนกลับ</span></a></div>
               
               <br>
             </div>
@@ -147,10 +145,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
               <h4 class="uppercase">ที่ตั้งสำนักงาน</h4>
               <p> 173/21 อาคารเอเชีย เซนเตอร์ ชั้น 20 ถนนสาทรใต้ แขวงทุ่งมหาเมฆ เขตสาทร กรุงเทพ 10120<br> (เลขที่ใบอนุญาต : ว00004/2556) </p> 
-              <img src="/DirectAsiaThailand/media/assets/images/trust-logo.png" alt="Direct Asia" class="visible-xs">
-
-
-
 
             </div>
             <div class="col-sm-6 col-md-3">
