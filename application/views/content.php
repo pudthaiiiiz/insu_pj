@@ -66,6 +66,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <li class="active">${contentTitle}</li>
               </ol>
               <span>อัพเดทล่าสุด : <span class="label label-primary">${contentCreateAt}</span></span>
+              <br><br>
               <div>
                 ${contentDetail}
               </div>
