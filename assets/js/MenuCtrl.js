@@ -42,7 +42,7 @@ app.controller('MenuCtrl', ['$scope',  function ($scope) {
     },
     {
     name : 'เบอร์แจ้งอุบัติเหตุ',
-    link : Global.baseurl+'/pagedetail'
+    link : Global.baseurl+'pagedetail'
     }
   ];
 }]);
