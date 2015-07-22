@@ -6,7 +6,7 @@ require_once 'routes_ctrl.php';
 
 $route['default_controller'] = 'HomeCtrl';
 $route['login'] = 'AuthenCtrl';
-$route['member/(:any)'] = 'AuthenCtrl/member/$1';
+$route['member'] = 'AuthenCtrl/member';
 $route['content'] = 'ContentCtrl';
 $route['content/(:any)'] = 'ContentCtrl/detail/$1';
 $route['404_override'] = '';

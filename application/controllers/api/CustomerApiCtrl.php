@@ -94,8 +94,9 @@ class CustomerApiCtrl extends CI_Controller {
 
   public function callLogin() {
     $resp['status'] = 'error';
+    
     $_POST = json_decode(file_get_contents("php://input"), true);
-   
+
       $this->load->library('form_validation');
         $this->form_validation->set_rules('userName', 'user', 'required');
      	  $this->form_validation->set_rules('password', 'pass', 'required');
@@ -107,9 +108,11 @@ class CustomerApiCtrl extends CI_Controller {
             if($isAuthen){
                 $userSessions = array('sesToken' => $isAuthen->cusToken,
                                       'sesCusId' => $isAuthen->cusId,
+                                      'sesData' => $isAuthen,
                                       'isSesLogin' => true);
                 $this->session->set_userdata($userSessions);
                 $resp['status'] = 'loginSuccess';
+              
             } 
         }
     $result = json_encode($resp);
