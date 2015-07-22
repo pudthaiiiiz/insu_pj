@@ -18,6 +18,8 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
     $scope.showTerm = false;
     $scope.hasUserAlraedy;
     $scope.hasUserYet;
+    $scope.hasInviteAlraedy;
+    $scope.hasInviteYet;
     $scope.assets = Global.assets;
     $scope.uploads = Global.uploads;
     $scope.baseUrl = Global.baseurl;
@@ -51,7 +53,6 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
     $scope.showFromRegister = 2;
     $scope.showFromLoginAndRegister = 0;
     $scope.showStep = 0;
-
 
     // $scope.needToRister = true;
     // $scope.showTerm = true;
@@ -90,19 +91,41 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
     };
     
     $scope.submitRegisterForm = function() {
+      // setTimeout(function (){
+        validateFormRegister();
+      // },500);
+    };
+
+    var validateFormRegister = function() {
+      // console.log('$scope.hasUserAlraedy :'+ $scope.hasUserAlraedy);
+      // console.log('$scope.hasInviteAlraedy :'+ $scope.hasInviteAlraedy);
+      if ($scope.hasUserAlraedy && ($scope.hasInviteAlraedy || (!$scope.hasInviteAlraedy && !$scope.hasInviteYet)) ) {
       $scope.showTerm = true;
       $scope.needToRister = false;
       $scope.showTextRegister = false;
       $scope.scrollTo('searchForm');
-    };
+      } else {
+        if (!$scope.hasUserAlraedy) {
+          $scope.scrollTo('box-user');
+        } else if (!$scope.hasInviteAlraedy) {
+          $scope.scrollTo('box-invite');
+        }
+      }
+    }
 
+    $scope.stepBackToRegister = function() {
+      $scope.showTerm = false;
+      $scope.needToRister = true;
+      $scope.showTextRegister = true;
+      $scope.scrollTo('searchForm');
+
+    }
     $scope.confirmTerm = function() {
-      if (!$scope.hasUserYet) {
         $scope.showTerm = false;
         $scope.needToRister = true;
         $scope.showTextRegister = true;
         callService("saveMember");
-      }
+
     };
 
     $scope.checkUser = function () {
@@ -114,6 +137,9 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
     $scope.checkInvite = function () {
       if ($scope.formRegister.invite) {
         callService('checkInvite');
+      } else {
+        delete $scope.hasInviteAlraedy;
+        delete $scope.hasInviteYet;
       }
     };
     
@@ -247,6 +273,7 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
           if (serviceName === 'saveMember') {
             $scope.scrollTo('searchForm');
             $scope.needToRister = false;
+            $scope.showTextRegister = false;
             $scope.saveMember = {
               status : "success"
             };
