@@ -10,6 +10,9 @@ class AuthenCtrl extends CI_Controller {
   }
 
   public function index() {
+    if($this->session->userdata('isSesLogin') == true){
+            redirect(base_url().'member');
+        }
     $pathAsset = assets();
         $data = array(
             'title' => 'insurancebroker360',
