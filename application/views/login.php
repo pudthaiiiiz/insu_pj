@@ -171,7 +171,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <option ng-repeat="brand in data.Brands" value="{{brand.bName}}">{{brand.bName}}</option>
                 </select>
               </div>
-              <div class="input-field">
+              <div id="box-user" class="input-field">
                 <label>ผู้ใช้งาน :</label>
               </div>
               <div class="form-group has-feedback" ng-class="{'has-success' : hasUserAlraedy ,'has-warning' : hasUserYet }">
@@ -190,7 +190,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!--                <br>
                 <input type="password" name="passwordConfirm" class="form-control" ng-model="formRegister.passwordConfirm" placeholder="Password Confirm" required title="ยืนยัน รหัสผ่าน">-->
               </div>
-              <div class="form-group has-feedback" ng-class="{'has-success' : hasInviteAlraedy ,'has-warning' : hasInviteYet }">
+              <div id="box-invite" class="form-group has-feedback" ng-class="{'has-success' : hasInviteAlraedy ,'has-warning' : hasInviteYet }">
                 <label>ผู้แนะนำ :</label>
                 <label class="control-label" ng-if="hasInviteAlraedy">มีผู้แนะนำที่ระบุ</label>
                 <label class="control-label" ng-if="hasInviteYet">ไม่มีผู้แนะนำที่ระบุ</label>
@@ -200,7 +200,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true" ng-if="hasInviteYet"></span>
                 <span id="inputWarning2Status" class="sr-only" ng-if="hasInviteYet">(warning)</span>
               </div>
-              <button type="submit" class="btn btn-default btn-lg btn-block">ลงทะเบียน</button>
+              <button type="submit" class="btn btn-primary btn-lg btn-block">ลงทะเบียน</button>
               <button type="button" class="btn btn-default btn-lg btn-block"  ng-click="$parent.needToRister = false; scrollTo('searchForm');">ไม่ล่ะ!! ขอบคุณ.</button>
             </form> 
           </div>
@@ -260,21 +260,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   ฉันอ่านเงื่อนไขและยอมรับ
                 </label>
               </div>
-              <button type="submit" class="btn btn-default btn-lg btn-block">ยอมรับ</button>
+              <button type="submit" class="btn btn-primary btn-lg btn-block">ยอมรับ</button>
+              <button type="button" class="btn btn-default btn-lg btn-block" ng-click="stepBackToRegister();">ย้อนกลับ</button>
             </form> 
       </div>
+  </div>
       <div class="col-md-12 wow animated fadeInLeft" ng-if="saveMember.status === 'success'">
           <div class="box-register box-form">
             <form>
               <div class="input-field" align="center">
-                <h1 class="white">ลงทะเบียนเสร็จสิ้น</h1>
+                <h1>ลงทะเบียนเสร็จสิ้น</h1>
               </div>
             </form> 
           </div>
       </div>
      
      <br>
-  </div>
   </div>
 
       <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
