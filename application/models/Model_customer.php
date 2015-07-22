@@ -33,6 +33,15 @@ class Model_customer extends CI_Model{
 		}
 		return $result;
 	}
+	public function callCheckInvite($invite){
+		$result  = 0;
+		$this->db->where('cusFullname',$invite);
+		$isQuery = $this->db->get('tbl_customers');
+		if($isQuery->num_rows()){
+			$result = 1;
+		}
+		return $result;
+	}
 	public function getProfileService($attb){
 	     $result = 0;
 	     $this->db->where('cusId',$attb);

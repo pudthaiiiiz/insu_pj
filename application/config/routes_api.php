@@ -3,6 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   ## API Route
   $route['api-register-customer']['post'] = 'api/CustomerApiCtrl/callReister';
   $route['api-check-username']['post'] = 'api/CustomerApiCtrl/callback_username';
+  $route['api-check-invite']['post'] = 'api/CustomerApiCtrl/callback_Invite';
+
   $route['api-login-customer']['post'] = 'api/CustomerApiCtrl/callLogin';
   
   

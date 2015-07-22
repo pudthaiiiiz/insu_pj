@@ -79,9 +79,23 @@ class CustomerApiCtrl extends CI_Controller {
     echo $result;
   }
 
+  public function callback_Invite(){
+    $resp['status'] = 'error';
+    $_POST = json_decode(file_get_contents("php://input"), true);
+    // $this->input->post('inputInvite')
+    $isUsername = $this->Model_customer->callCheckInvite($this->input->post('inputInvite'));
+    if($isUsername == 1){
+      $resp['status'] = 'success';
+    }
+    
+    $result = json_encode($resp);
+    echo $result;
+  }
+
   public function callLogin() {
     $resp['status'] = 'error';
     $_POST = json_decode(file_get_contents("php://input"), true);
+   
       $this->load->library('form_validation');
         $this->form_validation->set_rules('userName', 'user', 'required');
      	  $this->form_validation->set_rules('password', 'pass', 'required');
