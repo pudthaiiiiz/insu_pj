@@ -38,9 +38,6 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
       username : '',
       password : ''
     };
-    $scope.formLogin = {};
-    $scope.formLogin.username = '';
-    $scope.formLogin.password = '';
     $scope.formLevel = {};
     $scope.formLevel.id = '';
     $scope.formSearch = {

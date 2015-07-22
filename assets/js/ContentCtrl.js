@@ -52,11 +52,10 @@ app.controller('ContentListCtrl', ['$scope', 'HomeServices', function ($scope, H
     $scope.uploads = Global.uploads;
     $scope.baseUrl = Global.baseurl;
     $scope.contents = [];
+    $scope.formLogin = {};
+    $scope.formLogin.username = '';
+    $scope.formLogin.password = '';
 
-    $scope.formLogin = {
-      username : '',
-      password : ''
-    };
 //        HomeServices.showLoad(true);
     var callService = function (serviceName) { 
       if (serviceName === 'login') {
