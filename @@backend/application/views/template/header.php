@@ -187,7 +187,7 @@
 
 
               <li>
-                <a href="<?php echo base_url(); ?>homectrl/logout">
+                <a href="<?php echo base_url(); ?>HomeCtrl/logout">
                   Log Out <i class="entypo-logout right"></i>
                 </a>
               </li>

@@ -31,12 +31,18 @@ class AdminApiCtrl extends CI_Controller {
     if($isAdmin)
     {
       $login_status = 'success';
+      $newdata = array(
+                   'logged_in' => TRUE
+               );
+
+      $this->session->set_userdata($newdata);
     }
 
     $resp['login_status'] = $login_status;
 
     if($login_status == 'success')
     {
+      
       $resp['redirect_url'] = base_url().'HomeCtrl/main';
     }
 

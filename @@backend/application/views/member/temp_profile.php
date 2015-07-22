@@ -64,18 +64,32 @@
 		</div> -->
 		
 	</header>
-	
 	<section class="profile-info-tabs">
 		
 		<div class="row">
 			
-			<div class="col-sm-offset-2 col-sm-10">
+			<div class="col-sm-offset-2 col-sm-4">
 				
 				<ul class="user-details">
 					<li>
 						<a href="#">
+							<i class="entypo-vcard"></i>
+							${cusIdCard}
+						</a>
+					</li>
+
+
+					<li>
+						<a href="#">
 							<i class="entypo-location"></i>
-							${pAddress}
+							${pAddress} ${pProvince}
+						</a>
+					</li>
+					
+					<li>
+						<a href="#">
+							<i class="entypo-location"></i>
+							${pAmphur} ${pDistrict} ${pZippost}
 						</a>
 					</li>
 					
@@ -83,6 +97,60 @@
 						<a href="#">
 							<i class="entypo-phone"></i>
 							${pPhone}
+						</a>
+					</li>
+
+
+					
+
+					<li>
+						<a href="#">
+							<i class="entypo-user"></i>
+							${cusUsername}
+						</a>
+					</li>
+
+					<li>
+						<a href="#">
+							<i class="entypo-mail"></i>
+							${cusEmail}
+						</a>
+					</li>
+
+				</ul>
+				
+			
+			</div>
+			
+		
+		<div class="col-sm-5 col-sm-4">
+				
+				<ul class="user-details">
+					<li>
+						<a href="#">
+							<i class="entypo-location"></i>
+							${pInvite}
+						</a>
+					</li>
+					
+					<li>
+						<a href="#">
+							<i class="entypo-phone"></i>
+							${oldCompany}
+						</a>
+					</li>
+
+					<li>
+						<a href="#">
+							<i class="entypo-phone"></i>
+							${oldInsurance}
+						</a>
+					</li>
+
+					<li>
+						<a href="#">
+							<i class="entypo-phone"></i>
+							${oldRegister}
 						</a>
 					</li>
 					
@@ -107,7 +175,6 @@
 		</div>
 		
 	</section>
-	
 	
 	<section class="profile-feed">
 		

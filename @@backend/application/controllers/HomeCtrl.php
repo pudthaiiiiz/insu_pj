@@ -4,10 +4,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class HomeCtrl extends CI_Controller {
   function __construct(){
     parent::__construct();
+
+
     $this->load->model('Model_customer');
     $this->load->model('Model_contents');
     $this->load->model('Model_slide');
     $this->load->model('Model_menu');
+
   }
 	public function index()
 	{
@@ -20,6 +23,9 @@ class HomeCtrl extends CI_Controller {
 	}
  
   public function main(){
+    if($this->session->userdata('logged_in') != true){
+      redirect(base_url().'HomeCtrl');
+    }
     $pathAsset = assets();
    
     $result = $this->Model_customer->getCustomer();
@@ -42,6 +48,9 @@ class HomeCtrl extends CI_Controller {
    
   }
   public function member(){
+    if($this->session->userdata('logged_in') != true){
+      redirect(base_url().'HomeCtrl');
+    }
     $pathAsset = assets();
     $result = $this->Model_customer->getCustomer();
     $data = array(
@@ -58,6 +67,9 @@ class HomeCtrl extends CI_Controller {
 
 
   public function popup(){
+    if($this->session->userdata('logged_in') != true){
+      redirect(base_url().'HomeCtrl');
+    }
     $pathAsset = assets();
     $data = array('title' => 'insurancebroker360',
                   'assets' => $pathAsset      
@@ -69,6 +81,9 @@ class HomeCtrl extends CI_Controller {
   // Sildes
   
   public function slide(){
+    if($this->session->userdata('logged_in') != true){
+      redirect(base_url().'HomeCtrl');
+    }
     $pathAsset = assets();
     $data = array('title' => 'insurancebroker360',
                   'assets' => $pathAsset      
@@ -78,6 +93,10 @@ class HomeCtrl extends CI_Controller {
   }
 
   public function viewProfile($token = null){
+
+    if($this->session->userdata('logged_in') != true){
+      redirect(base_url().'HomeCtrl');
+    }
     if ($token == null){
       redirect(base_url()."/HomeCtrl");
     }else{
@@ -91,16 +110,31 @@ class HomeCtrl extends CI_Controller {
       }else{
         $downline = 0;
       }
-
+        if($getProfile->oldRegister === 0){
+        $reg = "ต่อเจ้าเดิม";
+      }else{
+        $reg = "เปลี่ยนเจ้า";
+      }
       if($getProfile->cusInvite != NULL){
         $invite = $getProfile->cusInvite;
       }else{
         $invite = "บริษัท";
       }
       $data = array('title' => 'insurancebroker360',
-                    'assets' => $pathAsset , 
+                     'assets' => $pathAsset , 
                     'pFullname' => $getProfile->cusFullname,
                     'pAddress' => $getProfile->cusAdrs,
+                    'pProvince' => $getProfile->PROVINCE_NAME,
+                    'pAmphur' => $getProfile->AMPHUR_NAME,
+                    'pDistrict' => $getProfile->DISTRICT_NAME,
+                    'pZippost' => $getProfile->cusZipcode,
+                    'cusIdCard' => $getProfile->cusIdCard,
+                    'cusUsername' => $getProfile->cusUsername,
+                    'cusEmail' => $getProfile->cusEmail,
+                    'oldCompany' => $getProfile->oldCompany,
+                    'oldInsurance' => $getProfile->oldInsurance,
+                    'oldRegister' => $reg,
+                    'thisToken' => $token,
                     'pPhone' => $getProfile->cusPhone,
                     'pDate' => $getProfile->cusCreateAt,
                     'pInvite' => $invite,
@@ -113,6 +147,9 @@ class HomeCtrl extends CI_Controller {
   }
 
    public function getInvite($token = null){
+    if($this->session->userdata('logged_in') != true){
+      redirect(base_url().'HomeCtrl');
+    }
     if ($token == null){
       redirect(base_url()."/HomeCtrl");
     }else{
@@ -163,6 +200,9 @@ class HomeCtrl extends CI_Controller {
   }
 
   public function slideAll(){
+    if($this->session->userdata('logged_in') != true){
+      redirect(base_url().'HomeCtrl');
+    }
     $pathAsset = assets();
     $result = $this->Model_slide->getSlide();
     $data = array('title' => 'insurancebroker360',
@@ -176,6 +216,9 @@ class HomeCtrl extends CI_Controller {
   // menu 
   
   public function profile(){
+    if($this->session->userdata('logged_in') != true){
+      redirect(base_url().'HomeCtrl');
+    }
     $pathAsset = assets();
     $getProfile = $this->Model_menu->getMenu(1);
     $data = array('title' => 'insurancebroker360',
@@ -186,6 +229,9 @@ class HomeCtrl extends CI_Controller {
    
   }
   public function product(){
+    if($this->session->userdata('logged_in') != true){
+      redirect(base_url().'HomeCtrl');
+    }
     $pathAsset = assets();
     $getProfile = $this->Model_menu->getMenu(2);
     $data = array('title' => 'insurancebroker360',
@@ -196,6 +242,9 @@ class HomeCtrl extends CI_Controller {
    
   }
   public function service(){
+    if($this->session->userdata('logged_in') != true){
+      redirect(base_url().'HomeCtrl');
+    }
     $pathAsset = assets();
     $getProfile = $this->Model_menu->getMenu(3);
     $data = array('title' => 'insurancebroker360',
@@ -206,6 +255,9 @@ class HomeCtrl extends CI_Controller {
    
   }
    public function payment(){
+    if($this->session->userdata('logged_in') != true){
+      redirect(base_url().'HomeCtrl');
+    }
     $pathAsset = assets();
     $getProfile = $this->Model_menu->getMenu(4);
     $data = array('title' => 'insurancebroker360',
@@ -217,6 +269,9 @@ class HomeCtrl extends CI_Controller {
   }
   
   public function contact(){
+    if($this->session->userdata('logged_in') != true){
+      redirect(base_url().'HomeCtrl');
+    }
     $pathAsset = assets();
     $getProfile = $this->Model_menu->getMenu(5);
     $data = array('title' => 'insurancebroker360',
@@ -228,6 +283,9 @@ class HomeCtrl extends CI_Controller {
   }
  
   public function pagedetail(){
+    if($this->session->userdata('logged_in') != true){
+      redirect(base_url().'HomeCtrl');
+    }
     $pathAsset = assets();
     $getProfile = $this->Model_menu->getMenu(6);
     $data = array('title' => 'insurancebroker360',
@@ -241,6 +299,9 @@ class HomeCtrl extends CI_Controller {
   // Contents
   
   public function contentAll($id = null){
+    if($this->session->userdata('logged_in') != true){
+      redirect(base_url().'HomeCtrl');
+    }
     if($id != null){
       $arr = array('cId' => $id);
       $this->db->delete('tbl_contents',$arr);
@@ -258,6 +319,9 @@ class HomeCtrl extends CI_Controller {
    
   }
   public function content(){
+    if($this->session->userdata('logged_in') != true){
+      redirect(base_url().'HomeCtrl');
+    }
     $pathAsset = assets();
     $data = array('title' => 'insurancebroker360',
                   'assets' => $pathAsset      
@@ -268,6 +332,9 @@ class HomeCtrl extends CI_Controller {
   
   
   public function contentEdit($id = null){
+    if($this->session->userdata('logged_in') != true){
+      redirect(base_url().'HomeCtrl');
+    }
     $pathAsset = assets();
     
       $result = $this->Model_contents->getRowContent($id);
@@ -283,5 +350,15 @@ class HomeCtrl extends CI_Controller {
     
     $this->parser->parse('content/temp_edit', $data);
    
+  }
+
+
+  public function logout(){
+
+    $this->session->sess_destroy();
+    $array_items = array('logged_in' => '');
+    $this->session->unset_userdata($array_items);
+    redirect(base_url().'HomeCtrl');
+
   }
 }
