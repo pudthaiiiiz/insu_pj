@@ -33,8 +33,8 @@ app.controller('MenuCtrl', ['$scope',  function ($scope) {
     link : Global.baseurl+'payment'
     },
     {
-    name : 'ติดต่อเรา',
-    link : Global.baseurl+'#contact'
+    name : 'เข้าสู่ระบบ',
+    link : Global.baseurl+'login'
     },
     {
     name : 'สมัครเลย',
@@ -42,7 +42,7 @@ app.controller('MenuCtrl', ['$scope',  function ($scope) {
     },
     {
     name : 'เบอร์แจ้งอุบัติเหตุ',
-    link : Global.baseurl+'/pagedetail'
+    link : Global.baseurl+'pagedetail'
     }
   ];
 }]);

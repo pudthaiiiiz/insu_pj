@@ -9,13 +9,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>insurancebroker360</title>	
-    <meta name="baseUrl" content="${baseUrl}">	
+    <title>insurancebroker360</title>		
+    <meta name="baseUrl" content="${baseUrl}">
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="${assets}css/font.css">
+    <link rel="stylesheet" href="${assets}css/colorbox.css">
     <link rel="stylesheet" href="${assets}css/font-awesome.min.css">
     <link rel="stylesheet" href="${assets}css/jquery.fancybox.css">
     <link rel="stylesheet" href="${assets}css/bootstrap.min.css">
@@ -41,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <img src="{{assets}}img/logo_web.png" class="logo-header">
+          <img src="${assets}img/logo_web.png" class="logo-header">
         </div>
         <nav class="collapse navbar-collapse navbar-right" role="navigation">
           <ul id="nav" class="nav navbar-nav">
@@ -53,34 +54,61 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </div>
       <div class="line-gold"></div>
     </header>
-    <main class="site-content" role="main">     
-      <!--<section id="home" data-temp-slide></section>-->   
-      <div ng-controller="CheckPackageCtrl" ng-cloak class="check-package">
+    <main class="site-content" role="main" ng-init="needToRister = false">
+      <div ng-controller="ContentListCtrl">
+
+  <div class="container" ng-if="contents">
+    <div class="row">
+      <br>
+      <div class="sec-title text-center wow animated fadeInDown">
+        <h2><a href="{{baseUrl}}content" class="black">บทความ</a></h2>
+        <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+      </div>
+      <ul class="project-wrapper wow animated fadeInUp">
+        <li class="portfolio-item" ng-repeat="content in contents">
+          <div class="img-crop" style="background-image: url('{{uploads}}content/{{content.cImage}}')"></div>
+          <img src="{{uploads}}content/{{content.cImage}}" class="img-responsive transparent" alt="{{content.cDes}}">
+          <a href="{{baseUrl}}content/{{content.cId}}"><figcaption class="mask">
+              <h3>{{content.cTitle}}</h3>
+              <p>{{content.cDes}} </p>
+            </figcaption></a>
+          <ul class="external">
+            <!--<li><a class="fancybox" title="Araund The world" data-fancybox-group="works" href="{{assets}}img/portfolio/item.jpg"><i class="fa fa-search"></i></a></li>-->
+            <li><a href="{{baseUrl}}content/{{content.cId}}"><i class="fa fa-link"></i></a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
+        <h2>&nbsp;</h2>
+      </div>
+
+    </div>
+  </div>
+</div>
+      <!-- <section id="content" data-temp-content data-contents="${contents}"></section>  -->
+      <!--      <section id="whyme" data-temp-why-me data-url="${assets}"></section> 
+      <section id="follow-us" data-temp-follow-us></section> 
+      <section id="contact-us" data-temp-contact-us></section> -->
+
+
+      <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
+        <h2>&nbsp;</h2>
+      </div>
+      <div class="bg-color-theme">
         <div class="container">
-          <div class="row">
-            <br>
-            <div class="col-md-12 wow animated fadeInLeft">
-              <ol class="breadcrumb">
-                <li><a href="${baseUrl}">หน้าแรก</a></li>
-                <li><a href="${baseUrl}content">บทความ</a></li>
-                <li class="active">${contentTitle}</li>
-              </ol>
-              <span>อัพเดทล่าสุด : <span class="label label-primary">${contentCreateAt}</span></span>
-              <br><br>
-              <div>
-                ${contentDetail}
-              </div>
-              <div class="pull-left"><a href="javascript: window.history.go(-1)" class="btn btn-lg btn-primary" style="margin:15px;"><span class="glyphicon glyphicon-chevron-left" style="top:0px !important">ย้อนกลับ</span></a></div>
-              
-              <br>
-            </div>
+          <div class="col-md-8 col-sm-8 col-xs-12 wow animated zoomIn">
+            <h2 class="white">ขั้นตอนการเคลมประกันภัยรถยนต์</h2>
+            <p>insurancebroker360.com จะทำให้การเคลมประกันภัยรถยนต์เป็นเรื่องที่ง่ายเหลือเชื่อ</p>
+            <p>ทุกครั้งที่คุณต้องการแจ้งเคลมหลังเกิดอุบัติเหตุ ผู้เชี่ยวชาญของเราจะดูแลคุณตั้งแต่การให้คำแนะนำ จนถึงการส่งมอบรถ โดยแจ้งความคืบหน้าเป็นระยะ และไม่มีค่าใช้จ่ายใดๆเพิ่มเติม</p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-12 text-center wow animated zoomIn">
+            <img  alt="Special Offer" src="${assets}img/man.png" />
           </div>
         </div>
+        <div class="line line-top"></div>
+        <div class="line line-bottom"></div>
       </div>
-      
-      
-      
-      
       <div style="background-color: #f6f6f6;">
         <div class="container">
           <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
@@ -168,6 +196,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="clearfix visible-sm"></div>
             <div class="col-sm-6 col-md-3 footer-newsletter">
 
+
               <div class="widget">
                 <div class="widget-inner">
                   <h4 class="uppercase">ช่องทางชำระเงิน</h4>
@@ -188,11 +217,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
 
       </div>
-      
-      
 
     </main>
-    <footer id="footer" data-temp-footer></footer>
+    <footer id="footer" data-temp-footer class="bg-color-theme"></footer>
     <script src="${assets}js/plugin/modernizr-2.6.2.min.js"></script>
     <script src="${assets}js/plugin/jquery.js"></script>
     <script src="${assets}js/plugin/jquery.easing.1.3.min.js"></script>
@@ -221,6 +248,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="${assets}js/plugin/jquery.ba-cond.min.js"></script>
     <script src="${assets}js/plugin/jquery.slides.min.js"></script>
     <script src="${assets}js/plugin/wow.min.js"></script>
+    <script src="${assets}js/plugin/jquery.colorbox-min.js"></script>
     <script src="${assets}js/plugin/main.js"></script>
   </body>
 </html>

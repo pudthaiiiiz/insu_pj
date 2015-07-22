@@ -13,6 +13,9 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
       'getYear',
       'getBrand'
     ];
+
+    $scope.showTextRegister = true;
+    $scope.showTerm = false;
     $scope.hasUserAlraedy;
     $scope.hasUserYet;
     $scope.assets = Global.assets;
@@ -48,6 +51,12 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
     $scope.showFromRegister = 2;
     $scope.showFromLoginAndRegister = 0;
     $scope.showStep = 0;
+
+
+    // $scope.needToRister = true;
+    // $scope.showTerm = true;
+    // $scope.needToRister = false;
+    // $scope.showTextRegister = false;
     
     var assignData = function (serviceName, getData) {
       if (serviceName === 'getProvince') {
@@ -71,16 +80,40 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
         HomeServices.showLoad(true);
     };
     
+    $scope.loginFormPage = function () {
+        // $scope.showStep = 3;
+        window.location.href = 'member/1111'
+    };
+    
     $scope.submitLoginForm = function () {
         $scope.showStep = 3;
     };
     
-    $scope.submitRegisterForm = function () {
-        $scope.showStep = 3;
+    $scope.submitRegisterForm = function() {
+      $scope.showTerm = true;
+      $scope.needToRister = false;
+      $scope.showTextRegister = false;
+      $scope.scrollTo('searchForm');
     };
+
+    $scope.confirmTerm = function() {
+      if (!$scope.hasUserYet) {
+        $scope.showTerm = false;
+        $scope.needToRister = true;
+        $scope.showTextRegister = true;
+        callService("saveMember");
+      }
+    };
+
     $scope.checkUser = function () {
       if ($scope.formRegister.username) {
         callService('checkUser');
+      }
+    };
+
+    $scope.checkInvite = function () {
+      if ($scope.formRegister.invite) {
+        callService('checkInvite');
       }
     };
     
@@ -144,7 +177,6 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
     };
     
     var callService = function (serviceName) {
-      console.log(serviceName);
       if (serviceName === 'getSeries') {
         params = {
           inputYear: $scope.formSearch.year,
@@ -196,6 +228,10 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
         params = {
           inputUserName: $scope.formRegister.username
         };
+      } else if (serviceName === 'checkInvite') {
+        params = {
+          inputInvite: $scope.formRegister.invite
+        };
       }
       var callServiceName = HomeServices[serviceName](params);
       callServiceName.success(function (data) {
@@ -204,8 +240,13 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
             $scope.hasUserAlraedy = true;
             $scope.hasUserYet = false;
           }
+          if (serviceName === 'checkInvite') {
+            $scope.hasInviteAlraedy = true;
+            $scope.hasInviteYet = false;
+          }
           if (serviceName === 'saveMember') {
             $scope.scrollTo('searchForm');
+            $scope.needToRister = false;
             $scope.saveMember = {
               status : "success"
             };
@@ -224,6 +265,10 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
             $scope.hasUserAlraedy = false;
             $scope.hasUserYet = true;
           }
+          if (serviceName === 'checkInvite') {
+            $scope.hasInviteAlraedy = false;
+            $scope.hasInviteYet = true;
+          }
         }
         HomeServices.showLoad(false);
       }).error(function () {
@@ -235,12 +280,6 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
     for (name in services) {
       callService(services[name]);
     }
-    
-    $scope.submitRegisterForm = function() {
-      if (!$scope.hasUserYet) {
-        callService("saveMember");
-      }
-    };
 
     var getAmphur = function() {
       callService('getAmphur');
@@ -256,7 +295,9 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
     $scope.scrollTo = function(div) {
       // searchForm
       var divTop = $("#"+div).offset().top;
-      $('html,body').animate({scrollTop: (divTop-100)}, 0);
+      $('html,body').animate({scrollTop: (divTop/*-100*/)}, 1000);
     };
+
+
    
   }]);

@@ -9,13 +9,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>insurancebroker360</title>	
-    <meta name="baseUrl" content="${baseUrl}">	
+    <title>insurancebroker360</title>		
+    <meta name="baseUrl" content="${baseUrl}">
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="${assets}css/font.css">
+    <link rel="stylesheet" href="${assets}css/colorbox.css">
     <link rel="stylesheet" href="${assets}css/font-awesome.min.css">
     <link rel="stylesheet" href="${assets}css/jquery.fancybox.css">
     <link rel="stylesheet" href="${assets}css/bootstrap.min.css">
@@ -41,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <img src="{{assets}}img/logo_web.png" class="logo-header">
+          <img src="${assets}img/logo_web.png" class="logo-header">
         </div>
         <nav class="collapse navbar-collapse navbar-right" role="navigation">
           <ul id="nav" class="nav navbar-nav">
@@ -53,90 +54,63 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </div>
       <div class="line-gold"></div>
     </header>
-    <main class="site-content" role="main">     
-      <!--<section id="home" data-temp-slide></section>-->   
-      <div ng-controller="CheckPackageCtrl" ng-cloak class="check-package">
-        <div class="container">
-          <div class="row">
-            <br>
-            <div class="col-md-12 wow animated fadeInLeft">
-              <ol class="breadcrumb">
-                <li><a href="${baseUrl}">หน้าแรก</a></li>
-                <li><a href="${baseUrl}content">บทความ</a></li>
-                <li class="active">${contentTitle}</li>
-              </ol>
-              <span>อัพเดทล่าสุด : <span class="label label-primary">${contentCreateAt}</span></span>
-              <br><br>
-              <div>
-                ${contentDetail}
-              </div>
-              <div class="pull-left"><a href="javascript: window.history.go(-1)" class="btn btn-lg btn-primary" style="margin:15px;"><span class="glyphicon glyphicon-chevron-left" style="top:0px !important">ย้อนกลับ</span></a></div>
-              
-              <br>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      
-      
-      
-      <div style="background-color: #f6f6f6;">
-        <div class="container">
-          <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
-            <h2>ช่องทางการชำระเงิน</h2>
-            <p>&nbsp;</p>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-12 wow animated zoomIn">
-            <p><img alt="Pay Securely Online" src="${assets}img/ic1.png" style="float:left; margin-right:20px" /></p>
-            <p>จ่ายออนไลน์</p>
-            <p>จ่ายได้ทันทีและปลอดภัย ด้วยบัตรวีซ่าหรือมาสเตอร์การ์ดของคุณ</p>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-12 wow animated zoomIn">
-            <p><img alt="Pay Securely Online" src="${assets}img/ic2.png" style="float:left; margin-right:20px" /></p>
-            <p>โทร.หาเราเพื่อชำระเงิน<br />
-              ได้ที่ 02-627-7777</p>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-12 wow animated zoomIn">
-            <p><img alt="Pay Securely Online" src="${assets}img/ic3.png" style="float:left; margin-right:20px" /></p>
-            <p>เคาน์เตอร์เซอร์วิส</p>
-            <p>จ่ายเงินได้ที่เคาน์เตอร์เซอร์วิสทุกแห่ง (7-Eleven, Max Value, Tops)</p>
-          </div>
-          <p>&nbsp;</p>
+    <main class="site-content" role="main" ng-init="needToRister = false">
+      <div ng-controller="ContentListCtrl">
 
-        </div>
+  <div class="container" ng-if="contents">
+    <div class="row">
+      <br>
+      <div class="sec-title wow animated fadeInDown">
+        <ol class="breadcrumb">
+          <li><a href="${baseUrl}">หน้าแรก</a></li>
+          <li class="active">ระบบสมาชิค</li>
+        </ol>
       </div>
 
-      <div class="bg-color-theme-default">
-        <div class="container">
-          <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
-            <p>&nbsp;</p>
-            <h2>ประกันรถยนต์ต่างๆ </h2>
-            <p>&nbsp;</p>
+
+      <div class="col-md-4 col-sm-4 col-xs-12 wow animated zoomIn">
+        <form class="form-">
+          <div class="text-center">
+        <img src="{{assets}}images/person-icon.png" alt="member" class="img-member img-circle">
+      </div>
+        <br>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">เปลี่ยนรูป</button>
+          <button type="submit" class="btn btn-danger btn-lg btn-block">ออกจากระบบ</button>
+        </form>
+        <br>
+        <br>
+      </div>
+
+      <div class="col-md-8 col-sm-8 col-xs-12 wow animated zoomIn form-">
+        <p>ชื่อ-นามสกุล : satorn kungtep</p>
+        <p>อีเมล์ : </p>
+        <p>เบอร​์โทรศัพท์ : </p>
+        <p>ที่อยู่ : </p>
+        <p>อำเภอ : </p>
+        <p>ตำบล : </p>
+        <p>จังหวัด : </p>
+        <p>รหัสไปรษณีย์ : </p>
+      </div>
+
+      <div class="col-md-12 col-sm-12 col-xs-12 wow animated zoomIn">
+        <form class="form-file">
+          <div class="form-group">
+            <label for="file">แนบไฟล์</label>
+            <input type="file" id="file" required>
+            <p class="help-block">สำเนาเอกสาร</p>
           </div>
-          <div class="center">
-            <img src="${assets}images/company/company-logo_01.png" />
-            <img src="${assets}images/company/company-logo_02.png" />
-            <img src="${assets}images/company/company-logo_03.png" />
-            <img src="${assets}images/company/company-logo_04.png" />
-            <img src="${assets}images/company/company-logo_05.png" />
-            <img src="${assets}images/company/company-logo_07.png" />
-            <img src="${assets}images/company/company-logo_08.png" />
-            <img src="${assets}images/company/company-logo_09.png" />
-            <img src="${assets}images/company/company-logo_10.png" />
-            <img src="${assets}images/company/company-logo_11.png" />
-            <img src="${assets}images/company/company-logo_13.png" />
-            <img src="${assets}images/company/company-logo_14.png" />
-            <img src="${assets}images/company/company-logo_15.png" />
-            <img src="${assets}images/company/company-logo_16.png" />
-            <img src="${assets}images/company/company-logo_17.png" />
-            <img src="${assets}images/company/company-logo_19.png" />
-            <img src="${assets}images/company/company-logo_20.png" />
-            <img src="${assets}images/company/company-logo_21.png" />
-            <img src="${assets}images/company/company-logo_22.png" />
-            <img src="${assets}images/company/company-logo_23.png" />
-          </div>
-        </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">อัพโหลด</button>
+        </form>
+        <h2>&nbsp;</h2>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+      <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
+        <h2>&nbsp;</h2>
       </div>
 
       <div class="bg-color-theme-gray">
@@ -168,6 +142,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="clearfix visible-sm"></div>
             <div class="col-sm-6 col-md-3 footer-newsletter">
 
+
               <div class="widget">
                 <div class="widget-inner">
                   <h4 class="uppercase">ช่องทางชำระเงิน</h4>
@@ -188,11 +163,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
 
       </div>
-      
-      
 
     </main>
-    <footer id="footer" data-temp-footer></footer>
+    <footer id="footer" data-temp-footer class="bg-color-theme"></footer>
     <script src="${assets}js/plugin/modernizr-2.6.2.min.js"></script>
     <script src="${assets}js/plugin/jquery.js"></script>
     <script src="${assets}js/plugin/jquery.easing.1.3.min.js"></script>
@@ -221,6 +194,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="${assets}js/plugin/jquery.ba-cond.min.js"></script>
     <script src="${assets}js/plugin/jquery.slides.min.js"></script>
     <script src="${assets}js/plugin/wow.min.js"></script>
+    <script src="${assets}js/plugin/jquery.colorbox-min.js"></script>
     <script src="${assets}js/plugin/main.js"></script>
   </body>
 </html>

@@ -23,6 +23,7 @@ app.controller('SlideCtrl', ['$scope', 'HomeServices', function ($scope, HomeSer
           captionShowDelay: 200,
           captionShowSpeed: 400,
           captionShowEasing: "easeOutBack",
+          arrowsNav: false,
           directionNavEnabled: true,
           controlNavEnabled: true,
           slideshowEnabled: true,
@@ -35,22 +36,17 @@ app.controller('SlideCtrl', ['$scope', 'HomeServices', function ($scope, HomeSer
     $scope.slides = [];
 //        HomeServices.showLoad(true);
     var callService = function (serviceName) {
-//          console.log(serviceName);
       var callServiceName = HomeServices[serviceName](params);
-//          console.log(serviceName);
       callServiceName.success(function (data) {
-//          console.log(data);
+        if (data.status === 'success' && data.data) {
         var getData = angular.extend(data.data);
-        if (data.status === 'success') {
           if (serviceName === 'getSlide') {
             $scope.slides = getData;
-            console.log(data);
             setTimeout(function(){
               setSlide(); 
             }, 1000);
           } else if  (serviceName === 'getPopup') {
             if (getData) {
-              //popup
               $scope.popupUrl = Global.uploads+'popup/'+getData;
               popupShow();
             }

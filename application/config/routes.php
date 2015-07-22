@@ -5,6 +5,9 @@ require_once 'routes_api.php';
 require_once 'routes_ctrl.php';
 
 $route['default_controller'] = 'HomeCtrl';
+$route['login'] = 'AuthenCtrl';
+$route['member/(:any)'] = 'AuthenCtrl/member/$1';
+$route['content'] = 'ContentCtrl';
 $route['content/(:any)'] = 'ContentCtrl/detail/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

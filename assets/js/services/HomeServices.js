@@ -84,6 +84,15 @@ app.factory('HomeServices', function ($http, $rootScope) {
           });
           return promise;
         },
+        getContentList : function (data) {
+          var formData = data;
+          var promise = $http({
+              method: 'post',
+              url: 'api-get-content-list',
+              data: formData
+          });
+          return promise;
+        },
         getProvince : function (data) {
           var formData = data;
           var promise = $http({
@@ -125,6 +134,15 @@ app.factory('HomeServices', function ($http, $rootScope) {
           var promise = $http({
               method: 'post',
               url: 'api-check-username',
+              data: formData
+          });
+          return promise;
+        },
+        checkInvite : function (data) {
+          var formData = data;
+          var promise = $http({
+              method: 'post',
+              url: 'api-check-invite',
               data: formData
           });
           return promise;

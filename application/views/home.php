@@ -150,10 +150,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
               <h4 class="uppercase">ที่ตั้งสำนักงาน</h4>
               <p> 173/21 อาคารเอเชีย เซนเตอร์ ชั้น 20 ถนนสาทรใต้ แขวงทุ่งมหาเมฆ เขตสาทร กรุงเทพ 10120<br> (เลขที่ใบอนุญาต : ว00004/2556) </p> 
-              <img src="/DirectAsiaThailand/media/assets/images/trust-logo.png" alt="Direct Asia" class="visible-xs">
-
-
-
 
             </div>
             <div class="col-sm-6 col-md-3">

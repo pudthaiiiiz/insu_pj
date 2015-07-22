@@ -10,7 +10,13 @@ class ContentCtrl extends CI_Controller {
   }
 
   public function index() {
-    return;
+    $pathAsset = assets();
+    $data = array(
+        'title' => 'insurancebroker360',
+        'baseUrl' => base_url(),
+        'assets' => $pathAsset
+    );
+    $this->parser->parse('contentlist', $data);
   }
 
   public function detail($id) {
@@ -31,6 +37,22 @@ class ContentCtrl extends CI_Controller {
     }
     $this->parser->parse('content', $data);
   }
+
+  public function getContent(){
+  
+    $resp['status'] = 'error';
+    $resp['data'] = null;
+    $isData = $this->Model_content->getContentHome();
+      if($isData != 0 ){
+        $resp['status'] = 'success';
+        $resp['data'] = $isData;
+      }
+    $result = json_encode($resp);
+    echo $result;
+    
+    
+  }
+
   public function getContentList(){
   
     $resp['status'] = 'error';
