@@ -62,19 +62,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <br>
       <div class="sec-title wow animated fadeInDown">
         <div class="text-center" ng-show="!needToRister" ng-if="showTextRegister">
-        <h2><a href="{{baseUrl}}login" class="black">เข้าสู่ระบบ</a></h2>
-      </div>
-<form ng-submit="loginFormPage()" ng-show="!needToRister" ng-if="showTextRegister">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Username</label>
-    <input type="text" class="form-control" ng-model="formLogin.username" id="username" placeholder="Username" required>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" ng-model="formLogin.password" id="password" placeholder="Password" required>
-  </div>
-  <button type="submit" class="btn btn-primary btn-lg btn-block">เข้าสู่ระบบ</button>
-</form>
+          <h2><a href="{{baseUrl}}login" class="black">เข้าสู่ระบบ</a></h2>
+        </div>
+        <form ng-submit="loginFormPage()" ng-show="!needToRister" ng-if="showTextRegister">
+          <div  class="form-group has-feedback" ng-class="{'has-success' : usernameCorrect ,'has-warning' : usernameError }">
+            <label for="exampleInputEmail1">Username</label>
+                <label class="control-label" ng-if="usernameCorrect">: ผ่าน</label>
+                <label class="control-label" ng-if="usernameError">: โปรดตรวจสอบความถูกต้อง username </label>
+            <input type="text" class="form-control" ng-model="formLogin.username" id="username" placeholder="Username" required>
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-if="usernameCorrect"></span>
+                <span id="inputSuccess2Status" class="sr-only" ng-if="usernameCorrect">(success)</span>
+                <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true" ng-if="usernameError"></span>
+                <span id="inputWarning2Status" class="sr-only" ng-if="usernameError">(warning)</span>
+          </div>
+          <div class="form-group has-feedback" ng-class="{'has-success' : passwordCorrect ,'has-warning' : passwordError }">
+            <label for="exampleInputPassword1">Password</label>
+                <label class="control-label" ng-if="passwordCorrect">: ผ่าน</label>
+                <label class="control-label" ng-if="passwordError">: โปรดตรวจสอบความถูกต้อง password </label>
+            <input type="password" class="form-control" ng-model="formLogin.password" id="password" placeholder="Password" required>
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-if="passwordCorrect"></span>
+                <span id="inputSuccess2Status" class="sr-only" ng-if="passwordCorrect">(success)</span>
+                <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true" ng-if="passwordError"></span>
+                <span id="inputWarning2Status" class="sr-only" ng-if="passwordError">(warning)</span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">เข้าสู่ระบบ</button>
+        </form>
 
 <div ng-cloak class="check-package">
      <br>
@@ -271,6 +283,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     </div>
   </div>
+</div>
 </div>
       <!-- <section id="content" data-temp-content data-contents="${contents}"></section>  -->
       <!--      <section id="whyme" data-temp-why-me data-url="${assets}"></section> 

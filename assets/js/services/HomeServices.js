@@ -146,6 +146,15 @@ app.factory('HomeServices', function ($http, $rootScope) {
               data: formData
           });
           return promise;
+        },
+        login : function (data) {
+          var formData = data;
+          var promise = $http({
+              method: 'post',
+              url: 'api-login-customer',
+              data: formData
+          });
+          return promise;
         }
     };
 });

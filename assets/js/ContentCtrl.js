@@ -44,17 +44,50 @@ app.controller('ContentListCtrl', ['$scope', 'HomeServices', function ($scope, H
       'getContentList'
     ];
     var params = {};
+    $scope.usernameCorrect;
+    $scope.usernameError;
+    $scope.passwordCorrect;
+    $scope.passwordError;
     $scope.assets = Global.assets;
     $scope.uploads = Global.uploads;
     $scope.baseUrl = Global.baseurl;
     $scope.contents = [];
+
+    $scope.formLogin = {
+      username : '',
+      password : ''
+    };
 //        HomeServices.showLoad(true);
-    var callService = function (serviceName) {
+    var callService = function (serviceName) { 
+      if (serviceName === 'login') {
+        params = {
+          userName: $scope.formLogin.username,
+          password: $scope.formLogin.password,
+        };
+      }
       var callServiceName = HomeServices[serviceName](params);
       callServiceName.success(function (data) {
-        if (data.data) {
-          var getData = angular.extend(data.data);
-          $scope.contents = getData;
+
+        if (data.status === 'success') {
+          if(serviceName === 'login') {
+            $scope.usernameCorrect = true;
+            $scope.usernameError = false;
+            $scope.passwordCorrect = true;
+            $scope.passwordError = false;
+            setTimeout(function(){
+              window.location.href = Global.baseurl+'member';
+            },1000);
+            return;
+          }
+          if (data.data) {
+            var getData = angular.extend(data.data);
+            $scope.contents = getData;
+          }
+        } else {
+            $scope.usernameCorrect = false;
+            $scope.usernameError = true;
+            $scope.passwordCorrect = false;
+            $scope.passwordError = true;
         }
 //        HomeServices.showLoad(false);
       }).error(function () {
@@ -68,6 +101,9 @@ app.controller('ContentListCtrl', ['$scope', 'HomeServices', function ($scope, H
     }
     //    
 
+    $scope.loginFormPage = function() {
+      callService('login');
+    }
 
 
 

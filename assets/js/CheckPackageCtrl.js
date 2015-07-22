@@ -81,11 +81,6 @@ app.controller('CheckPackageCtrl', ['$scope', 'HomeServices', '$timeout', functi
         HomeServices.showLoad(true);
     };
     
-    $scope.loginFormPage = function () {
-        // $scope.showStep = 3;
-        window.location.href = 'member/1111'
-    };
-    
     $scope.submitLoginForm = function () {
         $scope.showStep = 3;
     };
