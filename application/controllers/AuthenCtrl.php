@@ -20,23 +20,23 @@ class AuthenCtrl extends CI_Controller {
     $this->parser->parse('login', $data);
   }
 
-  public function member($id) {
-    $pathAsset = assets();
-    // $result = $this->Model_content->getContent($id);
-    // if($result === 0){
-    //   redirect(base_url());
-    // }else{
-        $data = array(
-            'title' => 'insurancebroker360',
-            'baseUrl' => base_url(),
-            'assets' => $pathAsset,
-            // 'contentTitle' => $result->cTitle,
-            // 'contentImage' => $result->cImage,
-            // 'contentDetail' => $result->cDetail,
-            // 'contentCreateAt' => $result->cCreateAt
-        );
-    // }
-    $this->parser->parse('member', $data);
+  public function member() {
+        if($this->session->userdata('isSesLogin') == true){
+            $pathAsset = assets();
+            $data = array(
+                'title' => 'insurancebroker360',
+                'baseUrl' => base_url(),
+                'assets' => $pathAsset,
+                // 'contentTitle' => $result->cTitle,
+                // 'contentImage' => $result->cImage,
+                // 'contentDetail' => $result->cDetail,
+                // 'contentCreateAt' => $result->cCreateAt
+            );
+    
+            $this->parser->parse('member', $data);
+        }else{
+            redirect(base_url().'login');
+        }
   }
 
 }
