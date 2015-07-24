@@ -8,7 +8,7 @@
   
 
 	<div class="col-sm-12">
-			<div class="pull-right"><a href="#" class="btn btn-success" style="margin-bottom:3px;">Add Member</a></div><br/>
+			<!-- <div class="pull-right"><a href="#" class="btn btn-success" style="margin-bottom:3px;">Add Member</a></div><br/> -->
       <div class="clearfix"></div>
 		<div class="panel panel-primary">
       

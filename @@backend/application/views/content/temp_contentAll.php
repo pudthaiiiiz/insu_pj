@@ -40,7 +40,7 @@
             <td width="150px"><img src="<?php echo base_url(); ?>../uploads/content/${cImage}" width="150px"></td>
 						<td>${cTitle}</td>
 						<td>${cDes}</td>
-            <td class='text-center'><a href='contentEdit/${cId}' class='btn btn-primary'>Edit</a></td>
+            <td class='text-center'><a href='contentEdit/${cId}' class='btn btn-primary'>View / Edit</a></td>
             <td class='text-center'><a href='javascript:void(0);' onclick="javascript:confirmDel(${cId})"class='btn btn-danger'>Del</a></td>
 					</tr>
           ${/results}

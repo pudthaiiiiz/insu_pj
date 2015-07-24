@@ -28,8 +28,8 @@
 						<th>Images</th>
 						<th>Title</th>
 						<th width="300px">Descaption</th>
-<!--						<th width="70px">Edit</th>
-						<th width="70px">Delete</th>-->
+						<th width="70px">Edit</th>
+						<th width="70px">Delete</th>
 					</tr>
 				</thead>
 				
@@ -37,12 +37,17 @@
           ${results}
           <tr>
 						
-            <td width="150px"><img src="<?php echo base_url(); ?>../uploads/slides/${slImage}" width="150px"></td>
+            <td width="150px" rowspan="2"><img src="<?php echo base_url(); ?>../uploads/slides/${slImage}" width="150px"></td>
 						<td>${slTitle}</td>
 						<td>${slDes}</td>
-<!--            <td class='text-center'><a href='contentEdit/${cId}' class='btn btn-primary'>Edit</a></td>
-            <td class='text-center'><a href='javascript:void(0);' onclick="javascript:confirmDel(${cId})"class='btn btn-danger'>Del</a></td>-->
+            <td class='text-center'rowspan="2"><a href='slideEdit/${slId}' class='btn btn-primary'>Edit</a></td>
+            <td class='text-center'rowspan="2"><a href='javascript:void(0);' onclick="javascript:confirmDel(${slId})"class='btn btn-danger'>Del</a></td>
+					
 					</tr>
+					</tr>
+						<td>Bottom : ${slLinkName}</td>
+						<td>Link : ${slLink}</td>
+					<tr>
           ${/results}
 				</tbody>
 			</table>
@@ -55,7 +60,7 @@
     function confirmDel(id){
     var r = confirm("คุณต้องการลบข้อมูลนี้ ?");
     if (r == true) {
-         window.location.assign("contentAll/"+ id);
+         window.location.assign("slideAll/"+ id);
     }
     }
 </script>

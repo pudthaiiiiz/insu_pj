@@ -1,6 +1,6 @@
  <?php $this->load->view('template/header'); ?>
 
-<div class="pull-right"> <a href="<?php echo base_url(); ?>homectrl/contentAll" class="btn btn-success">ดูเนื้อหามั้งหมด</a></div>
+<div class="pull-right"> <a href="<?php echo base_url(); ?>HomeCtrl/contentAll" class="btn btn-success">ดูเนื้อหามั้งหมด</a></div>
         <div class="clearfix"></div>
         <br />
 <div class="panel panel-primary" data-collapsed="0">
@@ -14,12 +14,12 @@
 			
 			<div class="panel-body">
 		
-        <form method="POST" action="#" enctype="multipart/form-data" class="form-horizontal form-groups-bordered">
+        <div class="form-horizontal form-groups-bordered">
 					
 					<div class="form-group">
 						<label class="col-sm-2 control-label">Title</label>
 						<div class="col-sm-10">
-              <input type="text" name="title"  class="form-control" value="${cTitle}" placeholder="Title">
+              <input type="text" id="title"  class="form-control" value="${cTitle}" placeholder="Title">
 							
 						</div>
 					</div>
@@ -28,7 +28,7 @@
 						
 						<div class="col-sm-10">
               
-             	<textarea name="des" class="form-control" placeholder="Descaption">${cDes}</textarea>
+             	<textarea id="des" class="form-control" placeholder="Descaption">${cDes}</textarea>
 							
 						</div>
 					</div>
@@ -37,35 +37,95 @@
 						
 						<div class="col-sm-10">
               
-             	<textarea name="detail"class="form-control ckeditor" >${cDetail}</textarea>
+             	<textarea id="detail"class="form-control ckeditor" >${cDetail}</textarea>
 							
 						</div>
 					</div>
           
 					<div class="form-group">
-						<label class="col-sm-2 control-label">Images</label>
-						
-						<div class="col-sm-10">
-              <input type="file" name="img" id="file" class="form-control">
-              <br />
-              <img src="<?php echo base_url();?>../uploads/content/${cImage}" width="120px" />
-						</div>
-					</div>
+                <label class="col-sm-2 control-label">Images</label>
+
+                <div class="col-sm-10">
+
+                  <div class="uploadify-queue" id="file-queue"></div>
+                  <input type="file" name="userfile" id="upload_btn" />
+                  <input type="hidden" id="temp-img"name="temp-img" value="">
+                  รูปใหม่
+                  <div id="temp-image">
+                    
+                  </div>
+                  <hr />
+                  รูปเก่า<br />
+                  <img id="lastImg" src="<?php echo base_url();?>../uploads/content/${cImage}" width="120px" />
+                </div>
+              </div>
 					<div class="form-group">
 						<label class="col-sm-2 control-label"></label>
 						
 						<div class="col-sm-10">
               
-             	<input type="submit" name="send" class="btn btn-primary" value="Update News">
+             	<input type="submit" name="send" class="btn btn-primary" value="Update News" onclick="onSend();">
 							
 						</div>
 					</div>
           
-				</form>
-				
+			
+				</div>
       </div>
 		</div>
 
     
     
     <?php $this->load->view('template/footer'); ?>
+
+     <script>
+           function alertSuccess(){
+             var modal = BootstrapDialog.show({
+                    title: 'Success',
+                    type:BootstrapDialog.TYPE_SUCCESS,
+                    closable: true,
+                    
+                });
+                modal.getModalBody().hide();
+          }
+            function alertError(txt){
+             var modal = BootstrapDialog.show({
+                    title: txt,
+                    type:BootstrapDialog.TYPE_WARNING,
+                    closable: true
+                });
+                modal.getModalBody().hide();
+          }
+          
+          
+          /* global Global, CKEDTIOR */
+            CKEDITOR.replace('detail');
+//           
+          function onSend(){
+            var formData = {};
+            formData.title = $('#title').val();
+            formData.des = $('#des').val();
+            formData.cId = '${cId}';
+            formData.detail = CKEDITOR.instances.detail.getData();
+            formData.temp = $('#temp-img').val();
+            $.ajax({
+              
+              type:"post",
+              url: Global.baseUrl+"api-edit-content",
+              data: formData
+            })
+              .success(function(res) {
+              var result = JSON.parse(res);
+                if(result.status == "success"){
+                  alertSuccess();
+                  setTimeout(function() {
+                     window.location.href = Global.baseUrl+'HomeCtrl/contentAll';
+                  }, 3000);
+                }else if(result.status == "bot"){
+                  alertError('กรุณากรอกข้อมูลให้ครบ');
+                }else{
+                  console.log(result.status);
+                }
+              });
+          }
+        </script>

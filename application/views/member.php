@@ -74,32 +74,46 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <img src="{{assets}}images/person-icon.png" alt="member" class="img-member img-circle">
       </div>
         <br>
-          <button type="submit" class="btn btn-primary btn-lg btn-block">เปลี่ยนรูป</button>
-          <button type="submit" class="btn btn-danger btn-lg btn-block">ออกจากระบบ</button>
+          <!-- <button type="submit" class="btn btn-primary btn-lg btn-block">เปลี่ยนรูป</button> -->
+          <a href='<?php echo base_url(); ?>logout' class="btn btn-danger btn-lg btn-block">ออกจากระบบ</a>
         </form>
         <br>
         <br>
       </div>
 
       <div class="col-md-8 col-sm-8 col-xs-12 wow animated zoomIn form-">
-        <p>ชื่อ-นามสกุล : satorn kungtep</p>
-        <p>อีเมล์ : </p>
-        <p>เบอร​์โทรศัพท์ : </p>
-        <p>ที่อยู่ : </p>
-        <p>อำเภอ : </p>
-        <p>ตำบล : </p>
-        <p>จังหวัด : </p>
-        <p>รหัสไปรษณีย์ : </p>
-      </div>
+        <p>ชื่อ-นามสกุล : <?php echo $this->session->userdata('sesData')->cusFullname; ?></p>
+        <p>อีเมล์ :  <?php echo $this->session->userdata('sesData')->cusEmail; ?></p>
+        <p>เบอร​์โทรศัพท์ :  <?php echo $this->session->userdata('sesData')->cusPhone; ?></p>
+        <p>ผู้แนะนำ : <?php
+          if($this->session->userdata('sesData')->cusInvite == ""){
+              echo "ยังไม่มี";
+          }else{
 
+            echo $this->session->userdata('sesData')->cusInvite;
+          }
+        ?>
+
+        </p>
+        
+        
+      </div>
+     
       <div class="col-md-12 col-sm-12 col-xs-12 wow animated zoomIn">
-        <form class="form-file">
+       <?php if(isset($error)){
+              echo '<label  class="btn btn-danger btn-lg btn-block">กรุณาตรวจสอบ เอกสาร อีกครั้ง ** รูปเท่านั้น</label>';
+            }elseif(isset($success)){
+              echo '<label  class="btn btn-success btn-lg btn-block">ทางเราได้รับเอกสารของท่านเรียบร้อยแล้ว</label>';
+            }
+
+      ?>
+        <form class="form-file" action="<?php echo base_url(); ?>AuthenCtrl/uploads"method="post" enctype="multipart/form-data">
           <div class="form-group">
             <label for="file">แนบไฟล์</label>
-            <input type="file" id="file" required>
-            <p class="help-block">สำเนาเอกสาร</p>
+            <input type="file" name="file" id="file" accept="image/*" required>
+            <p class="help-block">เอกสาร <font color='red' > ** รูปเท่านั้น </font></p>
           </div>
-          <button type="submit" class="btn btn-primary btn-lg btn-block">อัพโหลด</button>
+          <input type="submit"  name="sent" class="btn btn-primary btn-lg btn-block" value="อัพโหลด"> 
         </form>
         <h2>&nbsp;</h2>
       </div>
@@ -113,56 +127,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <h2>&nbsp;</h2>
       </div>
 
-      <div class="bg-color-theme-gray">
-        <div class="container">
-          <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
-            <h2>&nbsp;</h2>
-          </div>
-          <div class="row"> 
-            <!--start-->
-            <div class="col-sm-6 col-md-3"> 
-
-              <h4 class="uppercase">ที่ตั้งสำนักงาน</h4>
-              <p> 173/21 อาคารเอเชีย เซนเตอร์ ชั้น 20 ถนนสาทรใต้ แขวงทุ่งมหาเมฆ เขตสาทร กรุงเทพ 10120<br> (เลขที่ใบอนุญาต : ว00004/2556) </p> 
-
-            </div>
-            <div class="col-sm-6 col-md-3">
-              <h4 class="uppercase">INSURANCE BROKER 360</h4>
-              <div class="widget">
-                <div class="widget-inner">
-                  <ul>
-                    <li class="cat-item cat-item-2"> <a href="#" title="">ข่าวประชาสัมพันธ์</a> </li>
-                    <li class="cat-item cat-item-3"> <a href="#" title="">ร่วมงานกับเรา</a> </li>
-                    <li class="cat-item cat-item-4"> <a href="#" title="">นโยบายการรักษาความปลอดภัย</a> </li>
-                    <li class="cat-item cat-item-1"> <a href="#" title="">ข้อตกลงและเงื่อนไข</a> </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="clearfix visible-sm"></div>
-            <div class="col-sm-6 col-md-3 footer-newsletter">
-
-
-              <div class="widget">
-                <div class="widget-inner">
-                  <h4 class="uppercase">ช่องทางชำระเงิน</h4>
-                  <div class="tagcloud"> <img src="http://www.directasia.co.th/DirectAsiaThailand/media/assets/icons/payment-channel.png" class="img-responsive"> </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-3 footer-contact-us">
-              <h4 class="uppercase">ติดต่อฝ่ายลูกค้าสัมพันธ์</h4>
-              <p class="contact-number">02-627-7777</p>    <p>จันทร์-ศุกร์ : 08.00 – 20.30 น.<br>เสาร์-อาทิตย์ : 09.00 – 18.00 น.</p>
-              <br class="hidden-xs">
-              <p>สายด่วนแจ้งอุบัติเหตุ:<br>02-627-7788 ตลอด 24 ชั่วโมง</p> </div>  
-            <!--end--> 
-          </div>
-          <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
-            <h2>&nbsp;</h2>
-          </div>
-        </div>
-
-      </div>
+      
 
     </main>
     <footer id="footer" data-temp-footer class="bg-color-theme"></footer>

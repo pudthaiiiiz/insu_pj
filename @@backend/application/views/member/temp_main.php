@@ -41,7 +41,8 @@ function getRandomInt(min, max)
 			<th>ที่อยู่</th>
 			<th width="70px">เบอร์โทรศัพท์</th>
 			<th width="150px">บริษัทเดิม</th>
-			<th width="120px">ต่อจาก ?</th>
+			<th width="120px">ที่ปรึกษา ?</th>
+			<th width="80px">ยืนยัน</th>
 			<th width="150px">ลงทะเบียนเมื่อ</th>
 		</tr>
 	</thead>
@@ -60,6 +61,7 @@ function getRandomInt(min, max)
 						<?php } else { ?>
 						<td><a href='<?php echo base_url(); ?>HomeCtrl/viewProfile/<?php echo $value->cusToken; ?>'><?php echo $value->cusInvite; ?></a></td>
 						<?php }  ?>
+            			<td><label class="btn btn-danger">ไม่ยืนยัน</label></td>
             			<td><?php echo $value->cusCreateAt; ?></td>
             			
 					</tr>

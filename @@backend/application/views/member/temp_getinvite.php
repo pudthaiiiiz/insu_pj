@@ -28,7 +28,7 @@
 				<li>
 					<div class="profile-stat">
 						<h3>${pInvite}</h3>
-						<span><a href="#">หัวหน้า</a></span>
+						<span><a href="#">ผู้แนะนำ</a></span>
 					</div>
 				</li>
 
@@ -129,28 +129,28 @@
 				<ul class="user-details">
 					<li>
 						<a href="#">
-							<i class="entypo-location"></i>
+							<i class="entypo-user-add"></i>
 							${pInvite}
 						</a>
 					</li>
 					
 					<li>
 						<a href="#">
-							<i class="entypo-phone"></i>
+							<i class="entypo-compass"></i>
 							${oldCompany}
 						</a>
 					</li>
 
 					<li>
 						<a href="#">
-							<i class="entypo-phone"></i>
+							<i class="entypo-inbox"></i>
 							${oldInsurance}
 						</a>
 					</li>
 
 					<li>
 						<a href="#">
-							<i class="entypo-phone"></i>
+							<i class="entypo-star"></i>
 							${oldRegister}
 						</a>
 					</li>

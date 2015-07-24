@@ -97,6 +97,7 @@ ${/nums}
 			<th>ที่อยู่</th>
 			<th width="150px">รถปัจจุบัน</th>
 			<th width="150px">ลงทะเบียนเมื่อ</th>
+			<th width="20px">ยืนยัน</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -106,6 +107,7 @@ ${/nums}
 						<td>${cusAdrs}</td>
 						<td>${oldInsurance}</td>
             			<td>${cusCreateAt}</td>
+            			<td><label class="btn btn-danger">ไม่ยืนยัน</label></td>
 					</tr>
           
           ${/results}

@@ -1,32 +1,69 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Neon Admin Panel" />
+	<meta name="author" content="" />
+	
+	<title>Insurancebroker360.com | Error 404 - Page not found</title>
+	
+	<style type="text/css">
+	.page-error-404 {
+  color: #303641;
+  text-align: center;
+}
+.page-error-404 .error-symbol {
+  font-size: 120px;
+}
+.page-error-404 .error-text {
+  padding-bottom: 25px;
+  font-size: 30px;
+}
+</style>
+	<!-- <link rel="stylesheet" href="assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css"> -->
+	<link rel="stylesheet" href="http://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic">
+	
 
-<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+	<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
-<h4>An uncaught Exception was encountered</h4>
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	
+	
+</head>
+<body class="page-body" >
 
-<p>Type: <?php echo get_class($exception); ?></p>
-<p>Message: <?php echo $message; ?></p>
-<p>Filename: <?php echo $exception->getFile(); ?></p>
-<p>Line Number: <?php echo $exception->getLine(); ?></p>
 
-<?php if (defined('SHOW_DEBUG_BACKTRACE') && SHOW_DEBUG_BACKTRACE === TRUE): ?>
+	<div class="main-content">
+		<div class="page-error-404">
+	
+	
+	<div class="error-symbol">
+		<i class="fa fa-minus-circle"></i>
+	</div>
+	
+	<div class="error-text">
+		<h2>404</h2>
+		<p>Page not found!</p>
+		<p>Insurancebroker360.com</p>
+	</div>
+	
+	<hr />
+	
+	
+</div>	</div>
+	
+	
 
-	<p>Backtrace:</p>
-	<?php foreach ($exception->getTrace() as $error): ?>
-
-		<?php if (isset($error['file']) && strpos($error['file'], realpath(BASEPATH)) !== 0): ?>
-
-			<p style="margin-left:10px">
-			File: <?php echo $error['file']; ?><br />
-			Line: <?php echo $error['line']; ?><br />
-			Function: <?php echo $error['function']; ?>
-			</p>
-		<?php endif ?>
-
-	<?php endforeach ?>
-
-<?php endif ?>
-
-</div>
+</body>
+</html>

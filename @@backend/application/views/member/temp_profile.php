@@ -28,7 +28,7 @@
 				<li>
 					<div class="profile-stat">
 						<h3>${pInvite}</h3>
-						<span><a href="#">หัวหน้า</a></span>
+						<span><a href="#">ผู้แนะนำ</a></span>
 					</div>
 				</li>
 
@@ -128,28 +128,28 @@
 				<ul class="user-details">
 					<li>
 						<a href="#">
-							<i class="entypo-location"></i>
+							<i class="entypo-user-add"></i>
 							${pInvite}
 						</a>
 					</li>
 					
 					<li>
 						<a href="#">
-							<i class="entypo-phone"></i>
+							<i class="entypo-compass"></i>
 							${oldCompany}
 						</a>
 					</li>
 
 					<li>
 						<a href="#">
-							<i class="entypo-phone"></i>
+							<i class="entypo-inbox"></i>
 							${oldInsurance}
 						</a>
 					</li>
 
 					<li>
 						<a href="#">
-							<i class="entypo-phone"></i>
+							<i class="entypo-star"></i>
 							${oldRegister}
 						</a>
 					</li>
@@ -186,7 +186,7 @@
 		
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<div class="panel-title">รายชื่อ Down Line</div>
+				<div class="panel-title">รายชื่อ สาขาทั้งหมด</div>
 				
 				<div class="panel-options">
 					<a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a>
@@ -196,7 +196,7 @@
 				</div>
 			</div>
 			<?php if ($pDownline == 0){
-					echo '<center><font size="22" color="red">ยังไม่มี Down Line</font></center>';
+					echo '<center><font size="22" color="red">ไม่พบ สาขา / สายงาน</font></center>';
 				}else{ ?>
 			<table class="table table-bordered datatable" id="table-1">
 				<thead>
@@ -264,6 +264,7 @@ var tableContainer;
 	});
 </script>
 
+
 		
 		</div>
 		
@@ -275,7 +276,51 @@ var tableContainer;
 	
 		
 	</section>
+
+	<section class="profile-feed">
+		
+<div class="row">
+	
+  
+	
+	<div class="col-sm-12">
+		
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<div class="panel-title">เอกสารทั้งหมด</div>
+				
+				<div class="panel-options">
+					<a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a>
+					<a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
+					<a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a>
+					<a href="#" data-rel="close"><i class="entypo-cancel"></i></a>
+				</div>
+			</div>
+			<?php if ($atc == 0){
+					echo '<center><font size="22" color="red">ยังไม่มีเอกสาร</font></center>';
+				}else{ ?>
+			<table class="table table-bordered datatable" id="table-1">
+				<thead>
+					<tr>
+						<th width="230px">เอกสาร <font color="red" > ** คลิ๊กที่รูป เพื่อขยาย </font></th>
+						<th width="20px">อัพเดทเมื่อ</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+				${atc}
+				<tr>
+					<td><a href="<?php echo base_url();?>../uploads/attachment/${atcFile}"><img src="<?php echo base_url();?>../uploads/attachment/${atcFile}" width="300px"></a></td>
+					<td>${atcCreateAt}</td>
+				</tr>
+				${/atc}
+				</tbody>
+				
+			</table>
+
+<?php } ?>
 </div>
+</section>
 
 <link rel="stylesheet" href="${assets}js/datatables/responsive/css/datatables.responsive.css">
 	<link rel="stylesheet" href="${assets}js/select2/select2-bootstrap.css">
