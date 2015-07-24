@@ -309,8 +309,10 @@ var tableContainer;
 				</thead>
 				<tbody>
 				${atc}
-					<th><a href="<?php echo base_url();?>../uploads/attachment/${atcFile}"><img src="<?php echo base_url();?>../uploads/attachment/${atcFile}" width="300px"></a></th>
-					<th>${atcCreateAt}</th>
+				<tr>
+					<td><a href="<?php echo base_url();?>../uploads/attachment/${atcFile}"><img src="<?php echo base_url();?>../uploads/attachment/${atcFile}" width="300px"></a></td>
+					<td>${atcCreateAt}</td>
+				</tr>
 				${/atc}
 				</tbody>
 				
