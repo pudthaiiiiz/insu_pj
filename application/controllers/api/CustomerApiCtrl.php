@@ -103,7 +103,7 @@ class CustomerApiCtrl extends CI_Controller {
         if ($this->form_validation->run() == FALSE){
              $resp['result'] = 'bot';
         }else{  
-          $resp['status'] = 'error';
+          $resp['status'] = 'loginFalse';
           $isAuthen = $this->Model_customer->callLoginService($this->input->post('userName'), $this->input->post('password'));
             if($isAuthen){
                 $userSessions = array('sesToken' => $isAuthen->cusToken,
@@ -111,7 +111,7 @@ class CustomerApiCtrl extends CI_Controller {
                                       'sesData' => $isAuthen,
                                       'isSesLogin' => true);
                 $this->session->set_userdata($userSessions);
-                $resp['status'] = 'success';
+                $resp['status'] = 'loginSuccess';
               
             } 
         }
