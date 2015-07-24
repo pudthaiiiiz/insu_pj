@@ -64,7 +64,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <li><a href="${baseUrl}">หน้าแรก</a></li>
                 <li class="active">${contentName}</li>
               </ol>
-              <span>อัพเดทล่าสุด : <span class="label label-primary">${contentDate}</span></span>
+              <!-- <span>อัพเดทล่าสุด : <span class="label label-primary">${contentDate}</span></span> -->
               <div>
                 ${contentDetail}
               </div>

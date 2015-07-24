@@ -8,7 +8,7 @@
             <div class="royalCaption">
               <div class="royalCaptionItem title" data-show-effect="moveleft fade"  data-move-offset="10">{{slide.slTitle}}</div>
               <div class="royalCaptionItem content" data-show-effect="moveleft fade" data-delay="400" data-move-offset="15" >{{slide.slDes}}
-                <p><a href="slide.slLink" target="_self" ng-if="slide.slLink">
+                <p><a href="{{slide.slLink}}" target="_self" ng-if="slide.slLink">
                     <button type="button" class="btn_link btn btn-primary btn-lg" ng-if="slide.slLinkName">{{slide.slLinkName}}</button>
                     <button type="button" class="btn_link btn btn-primary btn-lg" ng-if="!slide.slLinkName">คลิก</button>
                   </a><p>
