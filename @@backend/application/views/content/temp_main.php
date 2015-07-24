@@ -52,9 +52,7 @@
                   <div id="temp-image">
 
                   </div>
-                  <script type='text/javascript' >
-                  
-                  </script>
+                 
                 </div>
               </div>
               <div class="form-group">
@@ -62,7 +60,7 @@
 
                 <div class="col-sm-10">
 
-                  <input type="submit" name="send" class="btn btn-success" value="Add News" onclick="onSend();">
+                  <input type="submit" name="send" class="btn btn-success" value="Add Content" onclick="onSend();">
 
                 </div>
               </div>

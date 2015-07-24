@@ -104,6 +104,7 @@ class HomeCtrl extends CI_Controller {
       $getProfile = $this->Model_customer->getProfile($token);
       $getDownline = $this->Model_customer->getDownline($getProfile->cusFullname);
       $countDownline = $this->Model_customer->countDownline($getProfile->cusFullname);
+      $atc = $this->Model_customer->getAttachment($token);
 
       if($getDownline != 0){
         $downline = $getDownline;
@@ -139,7 +140,8 @@ class HomeCtrl extends CI_Controller {
                     'pDate' => $getProfile->cusCreateAt,
                     'pInvite' => $invite,
                     'pDownline' => $downline,
-                    'countDownline' => $countDownline
+                    'countDownline' => $countDownline,
+                    'atc' => $atc
                   );
       $this->parser->parse('member/temp_profile', $data);
     }
@@ -199,20 +201,48 @@ class HomeCtrl extends CI_Controller {
    
   }
 
-  public function slideAll(){
+  public function slideAll($id = null){
+    if($this->session->userdata('logged_in') != true){
+      redirect(base_url().'HomeCtrl');
+    }
+    if($id != null){
+      $arr = array('slId' => $id);
+      $this->db->delete('tbl_slide_main',$arr);
+      redirect(base_url().'HomeCtrl/slideAll');
+    }else{
+      $pathAsset = assets();
+      $result = $this->Model_slide->getSlide();
+      $data = array('title' => 'insurancebroker360',
+                    'assets' => $pathAsset,
+                    'results' => $result
+                  );
+      $this->parser->parse('slide/temp_slideAll', $data);
+    }
+   
+  }
+  
+  public function slideEdit($id = null){
     if($this->session->userdata('logged_in') != true){
       redirect(base_url().'HomeCtrl');
     }
     $pathAsset = assets();
-    $result = $this->Model_slide->getSlide();
-    $data = array('title' => 'insurancebroker360',
+    
+      $result = $this->Model_slide->getRowSlide($id);
+    
+    $data = array(
+                  'title' => 'insurancebroker360',
                   'assets' => $pathAsset,
-                  'results' => $result
+                  'slTitle' => $result->slTitle,
+                  'slId' => $result->slId,
+                  'slDes' => $result->slDes,
+                  'slLink' => $result->slLink,
+                  'slLinkName' => $result->slLinkName,
+                  'slImage' => $result->slImage
                 );
-    $this->parser->parse('slide/temp_slideAll', $data);
+    
+    $this->parser->parse('slide/temp_edit', $data);
    
   }
-  
   // menu 
   
   public function profile(){
@@ -305,7 +335,7 @@ class HomeCtrl extends CI_Controller {
     if($id != null){
       $arr = array('cId' => $id);
       $this->db->delete('tbl_contents',$arr);
-      redirect(base_url().'homectrl/contentAll');
+      redirect(base_url().'HomeCtrl/contentAll');
     }else{
       $pathAsset = assets();
       $result = $this->Model_contents->getContents();
@@ -343,6 +373,7 @@ class HomeCtrl extends CI_Controller {
                   'title' => 'insurancebroker360',
                   'assets' => $pathAsset,
                   'cTitle' => $result->cTitle,
+                  'cId' => $result->cId,
                   'cDes' => $result->cDes,
                   'cDetail' => $result->cDetail,
                   'cImage' => $result->cImage

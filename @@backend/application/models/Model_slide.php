@@ -32,45 +32,23 @@ class Model_slide extends CI_Model{
   }
   
   
-  public function getRowContent($ar = null){
+  public function getRowSlide($ar = null){
      $result = 0;
-     $this->db->where('cId',$ar);
-     $this->db->from('tbl_contents');
+     $this->db->where('slId',$ar);
+     $this->db->from('tbl_slide_main');
      $isQuery = $this->db->get();
      if($isQuery->num_rows()){
       $result = $isQuery->row();
      }
      return $result;
   }
-  
-  
-     
-  # NUMBER
-     
-  public function numContents(){
-    $result = 0;
-     $this->db->from('tbl_contents');
-     $isQuery = $this->db->get();
-     if($isQuery->num_rows()){
-      $result = $isQuery->num_rows();
-     }
-     return $result;
-  }
-   public function numContentNew(){
-    $result = 0;
-     
-     $this->db->select('*');
-     $this->db->where('YEAR(cCreateAt)' , date('Y'));
-     $this->db->where('MONTH(cCreateAt)' , date('m'));
-     $this->db->where('DAY(cCreateAt)' , date('d'));
-//     $this->db->where('MONTH(cusCreateAt)' , 06);
-//     $this->db->where(Day('cusCreateAt') , date('d'));
-     $this->db->from('tbl_contents');
-     $isQuery = $this->db->get();
-     if($isQuery->num_rows()){
-      $result = $isQuery->num_rows();
-     }
-     return $result;
+ 
+  ## Edit
+
+  public function editSlide($id ,$arr){
+
+    $this->db->where('slid', $id);
+    $this->db->update('tbl_slide_main', $arr); 
   }
 
 }

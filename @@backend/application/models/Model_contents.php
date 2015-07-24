@@ -44,7 +44,12 @@ class Model_contents extends CI_Model{
   }
   
   
-     
+  ## UPDATE
+
+  public function editContent($id ,$arr){
+    $this->db->where('cId', $id);
+    $this->db->update('tbl_contents', $arr); 
+  }  
   # NUMBER
      
   public function numContents(){

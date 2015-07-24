@@ -6,6 +6,20 @@ class Model_customer extends CI_Model{
 		
 	}
 
+  public function getAttachment($token){
+    $result = 0;
+    $this->db->select('*');
+    $this->db->where('userToken' , $token);
+    $this->db->from('tbl_attachment');
+    $isQuery = $this->db->get();
+    if($isQuery->num_rows()){
+      $result = $isQuery->result();
+    }
+    return $result;
+
+  }
+
+  
   public function getProfile($token){
     $result = 0;
     $this->db->select('*');
