@@ -12,8 +12,8 @@
 
 
 
-      <script src="${assets}js/ckeditor/ckeditor.js"></script>
-      <script src="${assets}js/ckeditor/adapters/jquery.js"></script>
+
+      <script src="${assets}ckeditor/ckeditor.js"></script>
       <script src="${assets}js/neon-uploads.js"></script>
 
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
