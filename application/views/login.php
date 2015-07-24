@@ -216,6 +216,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <div class="input-field">
 
 
+
+
 <h2><strong>กฎระเบียบ ข้อกำหนด การสมัครเป็นที่ปรึกษาด้านการประกันรถ</strong></h2>
 
 <ol>
@@ -248,6 +250,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </li>
     <li>
     <p>PROMOTION รถ BENZ S-CLASS เป็นการส่งเสริมการขายเฉพาะผู้ที่ยังไม่เคยได้รับสิทธิ์นี้ &nbsp;หรือให้สิทธ์เฉพาะบุคคล คำนวณ 10% จาก COMM. ของผู้ให้การแต่งตั้งคุณ ตั้งแต่ระดับที่ 1-3 &nbsp;ทั้งนี้ 10% ของ COMM. ของแต่ละผู้ให้การแต่งตั้ง จะต้องไม่เกินรายได้ COMM. 10% ของคุณให้เก็บสะสมจนครบที่จะซื้อรถดังกล่าว เริ่มเก็บสะสมตั้งแต่ตำแหน่งที่ ปรึกษาฯ จะออกรถได้เมื่อ &nbsp;คุณมีตำแหน่งเป็น CEO เท่านั้น</p>
+    </li>
+    <li>
+      <img src="{{assets}}images/term1.png" />
     </li>
   </ul>
   </li>
