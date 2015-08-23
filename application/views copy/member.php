@@ -46,11 +46,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <nav class="collapse navbar-collapse navbar-right" role="navigation">
           <ul id="nav" class="nav navbar-nav">
-            <li ng-repeat="list in menu.lists" ng-if="list.link !== 'searchForm'">
+            <li ng-repeat="list in menu.lists">
               <a href="{{list.link}}" ng-bind="list.name"></a>
-            </li>
-            <li ng-repeat="list in menu.lists" ng-if="list.link === 'searchForm'">
-              <a href="#" ng-bind="list.name" ng-click="scrollTo(list.link);"></a>
             </li>
           </ul>
         </nav>
@@ -58,14 +55,80 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <div class="line-gold"></div>
     </header>
     <main class="site-content" role="main" ng-init="needToRister = false">
-      <section id="home" data-temp-slide></section>    
-      <section id="step" data-temp-step></section> 
-      <section id="content" data-temp-content data-contents="${contents}"></section> 
+      <div ng-controller="ContentListCtrl">
 
-      <section id="searchForm" data-temp-check-package></section>    
+  <div class="container" ng-if="contents">
+    <div class="row">
+      <br>
+      <div class="sec-title wow animated fadeInDown">
+        <ol class="breadcrumb">
+          <li><a href="${baseUrl}">หน้าแรก</a></li>
+          <li class="active">ระบบสมาชิค</li>
+        </ol>
+      </div>
+
+
+      <div class="col-md-4 col-sm-4 col-xs-12 wow animated zoomIn">
+        <form class="form-">
+          <div class="text-center">
+        <img src="{{assets}}images/person-icon.png" alt="member" class="img-member img-circle">
+      </div>
+        <br>
+          <!-- <button type="submit" class="btn btn-primary btn-lg btn-block">เปลี่ยนรูป</button> -->
+          <a href='<?php echo base_url(); ?>logout' class="btn btn-danger btn-lg btn-block">ออกจากระบบ</a>
+        </form>
+        <br>
+        <br>
+      </div>
+
+      <div class="col-md-8 col-sm-8 col-xs-12 wow animated zoomIn form-">
+        <p>ชื่อ-นามสกุล : <?php echo $this->session->userdata('sesData')->cusFullname; ?></p>
+        <p>อีเมล์ :  <?php echo $this->session->userdata('sesData')->cusEmail; ?></p>
+        <p>เบอร​์โทรศัพท์ :  <?php echo $this->session->userdata('sesData')->cusPhone; ?></p>
+        <p>ผู้แนะนำ : <?php
+          if($this->session->userdata('sesData')->cusInvite == ""){
+              echo "ยังไม่มี";
+          }else{
+
+            echo $this->session->userdata('sesData')->cusInvite;
+          }
+        ?>
+
+        </p>
+        
+        
+      </div>
+     
+      <div class="col-md-12 col-sm-12 col-xs-12 wow animated zoomIn">
+       <?php if(isset($error)){
+              echo '<label  class="btn btn-danger btn-lg btn-block">กรุณาตรวจสอบ เอกสาร อีกครั้ง ** รูปเท่านั้น</label>';
+            }elseif(isset($success)){
+              echo '<label  class="btn btn-success btn-lg btn-block">ทางเราได้รับเอกสารของท่านเรียบร้อยแล้ว</label>';
+            }
+
+      ?>
+        <form class="form-file" action="<?php echo base_url(); ?>AuthenCtrl/uploads"method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="file">แนบไฟล์</label>
+            <input type="file" name="file" id="file" accept="image/*" required>
+            <p class="help-block">เอกสาร <font color='red' > ** รูปเท่านั้น </font></p>
+          </div>
+          <input type="submit"  name="sent" class="btn btn-primary btn-lg btn-block" value="อัพโหลด"> 
+        </form>
+        <h2>&nbsp;</h2>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
       <div class="col-md-12 col-sm-12 col-xs-12 text-center wow animated zoomIn">
         <h2>&nbsp;</h2>
       </div>
+
+      
+
     </main>
     <footer id="footer" data-temp-footer class="bg-color-theme"></footer>
     <script src="${assets}js/plugin/modernizr-2.6.2.min.js"></script>

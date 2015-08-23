@@ -4,8 +4,8 @@
     <div id="myGallery1" class="royalSlider clearfix">
       <ul class="royalSlidesContainer" id="testId">
         <li class="royalSlide" ng-repeat="slide in slides"> 
-          <div style="background-image:url({{uploads}}slides/{{slide.slImage}});" ng-click="scrollTo(slide.slTitle);">
-<!--            <div class="royalCaption">
+          <div style="background-image:url({{uploads}}slides/{{slide.slImage}});">
+            <div class="royalCaption">
               <div class="royalCaptionItem title" data-show-effect="moveleft fade"  data-move-offset="10">{{slide.slTitle}}</div>
               <div class="royalCaptionItem content" data-show-effect="moveleft fade" data-delay="400" data-move-offset="15" >{{slide.slDes}}
                 <p><a href="{{slide.slLink}}" target="_self" ng-if="slide.slLink">
@@ -13,7 +13,7 @@
                     <button type="button" class="btn_link btn btn-primary btn-lg" ng-if="!slide.slLinkName">คลิก</button>
                   </a><p>
               </div>
-            </div>   -->
+            </div>   
             <img src="{{uploads}}slides/{{slide.slImage}}">
           </div>
         </li>

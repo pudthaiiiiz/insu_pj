@@ -69,5 +69,14 @@ app.controller('SlideCtrl', ['$scope', 'HomeServices', function ($scope, HomeSer
       },1000);
     }
     
+    
+    $scope.scrollTo = function(div) {
+      // searchForm
+      var hasElementDiv = $("#"+div).html();
+      if (!hasElementDiv) return;
+      var divTop = $("#"+div).offset().top;
+      $('html,body').animate({scrollTop: (divTop/*-100*/)}, 1000);
+    };
+    
   }]);
 

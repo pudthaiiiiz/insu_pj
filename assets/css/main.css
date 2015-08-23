@@ -790,7 +790,7 @@ figcaption.mask {
 }
 
 .portfolio-item:hover figcaption.mask {
-    bottom: 0;
+    /*bottom: 0;*/
 }
 
 figcaption.mask h3 {
@@ -836,7 +836,7 @@ ul.external li a:hover {
 }
 
 .portfolio-item:hover ul.external {
-    top: 0;
+    /*top: 0;*/
 }
 
 .fancybox-skin {
@@ -1332,7 +1332,7 @@ textarea.form-control {
 }
 
 .box-register{
-  border: 1px solid #2E2E2E;
+  border: 0px solid #2E2E2E;
 }
 
 .box-term{

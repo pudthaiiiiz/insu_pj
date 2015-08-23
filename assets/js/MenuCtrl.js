@@ -6,9 +6,9 @@
 /* global app, Global */
 
 app.controller('MenuCtrl', ['$scope',  function ($scope) {
-    $scope.assets = Global.assets;
-    $scope.uploads = Global.uploads;
-    $scope.baseUrl = Global.baseurl;
+  $scope.assets = Global.assets;
+  $scope.uploads = Global.uploads;
+  $scope.baseUrl = Global.baseurl;
   $scope.menu = {};
   $scope.menu.title = "insurancebroker360";
   $scope.menu.lists = [
@@ -36,13 +36,21 @@ app.controller('MenuCtrl', ['$scope',  function ($scope) {
     name : 'เข้าสู่ระบบ',
     link : Global.baseurl+'login'
     },
-    {
-    name : 'สมัครเลย',
-    link : Global.baseurl+'#'
-    },
+//    {
+//    name : 'สมัคร ​SUB BROKER',
+//    link : 'searchForm'
+//    },
     {
     name : 'เบอร์แจ้งอุบัติเหตุ',
     link : Global.baseurl+'pagedetail'
     }
   ];
+  
+    $scope.scrollTo = function(div) {
+      // searchForm
+      var hasElementDiv = $("#"+div).html();
+      if (!hasElementDiv) return;
+      var divTop = $("#"+div).offset().top;
+      $('html,body').animate({scrollTop: (divTop/*-100*/)}, 1000);
+    };
 }]);

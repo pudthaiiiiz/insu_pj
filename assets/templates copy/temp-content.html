@@ -3,21 +3,21 @@
   <div class="container">
     <div class="row">
       <div class="sec-title text-center wow animated fadeInDown">
-        <h2><a href="javascript:void(0)" class="black">บทความ</a></h2>
+        <h2><a href="{{baseUrl}}content" class="black">บทความ</a></h2>
         <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
       </div>
       <ul class="project-wrapper wow animated fadeInUp">
-        <li id="{{content.cTitle}}" class="portfolio-item" ng-repeat="content in contents">
+        <li class="portfolio-item" ng-repeat="content in contents">
           <div class="img-crop" style="background-image: url('{{uploads}}content/{{content.cImage}}')"></div>
-          <a href="javascript:void(0)">
+          <a href="{{baseUrl}}content/{{content.cId}}">
           <img src="{{uploads}}content/{{content.cImage}}" class="img-responsive transparent" alt="{{content.cDes}}">
-          <a href="javascript:void(0)"><figcaption class="mask">
+          <a href="{{baseUrl}}content/{{content.cId}}"><figcaption class="mask">
               <h3>{{content.cTitle}}</h3>
               <p>{{content.cDes}} </p>
             </figcaption></a>
           <ul class="external">
             <!--<li><a class="fancybox" title="Araund The world" data-fancybox-group="works" href="{{assets}}img/portfolio/item.jpg"><i class="fa fa-search"></i></a></li>-->
-            <li><a href="javascript:void(0)"><i class="fa fa-link"></i></a></li>
+            <li><a href="{{baseUrl}}content/{{content.cId}}"><i class="fa fa-link"></i></a></li>
           </ul>
           </a>
         </li>
