@@ -42,7 +42,8 @@ class ContentCtrl extends CI_Controller {
   
     $resp['status'] = 'error';
     $resp['data'] = null;
-    $isData = $this->Model_content->getContentHome();
+    $isData = $this->Model_content->getContentAll();
+    //$isData = $this->Model_content->getContentHome();
       if($isData != 0 ){
         $resp['status'] = 'success';
         $resp['data'] = $isData;
